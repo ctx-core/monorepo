@@ -11,6 +11,15 @@
 		"compile": "tsc -b",
 		"prepublishOnly": "npm run compile"
 	},
+	"bin": {
+		"git-commit-submodules.sh": "bin/git-commit-submodules.sh",
+		"git-module-github-ssh.sh": "bin/git-module-github-ssh.sh",
+		"git-push-submodules.sh": "bin/git-push-submodules.sh",
+		"npm-check-updates-monorepo.js": "bin/npm-check-updates-monorepo.js",
+		"npm-publish-force.sh": "bin/npm-publish-force.sh",
+		"refresh-ctx-core-package.json.js": "bin/refresh-ctx-core-package.json.js",
+		"run-parallel-workspaces.js": "bin/run-parallel-workspaces.js"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ctx-core/ctx-core.git"

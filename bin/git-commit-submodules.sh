@@ -4,4 +4,4 @@ while read dir; do
   cd "$dir"
   git add .
   git commit -av < /dev/tty > /dev/tty
-done <<< $(git submodule foreach pwd)
+done <<< $(git submodule foreach pwd | grep -v '^Entering')

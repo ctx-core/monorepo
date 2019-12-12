@@ -5,7 +5,9 @@ while read dir; do
   cd "$dir"
   git add .
   git commit -av < /dev/tty > /dev/tty
+  git push
 done <<< $(git submodule foreach pwd)
 cd $DIR
 git add .
 git commit -av < /dev/tty > /dev/tty
+git push

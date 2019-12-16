@@ -45,7 +45,7 @@
 		"@ctx-core/queue": "^1.2.11",
 		"esm": "^3.2.25",
 		"globby": "^10.0.1",
-		"semver": "^6.3.0"
+		"semver": "^7.0.0"
 	},
 	"devDependencies": {
 		"typescript": "^3.7.3"

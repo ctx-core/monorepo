@@ -83,7 +83,7 @@ export async function npm_check_updates__monorepo(opts:Opts__threads = {}) {
 		noUpdate = noUpdate || []
 		const update_a1 = []
 		for (let package_name in dependencies) {
-			if (!~noUpdate.indexOf(package_name)) continue
+			if (~noUpdate.indexOf(package_name)) continue
 			const dependency_workspace = workspaces[package_name]
 			const version = dependencies[package_name]
 			const has_carrot = version.slice(0, 1) === '^'

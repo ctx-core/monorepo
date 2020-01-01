@@ -63,11 +63,11 @@ export async function npm_check_updates__monorepo(opts:Opts__threads = {}) {
 		const pkg = JSON.parse(
 			(await readFile(path__package__json)).toString()
 		)
-		const { dependencies, peerDependencies, devDependencies } = pkg
+		const { dependencies, peerDependencies, devDependencies, noUpdate } = pkg
 		const update_a2 = []
-		update_a2.push(await update__dependencies(dependencies))
-		update_a2.push(await update__dependencies(devDependencies))
-		update_a2.push(await update__dependencies(peerDependencies))
+		update_a2.push(await update__dependencies(dependencies, noUpdate))
+		update_a2.push(await update__dependencies(devDependencies, noUpdate))
+		update_a2.push(await update__dependencies(peerDependencies, noUpdate))
 		const update_a1 = flatten(update_a2)
 		if (update_a1.length) {
 			await writeFile(path__package__json, JSON.stringify(pkg, null, '\t'))
@@ -79,9 +79,11 @@ export async function npm_check_updates__monorepo(opts:Opts__threads = {}) {
 		const { location } = workspace
 		return _promise(location)
 	}
-	async function update__dependencies(dependencies) {
+	async function update__dependencies(dependencies, noUpdate = []) {
+		noUpdate = noUpdate || []
 		const update_a1 = []
 		for (let package_name in dependencies) {
+			if (!~noUpdate.indexOf(package_name)) continue
 			const dependency_workspace = workspaces[package_name]
 			const version = dependencies[package_name]
 			const has_carrot = version.slice(0, 1) === '^'

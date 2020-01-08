@@ -45,7 +45,7 @@
 		"@ctx-core/package": "^3.1.36",
 		"@ctx-core/queue": "^1.2.12",
 		"esm": "^3.2.25",
-		"globby": "^10.0.1",
+		"globby": "^11.0.0",
 		"semver": "^7.1.1"
 	},
 	"devDependencies": {

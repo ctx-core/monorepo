@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 require = require('esm')(module)
 const { run_parallel__workspaces } = require('../lib')
-const commander = require('commander')
+const { _h__param } = require('@ctx-core/cli-args')
 const a1__cmd = process.argv.slice(2)
 main()
 async function main() {
@@ -14,10 +14,25 @@ async function main() {
 	}
 }
 function _opts() {
-	commander
-		.option('-t, --threads <thread-count>', 'thread count [default=20]')
-	commander.parse(process.argv)
-	return {
-		dir: commander.threads || 20,
+	const { threads, help } = _h__param(process.argv.slice(2), {
+		threads: '-t, --threads',
+		help: '-h, --help',
+	})
+	if (help) {
+		console.info(_help_msg)
+		process.exit(0)
 	}
+	return {
+		threads: threads || 20,
+	}
+}
+function _help_msg() {
+	return `
+Usage: run-parallel-workspaces.js [-t <thread-count>]
+
+Options:
+
+-h, --help    This help message
+-t, --threads Number of threads to run (defaults to 20)
+		`.trim()
 }

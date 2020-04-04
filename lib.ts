@@ -114,6 +114,12 @@ export async function npm_check_updates__monorepo(opts:Opts__threads = {}) {
 						await package_name__x__latest_version[package_name]
 				}
 				const latest_stripped_version = package_name__x__latest_version[package_name]
+				if (!latest_stripped_version) {
+					console.warn(
+						`WARN: Unable to parse ${package_name} from npm registry\n`,
+						await exec(`npm show ${package_name}@latest`),
+					)
+				}
 				if (
 					compare(
 						coerce(latest_stripped_version),

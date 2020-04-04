@@ -104,7 +104,9 @@ export async function npm_check_updates__monorepo(opts:Opts__threads = {}) {
 				if (!package_name__x__latest_version[package_name]) {
 					const promise = queue.add(async ()=>
 						(
-							await exec(`npm show ${package_name}@latest | grep latest | grep \\: | cut -f2 -d: | xargs echo`)
+							await exec(
+								`npm show ${package_name}@latest | grep latest | grep \\: | cut -f2 -d: | xargs echo`
+							)
 						).stdout.trim()
 					)
 					package_name__x__latest_version[package_name] = promise
@@ -121,7 +123,8 @@ export async function npm_check_updates__monorepo(opts:Opts__threads = {}) {
 					)
 				}
 				if (
-					compare(
+					!latest_stripped_version
+					|| compare(
 						coerce(latest_stripped_version),
 						coerce(version)
 					) > 0

@@ -122,8 +122,8 @@ export async function npm_check_updates__monorepo(opts:Opts__threads = {}) {
 					)
 				}
 				if (
-					!latest_stripped_version
-					|| compare(
+					latest_stripped_version
+					&& compare(
 						coerce(latest_stripped_version),
 						coerce(version)
 					) > 0

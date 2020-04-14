@@ -45,6 +45,7 @@ type Opts__threads = {
 }
 export async function npm_check_updates__monorepo(opts:Opts__threads = {}) {
 	const package_name__x__latest_version = {}
+	const package_name__x__already_warned = {}
 	const queue = _queue(opts.threads || 20)
 	const workspaces = await _workspaces()
 	const a1__workspace_name =
@@ -117,7 +118,8 @@ export async function npm_check_updates__monorepo(opts:Opts__threads = {}) {
 						|| ''
 				}
 				const latest_stripped_version = package_name__x__latest_version[package_name]
-				if (!latest_stripped_version) {
+				if (!latest_stripped_version && !package_name__x__already_warned[package_name]) {
+					package_name__x__already_warned[package_name] = true
 					console.warn(
 						`WARN: Unable to parse ${package_name} from npm registry`
 					)
@@ -125,8 +127,8 @@ export async function npm_check_updates__monorepo(opts:Opts__threads = {}) {
 				if (
 					latest_stripped_version
 					&& compare(
-						coerce(latest_stripped_version),
-						coerce(version)
+					coerce(latest_stripped_version),
+					coerce(version)
 					) > 0
 				) {
 					const latest_version = `${has_carrot ? '^' : ''}${latest_stripped_version}`

@@ -101,7 +101,7 @@ export async function npm_check_updates__monorepo(opts:Opts__threads = {}) {
 				}
 			} else {
 				if (!valid(coerce(dependencies[package_name]))) continue
-				if (!package_name__x__latest_version[package_name]) {
+				if (package_name__x__latest_version[package_name] == null) {
 					const promise = queue.add(async ()=>
 						(
 							await exec(
@@ -111,9 +111,10 @@ export async function npm_check_updates__monorepo(opts:Opts__threads = {}) {
 					)
 					package_name__x__latest_version[package_name] = promise
 				}
-				if (package_name__x__latest_version[package_name].then) {
+				if (package_name__x__latest_version[package_name]?.then) {
 					package_name__x__latest_version[package_name] =
-						await package_name__x__latest_version[package_name]
+						(await package_name__x__latest_version[package_name])
+						|| ''
 				}
 				const latest_stripped_version = package_name__x__latest_version[package_name]
 				if (!latest_stripped_version) {

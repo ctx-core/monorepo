@@ -28,7 +28,7 @@ function _opts() {
 }
 function _help_msg() {
 	return `
-Usage: run-parallel-workspaces.js [-t <thread-count>]
+Usage: run-parallel--workspaces.js [-t <thread-count>]
 
 Options:
 

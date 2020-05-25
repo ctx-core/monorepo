@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "7.0.5",
+	"version": "7.0.6",
 	"description": "ctx-core monorepo",
 	"type": "module",
 	"main": "lib.js",

@@ -6,7 +6,7 @@ import { _queue } from '@ctx-core/queue'
 import fs from 'fs'
 import child_process from 'child_process'
 const exec = promisify(child_process.exec)
-const globby = require('globby')
+import globby from 'globby'
 const readFile = promisify(fs.readFile)
 const writeFile = promisify(fs.writeFile)
 export async function _workspaces() {

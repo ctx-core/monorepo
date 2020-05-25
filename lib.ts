@@ -1,5 +1,6 @@
 import { promisify } from 'util'
-import { valid, coerce, compare } from 'semver'
+import semver from 'semver'
+const { valid, coerce, compare } = semver
 import { map, flatten } from '@ctx-core/array'
 import { _h__param } from '@ctx-core/cli-args'
 import { _queue } from '@ctx-core/queue'

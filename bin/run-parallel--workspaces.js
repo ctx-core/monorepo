@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-require = require('esm')(module)
-const { run_parallel__workspaces } = require('../lib')
-const { _h__param } = require('@ctx-core/cli-args')
+import { run_parallel__workspaces } from '../lib'
+import { _h__param } from '@ctx-core/cli-args'
 const a1__cmd = process.argv.slice(2)
 main()
 async function main() {

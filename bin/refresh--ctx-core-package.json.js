@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-require = require('esm')(module)
-const fs = require('fs')
-const { promisify } = require('util')
-const { each } = require('@ctx-core/array')
-const { each__package__json } = require('../lib')
+import fs from 'fs'
+import { promisify } from 'util'
+import { each } from '@ctx-core/array'
+import { each__package__json } from '../lib'
 const readFile = promisify(fs.readFile)
 const writeFile = promisify(fs.writeFile)
 const { keys } = Object

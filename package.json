@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "7.0.6",
+	"version": "7.0.7",
 	"description": "ctx-core monorepo",
 	"main": "lib.js",
 	"module": "lib.js",
@@ -41,10 +41,10 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@ctx-core/array": "^15.5.20",
-		"@ctx-core/cli-args": "^3.1.51",
-		"@ctx-core/package": "^3.1.53",
-		"@ctx-core/queue": "^1.2.20",
+		"@ctx-core/array": "^15.5.21",
+		"@ctx-core/cli-args": "^3.1.52",
+		"@ctx-core/package": "^3.1.54",
+		"@ctx-core/queue": "^1.2.21",
 		"esm": "^3.2.25",
 		"globby": "^11.0.0",
 		"semver": "^7.3.2"

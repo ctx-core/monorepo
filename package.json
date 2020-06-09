@@ -46,11 +46,11 @@
 		"@ctx-core/package": "^3.1.54",
 		"@ctx-core/queue": "^1.2.21",
 		"esm": "^3.2.25",
-		"globby": "^11.0.0",
+		"globby": "^11.0.1",
 		"semver": "^7.3.2"
 	},
 	"devDependencies": {
-		"typescript": "^3.9.3"
+		"typescript": "^3.9.5"
 	},
 	"gitHead": "033e149ae5a6a58cb03dac5db9e030b373e08e05"
 }

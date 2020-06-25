@@ -5,6 +5,7 @@ import { map, flatten } from '@ctx-core/array'
 import { _h__param } from '@ctx-core/cli-args'
 import { _queue } from '@ctx-core/queue'
 import fs from 'fs'
+import detect_indent from 'detect-indent'
 import child_process from 'child_process'
 const exec = promisify(child_process.exec)
 import globby from 'globby'
@@ -62,9 +63,8 @@ export async function npm_check_updates__monorepo(opts:Opts__threads = {}) {
 	return _h1__stdout__h0__name__workspace(a1__workspace_name, a1__stdout)
 	async function _promise(location = '.') {
 		const path__package__json = `${location}/package.json`
-		const pkg = JSON.parse(
-			(await readFile(path__package__json)).toString()
-		)
+		const pkg_json = (await readFile(path__package__json)).toString()
+		const pkg = JSON.parse(pkg_json)
 		const { dependencies, peerDependencies, devDependencies, noUpdate } = pkg
 		const update_a2 = []
 		update_a2.push(await update__dependencies(dependencies, noUpdate))
@@ -72,7 +72,8 @@ export async function npm_check_updates__monorepo(opts:Opts__threads = {}) {
 		update_a2.push(await update__dependencies(peerDependencies, noUpdate))
 		const update_a1 = flatten(update_a2)
 		if (update_a1.length) {
-			await writeFile(path__package__json, JSON.stringify(pkg, null, '\t'))
+			const indent = detect_indent(pkg_json).indent || '\t'
+			await writeFile(path__package__json, JSON.stringify(pkg, null, indent))
 		}
 		return update_a1.join('\n')
 	}

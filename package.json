@@ -45,6 +45,7 @@
 		"@ctx-core/cli-args": "^3.1.53",
 		"@ctx-core/package": "^3.1.55",
 		"@ctx-core/queue": "^1.2.22",
+		"detect-indent": "^6.0.0",
 		"esm": "^3.2.25",
 		"globby": "^11.0.1",
 		"semver": "^7.3.2"

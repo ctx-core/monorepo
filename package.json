@@ -2,9 +2,9 @@
 	"name": "@ctx-core/monorepo",
 	"version": "7.1.5",
 	"description": "ctx-core monorepo",
-	"main": "index.js",
-	"module": "index.js",
-	"types": "index.ts",
+	"main": "./index.js",
+	"module": "./index.js",
+	"types": "./index.ts",
 	"scripts": {
 		"build": "npm run clean && npm run compile",
 		"clean": "rm -f tsconfig.tsbuildinfo",

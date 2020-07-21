@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "7.1.7",
+	"version": "7.1.8",
 	"description": "ctx-core monorepo",
 	"main": "./index.js",
 	"module": "./index.js",
@@ -41,10 +41,10 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@ctx-core/array": "^15.5.28",
-		"@ctx-core/cli-args": "^3.1.59",
-		"@ctx-core/package": "^3.1.61",
-		"@ctx-core/queue": "^1.2.26",
+		"@ctx-core/array": "^15.5.29",
+		"@ctx-core/cli-args": "^3.1.60",
+		"@ctx-core/package": "^3.1.62",
+		"@ctx-core/queue": "^1.2.27",
 		"detect-indent": "^6.0.0",
 		"esm": "^3.2.25",
 		"globby": "^11.0.1",

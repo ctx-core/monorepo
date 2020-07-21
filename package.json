@@ -51,7 +51,7 @@
 		"semver": "^7.3.2"
 	},
 	"devDependencies": {
-		"typescript": "^3.9.6"
+		"typescript": "^3.9.7"
 	},
 	"gitHead": "6a361cebcd882db994f4b6035676ae73a483c096"
 }

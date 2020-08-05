@@ -2,7 +2,7 @@ import { promisify } from 'util'
 import semver from 'semver'
 const { valid, coerce, compare } = semver
 import { map, flatten } from '@ctx-core/array'
-import { _h__param } from '@ctx-core/cli-args'
+import { _param_h } from '@ctx-core/cli-args'
 import { _queue } from '@ctx-core/queue'
 import fs from 'fs'
 import detect_indent from 'detect-indent'
@@ -29,7 +29,7 @@ export async function each__package__json(txt__glob, fn) {
 	await Promise.all(a1__promise)
 }
 export async function cli__npm_check_updates__monorepo() {
-	const h__param = _h__param(process.argv.slice(2), {
+	const h__param = _param_h(process.argv.slice(2), {
 		threads: '-t, --threads',
 		workspace_name: '-w, --workspace-name'
 	}, {

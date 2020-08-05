@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 require = require('esm')(module)
 const { run_parallel__workspaces } = require('../lib')
-const { _h__param } = require('@ctx-core/cli-args')
+const { _param_h } = require('@ctx-core/cli-args')
 const a1__cmd = process.argv.slice(2)
 main()
 async function main() {
@@ -14,7 +14,7 @@ async function main() {
 	}
 }
 function _opts() {
-	const { threads, help } = _h__param(process.argv.slice(2), {
+	const { threads, help } = _param_h(process.argv.slice(2), {
 		threads: '-t, --threads',
 		help: '-h, --help',
 	})

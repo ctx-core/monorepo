@@ -3,13 +3,13 @@ require = require('esm')(module)
 const fs = require('fs')
 const { promisify } = require('util')
 const { each } = require('@ctx-core/array')
-const { each__package__json } = require('../lib')
+const { map_package_json_path_glob } = require('../lib')
 const readFile = promisify(fs.readFile)
 const writeFile = promisify(fs.writeFile)
 const { keys } = Object
 main()
 async function main() {
-	await each__package__json(`${__dirname}/../../*/package.json`, async package__json => {
+	await map_package_json_path_glob(`${__dirname}/../../*/package.json`, async package__json => {
 		const txt = await readFile(package__json)
 		const json = JSON.parse(txt)
 		const json__ = {}

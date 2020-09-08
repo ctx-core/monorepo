@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 require = require('esm')(module)
-const { cli__npm_check_updates__monorepo } = require('../lib')
-cli__npm_check_updates__monorepo()
+const { monorepo_npm_check_updates_cli } = require('../lib')
+monorepo_npm_check_updates_cli()

@@ -4,7 +4,7 @@ import { _workspaces } from './_workspaces'
 import { _promise_a1 } from './_promise_a1'
 import { exec } from './exec'
 import { _workspace_name_h0_stdout_h1 } from './_workspace_name_h0_stdout_h1'
-export async function workspace_a1_run_parallel(cmd_a1, opts:monorepo_thread_opts_type = {}) {
+export async function run_parallel_workspaces(cmd_a1, opts:monorepo_thread_opts_type = {}) {
 	const queue = _queue(opts.threads || 20)
 	const workspaces = await _workspaces()
 	const cmd = cmd_a1.join(' ')

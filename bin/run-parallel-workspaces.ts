@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 require = require('esm')(module)
-const { workspace_a1_run_parallel } = require('../lib')
+import { run_parallel_workspaces } from '../run_parallel_workspaces'
 const { _param_h } = require('@ctx-core/cli-args')
-const a1__cmd = process.argv.slice(2)
-main()
+const cmd_a1 = process.argv.slice(2)
+main().then()
 async function main() {
 	const opts = _opts()
-	const stdout__name__workspace =
-		await workspace_a1_run_parallel(a1__cmd, opts)
-	for (let name__workspace in stdout__name__workspace) {
-		console.info(name__workspace)
-		console.info(stdout__name__workspace[name__workspace])
+	const workspace_name_stdout =
+		await run_parallel_workspaces(cmd_a1, opts)
+	for (let workspace_name in workspace_name_stdout) {
+		console.info(workspace_name)
+		console.info(workspace_name_stdout[workspace_name])
 	}
 }
 function _opts() {

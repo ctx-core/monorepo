@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "7.1.34",
+	"version": "8.0.0",
 	"description": "ctx-core monorepo",
 	"main": "./index.js",
 	"module": "./index.js",

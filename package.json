@@ -8,7 +8,7 @@
 	"scripts": {
 		"build": "npm run clean && npm run compile",
 		"clean": "rm -f tsconfig.tsbuildinfo",
-		"compile": "tsc -b",
+		"compile": "tsc -b && chmod a+x bin/*.js",
 		"prepublishOnly": "npm run compile"
 	},
 	"bin": {

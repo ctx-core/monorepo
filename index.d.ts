@@ -7,5 +7,5 @@ export * from './monorepo_npm_check_updates';
 export * from './monorepo_npm_check_updates_cli';
 export * from './monorepo_thread_opts_type';
 export * from './readFile';
-export * from './run_parallel_workspaces';
+export * from './run_parallel__workspaces';
 export * from './writeFile';

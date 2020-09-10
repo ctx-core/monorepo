@@ -15,7 +15,6 @@
 		"ensure.sh": "bin/ensure.sh",
 		"git-commit--submodules": "bin/git-commit--submodules.sh",
 		"update-git-module--github--ssh": "bin/update-git-module--github--ssh.sh",
-		"git-push-submodules": "bin/git-push-submodules.sh",
 		"npm-check-updates--monorepo": "bin/npm-check-updates--monorepo.js",
 		"npm-copy--package-bin-config": "bin/npm-copy--package-bin-config.js",
 		"npm-publish--force": "bin/npm-publish--force.sh",

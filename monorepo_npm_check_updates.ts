@@ -3,7 +3,7 @@ const { valid, coerce, compare } = semver
 import { _queue } from '@ctx-core/queue'
 import { flatten } from '@ctx-core/array'
 import detect_indent from 'detect-indent'
-import { monorepo_thread_opts_type } from './monorepo_thread_opts_type'
+import type { monorepo_thread_opts_type } from './monorepo_thread_opts_type'
 import { _workspaces } from './_workspaces'
 import { _promise_a1 } from './_promise_a1'
 import { readFile } from './readFile'

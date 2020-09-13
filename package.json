@@ -2,49 +2,46 @@
 	"name": "@ctx-core/monorepo",
 	"version": "8.0.7",
 	"description": "ctx-core monorepo",
-	"main": "./index.js",
-	"module": "./index.js",
-	"types": "./index.ts",
-	"scripts": {
-		"build": "npm run clean && npm run compile",
-		"clean": "rm -f tsconfig.tsbuildinfo",
-		"compile": "tsc -b && chmod a+x bin/*.js",
-		"prepublishOnly": "npm run compile",
-		"exec": "$@"
-	},
-	"bin": {
-		"ensure.sh": "bin/ensure.sh",
-		"git-commit--submodules": "bin/git-commit--submodules.sh",
-		"update-git-module--github--ssh": "bin/update-git-module--github--ssh.sh",
-		"npm-check-updates--monorepo": "bin/npm-check-updates--monorepo.js",
-		"npm-copy--package-bin-config": "bin/npm-copy--package-bin-config.sh",
-		"npm-publish--force": "bin/npm-publish--force.sh",
-		"refresh-ctx-core-package.json": "bin/refresh-ctx-core-package.json.js",
-		"run-parallel--workspaces": "bin/run-parallel--workspaces.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/ctx-core/monorepo/issues"
-	},
 	"keywords": [
 		"ctx-core",
 		"monorepo",
 		"yarn"
 	],
-	"author": "Brian Takita",
-	"license": "Apache-2.0",
+	"homepage": "https://github.com/ctx-core/monorepo#readme",
 	"bugs": {
 		"url": "https://github.com/ctx-core/monorepo/issues"
 	},
-	"homepage": "https://github.com/ctx-core/monorepo#readme",
-	"publishConfig": {
-		"access": "public"
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ctx-core/monorepo/issues"
+	},
+	"license": "Apache-2.0",
+	"author": "Brian Takita",
+	"main": "./index.js",
+	"module": "./index.js",
+	"types": "./index.ts",
+	"bin": {
+		"ensure.sh": "bin/ensure.sh",
+		"git-commit--submodules": "bin/git-commit--submodules.sh",
+		"npm-check-updates--monorepo": "bin/npm-check-updates--monorepo.js",
+		"npm-copy--package-bin-config": "bin/npm-copy--package-bin-config.sh",
+		"npm-publish--force": "bin/npm-publish--force.sh",
+		"refresh-ctx-core-package.json": "bin/refresh-ctx-core-package.json.js",
+		"run-parallel--workspaces": "bin/run-parallel--workspaces.js",
+		"update-git-module--github--ssh": "bin/update-git-module--github--ssh.sh"
+	},
+	"scripts": {
+		"build": "npm run clean && npm run compile",
+		"clean": "rm -f tsconfig.tsbuildinfo",
+		"compile": "tsc -b && chmod a+x bin/*.js",
+		"exec": "$@",
+		"prepublishOnly": "npm run compile"
 	},
 	"dependencies": {
-		"@ctx-core/array": "^17.0.4",
-		"@ctx-core/cli-args": "^4.1.7",
-		"@ctx-core/package": "^3.1.87",
-		"@ctx-core/queue": "^1.3.3",
+		"@ctx-core/array": "workspace:*",
+		"@ctx-core/cli-args": "workspace:*",
+		"@ctx-core/package": "workspace:*",
+		"@ctx-core/queue": "workspace:*",
 		"detect-indent": "^6.0.0",
 		"esm": "^3.2.25",
 		"globby": "^11.0.1",
@@ -52,6 +49,9 @@
 	},
 	"devDependencies": {
 		"typescript": "^4.0.2"
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"gitHead": "97f48947667990fa5df11c77d4834a7976e2c04c"
 }

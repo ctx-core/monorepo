@@ -5,7 +5,7 @@
 	"keywords": [
 		"ctx-core",
 		"monorepo",
-		"yarn"
+		"@microsoft/rush"
 	],
 	"homepage": "https://github.com/ctx-core/monorepo#readme",
 	"bugs": {

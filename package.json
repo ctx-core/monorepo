@@ -9,16 +9,17 @@
 		"build": "npm run clean && npm run compile",
 		"clean": "rm -f tsconfig.tsbuildinfo",
 		"compile": "tsc -b && chmod a+x bin/*.js",
-		"prepublishOnly": "npm run compile"
+		"prepublishOnly": "npm run compile",
+		"exec": "$@"
 	},
 	"bin": {
 		"ensure.sh": "bin/ensure.sh",
 		"git-commit--submodules": "bin/git-commit--submodules.sh",
 		"update-git-module--github--ssh": "bin/update-git-module--github--ssh.sh",
 		"npm-check-updates--monorepo": "bin/npm-check-updates--monorepo.js",
-		"npm-copy--package-bin-config": "bin/npm-copy--package-bin-config.js",
+		"npm-copy--package-bin-config": "bin/npm-copy--package-bin-config.sh",
 		"npm-publish--force": "bin/npm-publish--force.sh",
-		"refresh--ctx-core-package.json": "bin/refresh--ctx-core-package.json.js",
+		"refresh-ctx-core-package.json": "bin/refresh-ctx-core-package.json.js",
 		"run-parallel--workspaces": "bin/run-parallel--workspaces.js"
 	},
 	"repository": {
@@ -52,5 +53,5 @@
 	"devDependencies": {
 		"typescript": "^4.0.2"
 	},
-	"gitHead": "f0cc09746330715509859e2ebcc556239c535ce6"
+	"gitHead": "97f48947667990fa5df11c77d4834a7976e2c04c"
 }

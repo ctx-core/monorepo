@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "8.0.7",
+	"version": "9.0.0",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",

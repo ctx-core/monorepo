@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 10.0.2
+
+### Patch Changes
+
+- fix: npm-publish--force.sh: running script
+
 ## 10.0.1
 
 ### Patch Changes

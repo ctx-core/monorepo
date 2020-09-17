@@ -1,5 +1,16 @@
 # @ctx-core/monorepo
 
+## 10.0.3
+
+### Patch Changes
+
+- fix: npm run compile: path to tsc
+- Updated dependencies [undefined]
+  - @ctx-core/array@18.0.1
+  - @ctx-core/cli-args@5.0.1
+  - @ctx-core/package@4.0.1
+  - @ctx-core/queue@1.3.5
+
 ## 10.0.2
 
 ### Patch Changes

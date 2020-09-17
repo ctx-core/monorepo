@@ -1,6 +1,6 @@
 {
   "name": "@ctx-core/monorepo",
-  "version": "10.0.2",
+  "version": "10.0.3",
   "description": "ctx-core monorepo",
   "keywords": [
     "ctx-core",
@@ -33,7 +33,7 @@
   "scripts": {
     "build": "npm run clean && npm run compile",
     "clean": "rm -f tsconfig.tsbuildinfo",
-    "compile": "tsc -b && chmod a+x bin/*.js",
+    "compile": "./node_modules/.bin/tsc -b && chmod a+x bin/*.js",
     "exec": "$@",
     "prepublishOnly": "npm run compile"
   },

@@ -1,4 +1,4 @@
 #!/bin/sh
 TEMP=$(mktemp); cat <<EOF > $TEMP; pnpm recursive exec -- sh "$TEMP"
-npm publish || echo 'NOT PUBLISHED'
+pnpm publish || echo 'NOT PUBLISHED'
 EOF

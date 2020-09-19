@@ -1,5 +1,23 @@
 # @ctx-core/monorepo
 
+## 11.0.0
+
+### Major Changes
+
+- Typescript strict checking
+
+### Minor Changes
+
+- - pwd--packages, tsc-clean--packages
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/array@19.0.0
+  - @ctx-core/cli-args@6.0.0
+  - @ctx-core/package@5.0.0
+  - @ctx-core/queue@2.0.0
+
 ## 10.0.3
 
 ### Patch Changes

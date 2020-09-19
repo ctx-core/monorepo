@@ -47,7 +47,7 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type 
 		const { projectFolder } = project
 		return _promise(projectFolder) as Promise<string>
 	}
-	async function update_dependencies(dependencies:Record<string, string>, noUpdate = []) {
+	async function update_dependencies(dependencies:Record<string, string>, noUpdate = [] as string[]) {
 		noUpdate = noUpdate || []
 		const update_a1 = []
 		for (let packageName in dependencies) {
@@ -77,8 +77,8 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type 
 			if (
 				latest_stripped_version
 				&& compare(
-				coerce(latest_stripped_version),
-				coerce(in_version)
+				coerce(latest_stripped_version) || '',
+				coerce(in_version) || ''
 				) > 0
 			) {
 				const latest_version = `${has_carrot ? '^' : ''}${latest_stripped_version}`

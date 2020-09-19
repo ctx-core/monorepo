@@ -24,10 +24,11 @@
 		"declarationDir": ".",
 		"lib": [
 			"dom",
-      "ES2019",
-      "ES6"
+			"ES2019",
+			"ES6"
 		],
-		"importsNotUsedAsValues": "error"
+		"importsNotUsedAsValues": "error",
+		"strict": true
 	},
 	"exclude": [
 		"node_modules"

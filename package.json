@@ -1,6 +1,6 @@
 {
   "name": "@ctx-core/monorepo",
-  "version": "10.0.3",
+  "version": "11.0.0",
   "description": "ctx-core monorepo",
   "keywords": [
     "ctx-core",
@@ -26,8 +26,10 @@
     "npm-check-updates--monorepo": "bin/npm-check-updates--monorepo.js",
     "npm-copy--package-bin-config": "bin/npm-copy--package-bin-config.sh",
     "npm-publish--force": "bin/npm-publish--force.sh",
+    "pwd--packages": "bin/pwd--packages.sh",
     "refresh-ctx-core-package.json": "bin/refresh-ctx-core-package.json.js",
     "run-parallel--workspaces": "bin/run-parallel--workspaces.js",
+    "tsc-clean--packages": "bin/tsc-clean--packages.sh",
     "update-git-module--github--ssh": "bin/update-git-module--github--ssh.sh"
   },
   "scripts": {
@@ -48,7 +50,7 @@
     "semver": "^7.3.2"
   },
   "devDependencies": {
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.3"
   },
   "publishConfig": {
     "access": "public"

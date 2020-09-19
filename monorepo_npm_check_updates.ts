@@ -1,4 +1,5 @@
 import semver from 'semver'
+import ora from 'ora'
 const { valid, coerce, compare } = semver
 import { _queue } from '@ctx-core/queue'
 import detect_indent from 'detect-indent'
@@ -16,6 +17,7 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type 
 	const queue = _queue(opts.threads || 20)
 	const projects = await _projects()
 	const packageName_h_project = _packageName_h_project(projects)
+	let current_count = 0
 	const packageName_a1 =
 		opts.packageName
 		? [opts.packageName].flat()
@@ -25,7 +27,10 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type 
 		packageName_a1.push('.')
 		promise_a1.push(_promise('.'))
 	}
+	const total_count = promise_a1.length
+	const spinner = ora(_ora_message(current_count, total_count)).start()
 	const stdout_a1 = await Promise.all(promise_a1)
+	spinner.stop()
 	return _packageName_h0_stdout_h1(packageName_a1, stdout_a1)
 	async function _promise(location = '.') {
 		const package_json_path = `${location}/package.json`
@@ -41,6 +46,8 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type 
 			const indent = detect_indent(pkg_json).indent || '\t'
 			await writeFile(package_json_path, JSON.stringify(pkg, null, indent))
 		}
+		current_count += 1
+		spinner.text = _ora_message(current_count, total_count)
 		return update_a1.join('\n')
 	}
 	async function _project_promise(project:rush_project_type) {
@@ -87,6 +94,9 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type 
 			}
 		}
 		return update_a1 as string[]
+	}
+	function _ora_message(current_count, total_count) {
+		return `Checking for updates...${current_count} of ${total_count}`
 	}
 	function push_update_a1(update_a1, packageName, version, latest_version) {
 		update_a1.push(`${packageName}: ${version} -> ${latest_version}`)

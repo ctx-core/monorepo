@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 11.3.4
+
+### Patch Changes
+
+- pnpm-publish--force: back to 8 threads
+
 ## 11.3.3
 
 ### Patch Changes

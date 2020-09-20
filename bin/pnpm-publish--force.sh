@@ -15,7 +15,7 @@ done
 if [ -z $SINGLE ]; then
   pnpm ls -r --depth -1 | sed '/^\s*$/d' | awk '{print $2}' \
   | awk -v cmd=$0 -v flags="-s$([[ -n $DRY ]] && echo ' -d')" '{print "(cd "$1"; "cmd" "flags")"}' \
-  | parallel --jobs 16 --eta
+  | parallel --eta
   exit 0
 fi
 

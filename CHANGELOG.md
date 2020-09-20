@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 11.1.5
+
+### Patch Changes
+
+- pnpm-publish--force.sh: do not attempt ot publish package if local version matches with npm repository version
+
 ## 11.1.4
 
 ### Patch Changes

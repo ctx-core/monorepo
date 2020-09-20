@@ -19,14 +19,15 @@ cat <<'EOF' >> $TEMP
 NAME=$(cat package.json | jq -r '.name')
 VERSION=$(cat package.json | jq -r '.version')
 LATEST=$(npm show "$NAME" | grep latest | awk '{print $2}')
+not_published() { echo "$NAME NOT PUBLISHED" }
 if [ "$VERSION" = "$LATEST" ]; then
   if [ -z $DRY ]; then
-    echo 'NOT PUBLISHED'
+    not_published
   fi
   exit 0
 fi
 if [ -z $DRY ]; then
-  pnpm publish || echo 'NOT PUBLISHED'
+  pnpm publish || not_published
 else
   echo "$NAME will be published"
 fi

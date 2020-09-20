@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 11.3.1
+
+### Patch Changes
+
+- fix: pnpm-publish--force: issue with error message being printed from npm show command on private repo
+
 ## 11.3.0
 
 ### Minor Changes

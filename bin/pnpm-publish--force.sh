@@ -19,15 +19,15 @@ if [ -z $SINGLE ]; then
   exit 0
 fi
 
-PRIVATE=$(cat package.json | jq -r '.private')
 NAME=$(cat package.json | jq -r '.name')
-VERSION=$(cat package.json | jq -r '.version')
-LATEST=$(npm show "$NAME" | grep latest | awk '{print $2}')
+PRIVATE=$(cat package.json | jq -r '.private')
 not_published() { echo "$NAME NOT PUBLISHED: $1"; }
 if [ "$PRIVATE" = 'true' ]; then
   not_published 'Private package'
   exit 0
 fi
+VERSION=$(cat package.json | jq -r '.version')
+LATEST=$(npm show "$NAME" | grep latest | awk '{print $2}')
 if [ "$VERSION" = "$LATEST" ]; then
   if [ -z $DRY ]; then
     not_published 'Latest version'

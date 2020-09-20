@@ -1,5 +1,14 @@
 # @ctx-core/monorepo
 
+## 11.2.0
+
+### Minor Changes
+
+- feat: pnpm-publish--all: flags
+
+      -d dry run
+      -h help
+
 ## 11.1.7
 
 ### Patch Changes

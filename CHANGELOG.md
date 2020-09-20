@@ -1,5 +1,15 @@
 # @ctx-core/monorepo
 
+## 11.1.4
+
+### Patch Changes
+
+- fix: install issues: using explicit workspace: versioning
+- Updated dependencies [undefined]
+  - @ctx-core/array@19.0.2
+  - @ctx-core/cli-args@6.0.2
+  - @ctx-core/package@5.0.2
+
 ## 11.1.3
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @ctx-core/monorepo
 
+## 11.3.0
+
+### Minor Changes
+
+- feat: pnpm-publish--force: parallel --eta: progress indicator
+  fix: pnpm-publish--force: issue skipping latest package
+
 ## 11.2.2
 
 ### Patch Changes

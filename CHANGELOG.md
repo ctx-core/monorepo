@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 11.1.7
+
+### Patch Changes
+
+- fix: pnpm-publish--force.sh: ignoring packages at the latest version on npm
+
 ## 11.1.6
 
 ### Patch Changes

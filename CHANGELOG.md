@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 11.1.6
+
+### Patch Changes
+
+- fix: pnpm-publish--force.sh: error in conditional
+
 ## 11.1.5
 
 ### Patch Changes

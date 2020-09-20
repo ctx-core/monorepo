@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 11.3.3
+
+### Patch Changes
+
+- pnpm-publish--force: 16 parallel threads
+
 ## 11.3.2
 
 ### Patch Changes

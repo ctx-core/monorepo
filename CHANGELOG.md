@@ -1,5 +1,12 @@
 # @ctx-core/monorepo
 
+## 11.1.3
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/queue@2.0.1
+
 ## 11.1.2
 
 ### Patch Changes

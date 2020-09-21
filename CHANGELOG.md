@@ -1,5 +1,14 @@
 # @ctx-core/monorepo
 
+## 11.3.6
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/array@19.0.6
+  - @ctx-core/cli-args@6.0.6
+  - @ctx-core/package@5.0.6
+
 ## 11.3.5
 
 ### Patch Changes

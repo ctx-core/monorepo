@@ -1,18 +1,30 @@
 # @ctx-core/monorepo
 
+## 12.0.1
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/cli-args@6.0.8
+  - @ctx-core/array@19.0.8
+  - @ctx-core/package@5.0.8
+
+## 12.0.0
+
+### Major Changes
+
+- BREAKING CHANGE: \_stdout_h1_package_name_h0 instead of \_packageName_h0_stdout_h1
+- feat: \_package_name_h_project
+
 ## 11.4.0
 
 ### Minor Changes
 
 - feat: recursive-git-commit
-
-  feat: append-packages-COMMIT_EDITMSG
-
-  feat: create-changeset-packages
-
-  npm-check-updates--monorepo: each package & dependency upgrade output is printed as a single line
-
-  npm-check-updates--monorepo: only packages with upgrades are printed
+- feat: append-packages-COMMIT_EDITMSG
+- feat: create-changeset-packages
+- npm-check-updates--monorepo: each package & dependency upgrade output is printed as a single line
+- npm-check-updates--monorepo: only packages with upgrades are printed
 
 ## 11.3.7
 

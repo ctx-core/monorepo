@@ -1,6 +1,6 @@
 export * from './_projects';
 export * from './_promise_a1';
-export * from './_packageName_h0_stdout_h1';
+export * from './_stdout_h1_package_name_h0';
 export * from './exec';
 export * from './map_package_json_path_glob';
 export * from './monorepo_npm_check_updates';

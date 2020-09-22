@@ -1,5 +1,5 @@
 import { _queue } from '@ctx-core/queue'
-import { _packageName_h0_stdout_h1 } from './_packageName_h0_stdout_h1'
+import { _stdout_h0_packageName_h1 } from './_stdout_h1_package_name_h0'
 import { _projects } from './_projects'
 import { _promise_a1 } from './_promise_a1'
 import { exec } from './exec'
@@ -12,7 +12,7 @@ export async function run_parallel__workspaces(cmd_a1, opts:monorepo_thread_opts
 	const packageName_a1 = projects.map(project=>project.packageName)
 	const promise_a1 = _promise_a1(projects, _promise)
 	const stdout_a1 = await Promise.all(promise_a1)
-	return _packageName_h0_stdout_h1(packageName_a1, stdout_a1)
+	return _stdout_h0_packageName_h1(packageName_a1, stdout_a1)
 	async function _promise(project:rush_project_type) {
 		const { projectFolder } = project
 		return (

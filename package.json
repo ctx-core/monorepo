@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "11.3.7",
+	"version": "11.4.0",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -21,6 +21,8 @@
 	"module": "./index.js",
 	"types": "./index.ts",
 	"bin": {
+		"append-packages-COMMIT_EDITMSG": "bin/append-packages-COMMIT_EDITMSG.sh",
+		"create-changeset-packages": "bin/create-changeset-packages.sh",
 		"ensure.sh": "bin/ensure.sh",
 		"git-commit--submodules": "bin/git-commit--submodules.sh",
 		"npm-check-updates--monorepo": "bin/npm-check-updates--monorepo.js",

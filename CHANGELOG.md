@@ -1,5 +1,19 @@
 # @ctx-core/monorepo
 
+## 11.4.0
+
+### Minor Changes
+
+- feat: recursive-git-commit
+
+  feat: append-packages-COMMIT_EDITMSG
+
+  feat: create-changeset-packages
+
+  npm-check-updates--monorepo: each package & dependency upgrade output is printed as a single line
+
+  npm-check-updates--monorepo: only packages with upgrades are printed
+
 ## 11.3.7
 
 ### Patch Changes

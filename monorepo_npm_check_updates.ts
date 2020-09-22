@@ -8,9 +8,9 @@ import { _projects } from './_projects'
 import { readFile } from './readFile'
 import { writeFile } from './writeFile'
 import { exec } from './exec'
-import { _packageName_h0_stdout_h1 } from './_packageName_h0_stdout_h1'
 import type { rush_project_type } from './rush_project_type'
 import { _packageName_h_project } from './_package_name_h_project'
+import { _stdout_h0_packageName_h1 } from './_stdout_h0_packageName_h1'
 export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type = {}) {
 	const packageName_h_latest_version_promise = {} as Record<string, Promise<string>>
 	const packageName_h_already_warned = {} as Record<string, boolean>
@@ -31,7 +31,8 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type 
 	const spinner = ora(_ora_message(current_count, total_count)).start()
 	const stdout_a1 = await Promise.all(promise_a1)
 	spinner.stop()
-	return _packageName_h0_stdout_h1(packageName_a1, stdout_a1)
+	const stdout_h0_packageName_h1 = _stdout_h0_packageName_h1(packageName_a1, stdout_a1)
+	return stdout_h0_packageName_h1
 	async function _promise(location = '.') {
 		const package_json_path = `${location}/package.json`
 		const pkg_json = (await readFile(package_json_path)).toString()

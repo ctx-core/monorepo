@@ -7,9 +7,9 @@ export async function monorepo_npm_check_updates_cli() {
 	}, {
 		threads: 20,
 	})
-	const h0_workspace_name_h1 = await monorepo_npm_check_updates(param_h)
-	for (let workspace_name in h0_workspace_name_h1) {
-		console.info(workspace_name)
-		console.info(h0_workspace_name_h1[workspace_name])
+	const stdout_h0_packageName_h1 = await monorepo_npm_check_updates(param_h)
+	for (let packageName in stdout_h0_packageName_h1) {
+		const stdout = stdout_h0_packageName_h1[packageName]
+		if (stdout) console.info(packageName, stdout)
 	}
 }

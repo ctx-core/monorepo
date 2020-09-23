@@ -1,5 +1,16 @@
 # @ctx-core/monorepo
 
+## 13.0.0
+
+### Major Changes
+
+- BREAKING CHANGE: package-manifest-COMMIT_EDITMSG instead of append-packages-COMMIT_EDITMSG
+- BREAKING CHANGE: package-manifest-changesets instead of create-changesets-packages
+
+### Minor Changes
+
+- feat: package-manifest-COMMIT_EDITMSG
+
 ## 12.0.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 13.1.4
+
+### Patch Changes
+
+- recursive-git-commit: do not use COMMIT_EDITMSG if it only contains spaces
+
 ## 13.1.3
 
 ### Patch Changes

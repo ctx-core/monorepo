@@ -14,7 +14,7 @@ done
 
 BUMP=${BUMP:-patch}
 PWD=$(pwd)
-LIST="$(pnpm list -r)"
+LIST="$(pnpm list -r --depth -1)"
 while read line; do
 	PKG="$(echo "$line" | awk '{print $1}')"
 	MSG="$(echo "$line" | awk '{$1=""; print $0}')"

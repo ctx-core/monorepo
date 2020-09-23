@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "13.0.2",
+	"version": "13.1.0",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -32,10 +32,13 @@
 		"npm-publish--force": "bin/pnpm-publish--force.sh",
 		"pnpm-publish--force": "bin/pnpm-publish--force.sh",
 		"pwd--packages": "bin/pwd--packages.sh",
+		"recursive-surrounding-trim-COMMIT_EDITMSG": "bin/recursive-surrounding-trim-COMMIT_EDITMSG.sh",
+		"recursive-git-commit": "bin/recursive-git-commit.sh",
 		"refresh-ctx-core-package.json": "bin/refresh-ctx-core-package.json.js",
 		"run-parallel--workspaces": "bin/run-parallel--workspaces.js",
 		"surrounding-trim": "bin/surrounding-trim.sh",
 		"tsc-clean--packages": "bin/tsc-clean--packages.sh",
+		"update-npm-packages": "bin/update-npm-packages.sh",
 		"update-git-module--github--ssh": "bin/update-git-module--github--ssh.sh"
 	},
 	"scripts": {

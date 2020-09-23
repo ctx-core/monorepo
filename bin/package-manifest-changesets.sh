@@ -15,9 +15,11 @@ done
 BUMP=${BUMP:-patch}
 PWD=$(pwd)
 LIST="$(pnpm list -r --depth -1)"
+BIN_DIR="$(dirname $0)"
+echo $DIR
 while read line; do
 	PKG="$(echo "$line" | awk '{print $1}')"
-	MSG="$(echo "$line" | awk '{$1=""; print $0}')"
+	MSG="$(echo "$line" | awk '{$1=""; print $0}' | "$BIN_DIR/surrounding-trim.sh")"
 	DIR="$(echo "$LIST" | grep "$PKG" | awk '{print $2}')"
 	CHANGESET_MD_PATH="$PWD/.changeset/$(cksum <<<$MSG | cut -f 1 -d ' ').md"
 	FRONTMATTER=''
@@ -36,6 +38,6 @@ while read line; do
 $(echo "$FRONTMATTER")
 ---
 
-$(echo "$MSG")
+$MSG
 EOF
 done

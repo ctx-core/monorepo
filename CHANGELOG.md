@@ -1,5 +1,13 @@
 # @ctx-core/monorepo
 
+## 13.1.0
+
+### Minor Changes
+
+- feat: recursive-surrounding-trim-COMMIT_EDITMSG
+- feat: update-npm-packages
+- feat: recursive-git-commit
+
 ## 13.0.2
 
 ### Patch Changes

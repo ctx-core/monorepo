@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "13.0.1",
+	"version": "13.0.2",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -34,6 +34,7 @@
 		"pwd--packages": "bin/pwd--packages.sh",
 		"refresh-ctx-core-package.json": "bin/refresh-ctx-core-package.json.js",
 		"run-parallel--workspaces": "bin/run-parallel--workspaces.js",
+		"surrounding-trim": "bin/surrounding-trim.sh",
 		"tsc-clean--packages": "bin/tsc-clean--packages.sh",
 		"update-git-module--github--ssh": "bin/update-git-module--github--ssh.sh"
 	},

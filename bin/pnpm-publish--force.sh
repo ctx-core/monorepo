@@ -1,5 +1,8 @@
 #!/bin/sh
-usage() { echo "Usage: $0 [-s] [-p] [-h]" 1>&2; exit 1; }
+usage() {
+	echo "Usage: $0 [-s] [-p] [-h]" 1>&2
+	exit 1
+}
 while getopts "sdh" o; do
 	case $o in
 	s)
@@ -16,9 +19,26 @@ while getopts "sdh" o; do
 done
 
 if [ -z $SINGLE ]; then
+	JOBLOG="$(mktemp)"
 	pnpm ls -r --depth -1 | sed '/^\s*$/d' | awk '{print $2}' \
 		| awk -v cmd=$0 -v flags="-s$([[ -n $DRY ]] && echo ' -d')" '{print "(cd "$1"; "cmd" "flags")"}' \
-		| parallel --eta
+		| parallel --eta --joblog "$JOBLOG"
+	COLS="$(cat "$JOBLOG" | head -n1)"
+	EXITVAL_COL="$(echo "$COLS" | awk -v RS='\t' '/Exitval/{print NR; exit}')"
+	COMMAND_COL="$(echo "$COLS" | awk -v RS='\t' '/Command/{print NR; exit}')"
+	FAILED=''
+	while IFS= read -r ROW; do
+		if [ "$(echo "$ROW" | cut -f$EXITVAL_COL)" != '0' ]; then
+			FAILED="$FAILED\n$ROW"
+		fi
+	done <<<"$(cat "$JOBLOG" | tail -n +2)"
+	STRIPPED_FAILED="$(echo "$FAILED" | "$(dirname $0)/surrounding-trim.sh")"
+	if [ -n "$STRIPPED_FAILED" ]; then
+		echo "Jobs with errors ($JOBLOG)"
+		echo "$COLS"
+		echo "$STRIPPED_FAILED"
+		exit 1
+	fi
 	exit 0
 fi
 
@@ -38,7 +58,7 @@ if [ "$VERSION" = "$LATEST" ]; then
 	exit 0
 fi
 if [ -z $DRY ]; then
-	pnpm publish || not_published 'Publish failed'
+	pnpm publish || (not_published 'Publish failed' && exit 1)
 else
 	echo "$NAME will be published"
 fi

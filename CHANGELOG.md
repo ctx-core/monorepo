@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 13.0.2
+
+### Patch Changes
+
+- pnpm-publish--force: prints parallel jobs containing errors
+
 ## 13.0.1
 
 ### Patch Changes

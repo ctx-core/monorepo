@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "13.1.11",
+	"version": "13.2.0",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -21,11 +21,12 @@
 	"module": "./index.js",
 	"types": "./index.ts",
 	"bin": {
-		"changesets-COMMIT_EDITMSG": "bin/changesets-COMMIT_EDITMSG.sh",
+		"changeset-COMMIT_EDITMSG": "bin/changeset-COMMIT_EDITMSG.sh",
+		"changeset-version-COMMIT_EDITMSG": "bin/changeset-version-COMMIT_EDITMSG.sh",
 		"CHANGELOG-diff-COMMIT_EDITMSG": "bin/CHANGELOG-diff-COMMIT_EDITMSG.sh",
 		"ensure.sh": "bin/ensure.sh",
 		"git-commit--submodules": "bin/git-commit--submodules.sh",
-		"package-manifest-changesets": "bin/package-manifest-changesets.sh",
+		"package-manifest-changeset": "bin/package-manifest-changeset.sh",
 		"package-manifest-COMMIT_EDITMSG": "bin/package-manifest-COMMIT_EDITMSG.sh",
 		"npm-check-updates--monorepo": "bin/npm-check-updates--monorepo.js",
 		"npm-copy--package-bin-config": "bin/npm-copy--package-bin-config.sh",

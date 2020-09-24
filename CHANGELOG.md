@@ -1,5 +1,13 @@
 # @ctx-core/monorepo
 
+## 13.2.0
+
+### Minor Changes
+
+- changeset-COMMIT_EDITMSG instead of changesets-COMMIT_EDITMSG
+- feat: changeset-version-COMMIT_EDITMSG
+- package-manifest-changeset instead of package-manifest-changesets
+
 ## 13.1.11
 
 ### Patch Changes

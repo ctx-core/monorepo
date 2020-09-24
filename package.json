@@ -5,7 +5,7 @@
 	"keywords": [
 		"ctx-core",
 		"monorepo",
-		"@microsoft/rush"
+		"pnpm"
 	],
 	"homepage": "https://github.com/ctx-core/monorepo#readme",
 	"bugs": {

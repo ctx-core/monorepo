@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 13.1.10
+
+### Patch Changes
+
+- fix: npm-check-updates--monorepo: using pnpm directly instead of @microsoft/rush
+
 ## 13.1.9
 
 ### Patch Changes

@@ -8,7 +8,7 @@ import { _projects } from './_projects'
 import { readFile } from './readFile'
 import { writeFile } from './writeFile'
 import { exec } from './exec'
-import type { rush_project_type } from './rush_project_type'
+import type { project_type } from './project_type'
 import { _packageName_h_project } from './_package_name_h_project'
 import { _stdout_h0_packageName_h1 } from './_stdout_h0_packageName_h1'
 export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type = {}) {
@@ -22,7 +22,9 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type 
 		opts.packageName
 		? [opts.packageName].flat()
 		: Object.keys(packageName_h_project)
-	const promise_a1 = projects.map((project:rush_project_type)=>_project_promise(project)) as Promise<string>[]
+	const promise_a1 = projects.map((project:project_type)=>
+		_project_promise(project)
+	) as Promise<string>[]
 	if (!opts.packageName) {
 		packageName_a1.push('.')
 		promise_a1.push(_promise('.'))
@@ -51,7 +53,7 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type 
 		spinner.text = _ora_message(current_count, total_count)
 		return update_a1.join('\n')
 	}
-	async function _project_promise(project:rush_project_type) {
+	async function _project_promise(project:project_type) {
 		const { projectFolder } = project
 		return _promise(projectFolder) as Promise<string>
 	}

@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "13.1.9",
+	"version": "13.1.10",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -60,6 +60,7 @@
 		"semver": "^7.3.2"
 	},
 	"devDependencies": {
+		"@pnpm/logger": "^3.2.2",
 		"typescript": "^4.0.3"
 	},
 	"publishConfig": {

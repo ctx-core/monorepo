@@ -10,6 +10,10 @@ export async function monorepo_npm_check_updates_cli() {
 	const stdout_h0_package_name_h1 = await monorepo_npm_check_updates(param_h)
 	for (let package_name in stdout_h0_package_name_h1) {
 		const stdout = stdout_h0_package_name_h1[package_name]
-		if (stdout) console.info(package_name, stdout)
+		if (stdout) {
+			stdout.split('\n').forEach(stdout_line => {
+				console.info(package_name, stdout_line)
+			})
+		}
 	}
 }

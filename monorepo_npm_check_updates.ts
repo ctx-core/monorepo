@@ -23,20 +23,19 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type 
 		opts.package_name
 		? flatten<string>([opts.package_name] as string[]|string[][])
 		: Object.keys(package_name_h_project)
-	const promise_a1 = projects.map((project:project_type)=>
-		_project_promise(project)
+	const stdout_a1_async_a1 = projects.map((project:project_type)=>
+		_project_stdout_async(project)
 	) as Promise<string>[]
 	if (!opts.package_name) {
 		package_name_a1.push('.')
-		promise_a1.push(_promise('.'))
+		stdout_a1_async_a1.push(_stdout_async('.'))
 	}
-	const total_count = promise_a1.length
+	const total_count = stdout_a1_async_a1.length
 	const spinner = ora(_ora_message(current_count, total_count)).start()
-	const stdout_a1 = await Promise.all(promise_a1)
+	const stdout_a1 = await Promise.all(stdout_a1_async_a1)
 	spinner.stop()
-	const stdout_h0_package_name_h1 = _stdout_h0_package_name_h1(package_name_a1, stdout_a1)
-	return stdout_h0_package_name_h1
-	async function _promise(location = '.') {
+	return _stdout_h0_package_name_h1(package_name_a1, stdout_a1)
+	async function _stdout_async(location = '.') {
 		const package_json_path = `${location}/package.json`
 		const pkg_json = (await readFile(package_json_path)).toString()
 		const pkg = JSON.parse(pkg_json)
@@ -54,9 +53,9 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type 
 		spinner.text = _ora_message(current_count, total_count)
 		return update_a1.join('\n')
 	}
-	async function _project_promise(project:project_type) {
+	async function _project_stdout_async(project:project_type): Promise<string> {
 		const { package_dir } = project
-		return _promise(package_dir) as Promise<string>
+		return _stdout_async(package_dir)
 	}
 	async function update_dependencies(dependencies:Record<string, string>, noUpdate = [] as string[]) {
 		noUpdate = noUpdate || []

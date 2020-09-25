@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 14.0.3
+
+### Patch Changes
+
+- fix: npm-check-updates--monorepo,monorepo_npm_check_updates_cli: packages with multiple dependency updates have package name in first column
+
 ## 14.0.2
 
 ### Patch Changes

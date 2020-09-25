@@ -4,4 +4,4 @@ TEMP=$(mktemp)
 "$DIR/npm-check-updates--monorepo.js" > $TEMP
 echo "$TEMP"
 cat "$TEMP"
-cat "$TEMP" | "$DIR/package-manifest-changesets.sh"
+cat "$TEMP" | "$DIR/package-manifest-changeset.sh"

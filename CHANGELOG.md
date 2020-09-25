@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 14.0.2
+
+### Patch Changes
+
+- fix: update-npm-packages: issue calling package-manifest-changeset
+
 ## 14.0.1
 
 ### Patch Changes
@@ -28,7 +34,7 @@
 
 - changeset-COMMIT_EDITMSG instead of changesets-COMMIT_EDITMSG
 - feat: changeset-version-COMMIT_EDITMSG
-- package-manifest-changeset instead of package-manifest-changesets
+- package-manifest-changeset instead of package-manifest-changeset
 
 ## 13.1.11
 
@@ -143,7 +149,7 @@
 ### Major Changes
 
 - BREAKING CHANGE: package-manifest-COMMIT_EDITMSG instead of append-packages-COMMIT_EDITMSG
-- BREAKING CHANGE: package-manifest-changesets instead of create-changesets-packages
+- BREAKING CHANGE: package-manifest-changeset instead of create-changesets-packages
 
 ### Minor Changes
 

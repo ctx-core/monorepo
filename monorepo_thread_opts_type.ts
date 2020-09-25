@@ -1,4 +1,4 @@
 export type monorepo_thread_opts_type = {
 	threads?:number
-	packageName?:string|string[]
+	package_name?:string|string[]
 }

@@ -1,5 +1,21 @@
 # @ctx-core/monorepo
 
+## 14.0.0
+
+### Major Changes
+
+- project_type property name updates:
+
+      package_name: string
+      package_version: string
+      package_dir: string
+
+### Patch Changes
+
+- @ctx-core/array@19.0.18
+- @ctx-core/cli-args@6.1.10
+- @ctx-core/package@5.0.19
+
 ## 13.2.0
 
 ### Minor Changes
@@ -148,7 +164,7 @@
 
 ### Major Changes
 
-- BREAKING CHANGE: \_stdout_h1_package_name_h0 instead of \_packageName_h0_stdout_h1
+- BREAKING CHANGE: \_stdout_h1_package_name_h0 instead of \_package_name_h0_stdout_h1
 - feat: \_package_name_h_project
 
 ## 11.4.0

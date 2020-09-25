@@ -1,5 +1,5 @@
 export type project_type = {
-	packageName: string
-	version: string
-	projectFolder: string
+	package_name: string
+	package_version: string
+	package_dir: string
 }

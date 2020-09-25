@@ -24,8 +24,8 @@
 		"declarationDir": ".",
 		"lib": [
 			"dom",
-			"ES2019",
-			"ES6"
+			"es2019",
+			"es6"
 		],
 		"importsNotUsedAsValues": "error",
 		"strict": true

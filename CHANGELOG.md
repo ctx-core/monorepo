@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 14.0.1
+
+### Patch Changes
+
+- fix: \_projects instead of \_packages
+
 ## 14.0.0
 
 ### Major Changes

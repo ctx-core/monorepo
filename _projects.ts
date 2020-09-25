@@ -1,11 +1,11 @@
 import type { project_type } from './project_type'
 import { exec } from './exec'
-export async function _packages() {
-	const raw_packages_str = (await exec(
+export async function _projects() {
+	const raw_projects_str = (await exec(
 		`pnpm list -r --depth -1 | sed '/^\\s*$/d'`
 	)).stdout.trim()
 	return (
-		raw_packages_str.split('\n').map(
+		raw_projects_str.split('\n').map(
 			raw_project_str=>{
 				const [package_name_package_version_str, package_dir] =
 					raw_project_str.split(/\s+/)

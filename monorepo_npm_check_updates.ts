@@ -4,7 +4,7 @@ const { valid, coerce, compare } = semver
 import { _queue } from '@ctx-core/queue'
 import detect_indent from 'detect-indent'
 import type { monorepo_thread_opts_type } from './monorepo_thread_opts_type'
-import { _packages } from './_packages'
+import { _projects } from './_projects'
 import { readFile } from './readFile'
 import { writeFile } from './writeFile'
 import { exec } from './exec'
@@ -16,7 +16,7 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type 
 	const package_name_h_latest_version_promise = {} as Record<string, Promise<string>>
 	const package_name_h_already_warned = {} as Record<string, boolean>
 	const queue = _queue(opts.threads || 20)
-	const projects = await _packages()
+	const projects = await _projects()
 	const package_name_h_project = _package_name_h_project(projects)
 	let current_count = 0
 	const package_name_a1 =

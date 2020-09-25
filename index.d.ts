@@ -1,5 +1,5 @@
 export * from './_package_name_h_project';
-export * from './_packages';
+export * from './_projects';
 export * from './_promise_a1';
 export * from './_stdout_h0_package_name_h1';
 export * from './exec';

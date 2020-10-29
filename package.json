@@ -1,71 +1,71 @@
 {
-  "name": "@ctx-core/monorepo",
-  "version": "14.0.11",
-  "description": "ctx-core monorepo",
-  "keywords": [
-    "ctx-core",
-    "monorepo",
-    "pnpm"
-  ],
-  "homepage": "https://github.com/ctx-core/monorepo#readme",
-  "bugs": {
-    "url": "https://github.com/ctx-core/monorepo/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ctx-core/monorepo/issues"
-  },
-  "license": "Apache-2.0",
-  "author": "Brian Takita",
-  "main": "./index.js",
-  "module": "./index.js",
-  "types": "./index.ts",
-  "bin": {
-    "changeset-COMMIT_EDITMSG": "bin/changeset-COMMIT_EDITMSG.sh",
-    "changeset-version-COMMIT_EDITMSG": "bin/changeset-version-COMMIT_EDITMSG.sh",
-    "CHANGELOG-diff-COMMIT_EDITMSG": "bin/CHANGELOG-diff-COMMIT_EDITMSG.sh",
-    "ensure.sh": "bin/ensure.sh",
-    "git-commit--submodules": "bin/git-commit--submodules.sh",
-    "package-manifest-changeset": "bin/package-manifest-changeset.sh",
-    "package-manifest-COMMIT_EDITMSG": "bin/package-manifest-COMMIT_EDITMSG.sh",
-    "npm-check-updates--monorepo": "bin/npm-check-updates--monorepo.js",
-    "npm-copy--package-bin-config": "bin/npm-copy--package-bin-config.sh",
-    "npm-publish--force": "bin/pnpm-publish--force.sh",
-    "pnpm-publish--force": "bin/pnpm-publish--force.sh",
-    "pwd--packages": "bin/pwd--packages.sh",
-    "recursive-surrounding-trim-COMMIT_EDITMSG": "bin/recursive-surrounding-trim-COMMIT_EDITMSG.sh",
-    "recursive-git-commit": "bin/recursive-git-commit.sh",
-    "refresh-ctx-core-package.json": "bin/refresh-ctx-core-package.json.js",
-    "run-parallel--workspaces": "bin/run-parallel--workspaces.js",
-    "surrounding-trim": "bin/surrounding-trim.sh",
-    "tsc-clean--packages": "bin/tsc-clean--packages.sh",
-    "update-npm-packages": "bin/update-npm-packages.sh",
-    "update-git-module--github--ssh": "bin/update-git-module--github--ssh.sh"
-  },
-  "scripts": {
-    "build": "npm run clean && npm run compile",
-    "clean": "rm -f tsconfig.tsbuildinfo",
-    "compile": "./node_modules/.bin/tsc -b && chmod a+x bin/*.js",
-    "exec": "$@",
-    "prepublishOnly": "npm run compile"
-  },
-  "dependencies": {
-    "@ctx-core/array": "workspace:^19.0.21",
-    "@ctx-core/cli-args": "workspace:^6.1.13",
-    "@ctx-core/package": "workspace:^5.0.23",
-    "@ctx-core/package-tools": "workspace:^4.0.23",
-    "@ctx-core/queue": "workspace:^2.0.3",
-    "detect-indent": "^6.0.0",
-    "esm": "^3.2.25",
-    "globby": "^11.0.1",
-    "ora": "~5.1.0",
-    "semver": "^7.3.2"
-  },
-  "devDependencies": {
-    "@pnpm/logger": "^3.2.2",
-    "typescript": "^4.0.5"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+	"name": "@ctx-core/monorepo",
+	"version": "14.0.11",
+	"description": "ctx-core monorepo",
+	"keywords": [
+		"ctx-core",
+		"monorepo",
+		"pnpm"
+	],
+	"homepage": "https://github.com/ctx-core/monorepo#readme",
+	"bugs": {
+		"url": "https://github.com/ctx-core/monorepo/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ctx-core/monorepo/issues"
+	},
+	"license": "Apache-2.0",
+	"author": "Brian Takita",
+	"main": "./index.js",
+	"module": "./index.js",
+	"types": "./index.ts",
+	"bin": {
+		"changeset-COMMIT_EDITMSG": "bin/changeset-COMMIT_EDITMSG.sh",
+		"changeset-version-COMMIT_EDITMSG": "bin/changeset-version-COMMIT_EDITMSG.sh",
+		"CHANGELOG-diff-COMMIT_EDITMSG": "bin/CHANGELOG-diff-COMMIT_EDITMSG.sh",
+		"ensure.sh": "bin/ensure.sh",
+		"git-commit--submodules": "bin/git-commit--submodules.sh",
+		"package-manifest-changeset": "bin/package-manifest-changeset.sh",
+		"package-manifest-COMMIT_EDITMSG": "bin/package-manifest-COMMIT_EDITMSG.sh",
+		"npm-check-updates--monorepo": "bin/npm-check-updates--monorepo.js",
+		"npm-copy--package-bin-config": "bin/npm-copy--package-bin-config.sh",
+		"npm-publish--force": "bin/pnpm-publish--force.sh",
+		"pnpm-publish--force": "bin/pnpm-publish--force.sh",
+		"pwd--packages": "bin/pwd--packages.sh",
+		"recursive-surrounding-trim-COMMIT_EDITMSG": "bin/recursive-surrounding-trim-COMMIT_EDITMSG.sh",
+		"recursive-git-commit": "bin/recursive-git-commit.sh",
+		"refresh-ctx-core-package.json": "bin/refresh-ctx-core-package.json.js",
+		"run-parallel--workspaces": "bin/run-parallel--workspaces.js",
+		"surrounding-trim": "bin/surrounding-trim.sh",
+		"tsc-clean--packages": "bin/tsc-clean--packages.sh",
+		"update-npm-packages": "bin/update-npm-packages.sh",
+		"update-git-module--github--ssh": "bin/update-git-module--github--ssh.sh"
+	},
+	"scripts": {
+		"build": "npm run clean && npm run compile",
+		"clean": "rm -f tsconfig.tsbuildinfo",
+		"compile": "./node_modules/.bin/tsc -b && chmod a+x bin/*.js",
+		"exec": "$@",
+		"prepublishOnly": "npm run compile"
+	},
+	"dependencies": {
+		"@ctx-core/array": "workspace:^19.0.21",
+		"@ctx-core/cli-args": "workspace:^6.1.13",
+		"@ctx-core/package": "workspace:^5.0.23",
+		"@ctx-core/package-tools": "workspace:^4.0.23",
+		"@ctx-core/queue": "workspace:^2.0.3",
+		"detect-indent": "^6.0.0",
+		"esm": "^3.2.25",
+		"globby": "^11.0.1",
+		"ora": "~5.1.0",
+		"semver": "^7.3.2"
+	},
+	"devDependencies": {
+		"@pnpm/logger": "^3.2.2",
+		"typescript": "^4.0.5"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
 }

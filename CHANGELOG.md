@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 14.0.17
+
+### Patch Changes
+
+- pnpm-publish--force: printf "$STRIPPED_FAILED" instead of echo "$STRIPPED_FAILED"
+
 ## 14.0.16
 
 ### Patch Changes

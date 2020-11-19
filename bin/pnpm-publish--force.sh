@@ -36,7 +36,7 @@ if [ -z $SINGLE ]; then
 	if [ -n "$STRIPPED_FAILED" ]; then
 		echo "Jobs with errors ($JOBLOG)"
 		echo "$COLS"
-		echo "$STRIPPED_FAILED"
+		printf "$STRIPPED_FAILED"
 		exit 1
 	fi
 	exit 0

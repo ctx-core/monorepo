@@ -1,5 +1,19 @@
 # @ctx-core/monorepo
 
+## 14.0.16
+
+### Patch Changes
+
+- @pnpm/logger: ^3.2.2 -> ^3.2.3
+- typescript: ^4.0.5 -> ^4.1.2
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+  - @ctx-core/package-tools@4.0.27
+  - @ctx-core/array@19.0.23
+  - @ctx-core/cli-args@6.1.15
+  - @ctx-core/package@5.0.26
+  - @ctx-core/queue@2.0.4
+
 ## 14.0.15
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @ctx-core/monorepo
 
+## 14.1.0
+
+### Minor Changes
+
+- interface instead of type
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/array@19.1.0
+  - @ctx-core/queue@2.1.0
+  - @ctx-core/cli-args@6.1.17
+  - @ctx-core/package-tools@4.0.29
+  - @ctx-core/package@5.0.28
+
 ## 14.0.18
 
 ### Patch Changes

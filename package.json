@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "14.1.2",
+	"version": "14.1.3",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -59,7 +59,7 @@
 		"esm": "^3.2.25",
 		"globby": "^11.0.1",
 		"ora": "~5.1.0",
-		"semver": "^7.3.2"
+		"semver": "^7.3.4"
 	},
 	"devDependencies": {
 		"@pnpm/logger": "^3.2.3",

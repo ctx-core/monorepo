@@ -2,7 +2,7 @@ import type { project_type } from './project_type'
 import { exec } from './exec'
 export async function _projects() {
 	const raw_projects_str = (await exec(
-		`pnpm list -r --depth -1 | sed '/^\\s*$/d'`
+		`pnpm list -r --depth -1 | grep -v WARN | sed '/^\\s*$/d'`
 	)).stdout.trim()
 	return (
 		raw_projects_str.split('\n').map(

@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 14.1.11
+
+### Patch Changes
+
+- fix: npm-check-updates--monorepo: issue: hangs when `pnpm list -r` command has WARN outputs
+
 ## 14.1.10
 
 ### Patch Changes

@@ -6,4 +6,4 @@ export function _package_name_h_project(projects:project_type[]) {
 	}
 	return package_name_h_project as package_name_h_project_type
 }
-export type package_name_h_project_type = Record<string, project_type>
+export interface package_name_h_project_type extends Record<string, project_type> {}

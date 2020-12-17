@@ -1,5 +1,19 @@
 # @ctx-core/monorepo
 
+## 14.1.12
+
+### Patch Changes
+
+- interface instead of type: package_name_h_project_type
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+  - @ctx-core/array@19.1.6
+  - @ctx-core/cli-args@6.1.23
+  - @ctx-core/package-tools@4.1.8
+  - @ctx-core/package@5.0.34
+
 ## 14.1.11
 
 ### Patch Changes

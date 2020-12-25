@@ -52,8 +52,8 @@
 	"dependencies": {
 		"@ctx-core/array": "workspace:^19.1.13",
 		"@ctx-core/cli-args": "workspace:^6.1.30",
-		"@ctx-core/package": "workspace:^5.0.41",
 		"@ctx-core/ctx-core-package-tools": "workspace:^5.0.0",
+		"@ctx-core/package": "workspace:^5.0.41",
 		"@ctx-core/queue": "workspace:^2.1.2",
 		"detect-indent": "^6.0.0",
 		"esm": "^3.2.25",

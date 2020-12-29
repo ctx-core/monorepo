@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 14.1.22
+
+### Patch Changes
+
+- ora: ~5.1.0 -> 5.2.0
+
 ## 14.1.21
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ctx-core/monorepo
 
+## 14.1.27
+
+### Patch Changes
+
+- @ctx-core/array@19.1.17
+- @ctx-core/cli-args@6.1.34
+- @ctx-core/ctx-core-package-tools@5.0.5
+- @ctx-core/package@5.0.45
+
 ## 14.1.26
 
 ### Patch Changes

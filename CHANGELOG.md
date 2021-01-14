@@ -1,5 +1,12 @@
 # @ctx-core/monorepo
 
+## 14.1.39
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/ctx-core-package-tools@5.0.16
+
 ## 14.1.38
 
 ### Patch Changes

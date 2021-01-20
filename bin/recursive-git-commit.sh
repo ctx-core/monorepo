@@ -9,5 +9,5 @@ else
   git commit -am "$DEFAULT_MSG"
 fi||echo ''
 EOF
-vim $TEMP
+"$EDITOR" "$TEMP"
 pnpm recursive exec --workspace-concurrency 1 -- sh "$TEMP"

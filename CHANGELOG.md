@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 15.0.2
+
+### Patch Changes
+
+- fix: bin/npm-check-updates--monorepo.js: loading monorepo_npm_check_updates_cli
+
 ## 15.0.1
 
 ### Patch Changes

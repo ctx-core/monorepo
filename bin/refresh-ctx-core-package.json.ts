@@ -5,7 +5,7 @@ const { promisify } = require('util')
 const { each } = require('@ctx-core/array')
 const readFile = promisify(fs.readFile)
 const writeFile = promisify(fs.writeFile)
-import { map_package_json_path_glob } from '../map_package_json_path_glob'
+import { map_package_json_path_glob } from '../src'
 const { keys } = Object
 refresh_ctx_core_package().then()
 async function refresh_ctx_core_package() {

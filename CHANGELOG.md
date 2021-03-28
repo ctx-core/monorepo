@@ -1,5 +1,15 @@
 # @ctx-core/monorepo
 
+## 15.0.40
+
+### Patch Changes
+
+- 39607cca5: semver: ^7.3.4 -> ^7.3.5
+- 39607cca5: globby: ^11.0.2 -> ^11.0.3
+- Updated dependencies [39607cca5]
+- Updated dependencies [39607cca5]
+  - @ctx-core/ctx-core-package-tools@6.0.36
+
 ## 15.0.39
 
 ### Patch Changes

@@ -57,9 +57,9 @@
 		"@ctx-core/queue": "workspace:^3.0.5",
 		"detect-indent": "^6.0.0",
 		"esm": "^3.2.25",
-		"globby": "^11.0.2",
+		"globby": "^11.0.3",
 		"ora": "5.4.0",
-		"semver": "^7.3.4"
+		"semver": "^7.3.5"
 	},
 	"devDependencies": {
 		"@pnpm/logger": "^3.2.3",

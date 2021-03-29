@@ -1,5 +1,17 @@
 # @ctx-core/monorepo
 
+## 15.0.42
+
+### Patch Changes
+
+- fix: npm publish: https://github.com/npm/cli/issues/2834
+- Updated dependencies [undefined]
+  - @ctx-core/array@20.2.2
+  - @ctx-core/cli-args@7.2.12
+  - @ctx-core/package@6.1.15
+  - @ctx-core/queue@3.0.7
+  - @ctx-core/ctx-core-package-tools@6.0.38
+
 ## 15.0.41
 
 ### Patch Changes

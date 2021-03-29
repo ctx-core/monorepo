@@ -58,7 +58,12 @@ if [ "$VERSION" = "$LATEST" ]; then
 	exit 0
 fi
 if [ -z $DRY ]; then
-	pnpm publish || (not_published 'Publish failed' && exit 1)
+	pnpm publish
+	npm dist-tag "$NAME"@"$LATEST" latest
+	if [ $? -ne 0 ]; then
+		not_published 'Publish failed'
+		exit 1
+	fi
 else
 	echo "$NAME will be published"
 fi

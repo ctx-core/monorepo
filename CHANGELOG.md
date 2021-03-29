@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 15.0.44
+
+### Patch Changes
+
+- fix: npm dist-tag "$NAME"@"$LATEST" latest
+
 ## 15.0.43
 
 ### Patch Changes

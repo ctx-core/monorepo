@@ -70,7 +70,13 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type 
 				const promise = queue.add(async ()=>{
 					const out_latest_version = (
 						await exec(
-							`npm show ${package_name}@latest | grep latest | grep \\: | cut -f2 -d: | xargs echo`
+							`
+							npm show ${package_name}@latest | \
+							sed -r "s/\x1B\\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g" | \
+							grep "^latest\:" | \
+							grep \\: | \
+							cut -f2 -d: | \
+							xargs echo`
 						)
 					).stdout.trim()
 					return out_latest_version

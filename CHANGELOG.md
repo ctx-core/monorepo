@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 15.0.46
+
+### Patch Changes
+
+- fix: npm-check-updates--monorepo: handle multiple dist-tags containing the word "latest"
+
 ## 15.0.45
 
 ### Patch Changes

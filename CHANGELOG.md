@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 15.0.47
+
+### Patch Changes
+
+- pnpm-publish--force: pnpm publish --tag latest
+
 ## 15.0.46
 
 ### Patch Changes

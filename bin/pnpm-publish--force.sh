@@ -58,8 +58,7 @@ if [ "$VERSION" = "$LATEST" ]; then
 	exit 0
 fi
 if [ -z $DRY ]; then
-	pnpm publish
-	npm dist-tag add "$NAME"@"$LATEST" latest
+	pnpm publish --tag latest
 	if [ $? -ne 0 ]; then
 		not_published 'Publish failed'
 		exit 1

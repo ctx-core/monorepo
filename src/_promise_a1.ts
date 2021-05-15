@@ -1,5 +1,5 @@
 import type { project_type } from './project_type'
-export function _promise_a1<O extends unknown>(
+export function _promise_a1<O extends unknown = unknown>(
 	projects:project_type[],
 	_promise:(project:project_type) => Promise<O>
 ) {

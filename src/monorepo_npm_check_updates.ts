@@ -53,13 +53,13 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type 
 		spinner.text = _ora_message(current_count, total_count)
 		return update_a1.join('\n')
 	}
-	async function _project_stdout_async(project:project_type): Promise<string> {
+	async function _project_stdout_async(project:project_type):Promise<string> {
 		const { package_dir } = project
 		return _stdout_async(package_dir)
 	}
 	async function update_dependencies(dependencies:Record<string, string>, noUpdate = [] as string[]) {
 		noUpdate = noUpdate || []
-		const update_a1 = []
+		const update_a1:string[] = []
 		for (let package_name in dependencies) {
 			if (~noUpdate.indexOf(package_name)) continue
 			const in_version = dependencies[package_name] as string
@@ -104,10 +104,10 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_type 
 		}
 		return update_a1 as string[]
 	}
-	function _ora_message(current_count, total_count) {
+	function _ora_message(current_count:number, total_count:number) {
 		return `Checking for updates...${current_count} of ${total_count}`
 	}
-	function push_update_a1(update_a1, package_name, version, latest_version) {
+	function push_update_a1(update_a1:string[], package_name:string, version:string, latest_version:string) {
 		update_a1.push(`${package_name}: ${version} -> ${latest_version}`)
 	}
 }

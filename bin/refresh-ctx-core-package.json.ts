@@ -9,34 +9,36 @@ import { map_package_json_path_glob } from '../src'
 const { keys } = Object
 refresh_ctx_core_package().then()
 async function refresh_ctx_core_package() {
-	await map_package_json_path_glob(`${__dirname}/../../*/package.json`, async package_json => {
-		const txt = await readFile(package_json)
-		const in_json = JSON.parse(txt)
-		const out_json = {} as out_json_type
-		each(keys(in_json), key => {
-			if (key === 'main') {
-				out_json.main = in_json[key]
-				out_json.module = in_json[key]
-			} else if (key === 'module') {
-				out_json.main = in_json[key]
-				out_json.module = in_json[key]
-			} else if (key === 'homepage') {
-				out_json.homepage = in_json[key]
-				out_json.publishConfig = {
-					access: 'public',
+	await map_package_json_path_glob(
+		`${__dirname}/../../*/package.json`,
+		async (package_json:string)=>{
+			const txt = await readFile(package_json)
+			const in_json = JSON.parse(txt)
+			const out_json = {} as out_json_T
+			each(keys(in_json), (key:keyof out_json_T)=>{
+				if (key === 'main') {
+					out_json.main = in_json[key]
+					out_json.module = in_json[key]
+				} else if (key === 'module') {
+					out_json.main = in_json[key]
+					out_json.module = in_json[key]
+				} else if (key === 'homepage') {
+					out_json.homepage = in_json[key]
+					out_json.publishConfig = {
+						access: 'public',
+					}
+				} else {
+					out_json[key] = in_json[key]
 				}
-			} else {
-				out_json[key] = in_json[key]
-			}
+			})
+			await writeFile(package_json, JSON.stringify(out_json, null, '\t'))
 		})
-		await writeFile(package_json, JSON.stringify(out_json, null, '\t'))
-	})
 }
-type out_json_type = {
-	main: string
-	module: string
-	homepage: string
-	publishConfig: {
-		access: string
+type out_json_T = {
+	main:string
+	module:string
+	homepage:string
+	publishConfig:{
+		access:string
 	}
 }

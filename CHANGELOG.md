@@ -1,5 +1,17 @@
 # @ctx-core/monorepo
 
+## 15.1.1
+
+### Patch Changes
+
+- fix: target: 2018: nodejs compatability
+- Updated dependencies [undefined]
+  - @ctx-core/array@20.3.1
+  - @ctx-core/cli-args@7.3.1
+  - @ctx-core/package@6.2.1
+  - @ctx-core/queue@3.1.1
+  - @ctx-core/ctx-core-package-tools@6.1.1
+
 ## 15.1.0
 
 ### Minor Changes

@@ -1,5 +1,17 @@
 # @ctx-core/monorepo
 
+## 15.2.1
+
+### Patch Changes
+
+- .gitignore: - \*.js
+- Updated dependencies [undefined]
+  - @ctx-core/array@20.4.1
+  - @ctx-core/cli-args@7.4.1
+  - @ctx-core/package@6.3.1
+  - @ctx-core/queue@3.2.1
+  - @ctx-core/ctx-core-package-tools@6.2.1
+
 ## 15.2.0
 
 ### Minor Changes

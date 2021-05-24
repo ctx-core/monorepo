@@ -1,5 +1,17 @@
 # @ctx-core/monorepo
 
+## 15.1.3
+
+### Patch Changes
+
+- types: ./src/index.d.ts: address error TS2742 issue
+- Updated dependencies [undefined]
+  - @ctx-core/array@20.3.10
+  - @ctx-core/cli-args@7.3.10
+  - @ctx-core/package@6.2.3
+  - @ctx-core/queue@3.1.3
+  - @ctx-core/ctx-core-package-tools@6.1.5
+
 ## 15.1.2
 
 ### Patch Changes

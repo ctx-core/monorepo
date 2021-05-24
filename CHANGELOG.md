@@ -1,5 +1,20 @@
 # @ctx-core/monorepo
 
+## 15.2.0
+
+### Minor Changes
+
+- dist,types directory: addressing typescript build issues
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/array@20.4.0
+  - @ctx-core/cli-args@7.4.0
+  - @ctx-core/package@6.3.0
+  - @ctx-core/queue@3.2.0
+  - @ctx-core/ctx-core-package-tools@6.2.0
+
 ## 15.1.3
 
 ### Patch Changes
@@ -1177,7 +1192,7 @@
 
 ### Major Changes
 
-- project_type property name updates:
+- project_T property name updates:
 
       package_name: string
       package_version: string

@@ -1,4 +1,4 @@
-import type { project_type } from './project_type'
+import type { project_T } from './project_T'
 import { exec } from './exec'
 export async function _projects() {
 	const raw_projects_str = (await exec(
@@ -18,6 +18,6 @@ export async function _projects() {
 					package_dir,
 				}
 			}
-		) as project_type[]
+		) as project_T[]
 	)
 }

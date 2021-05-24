@@ -1,21 +1,18 @@
-#!/usr/bin/env node
-require = require('esm')(module)
-const fs = require('fs')
-const { promisify } = require('util')
-const { each } = require('@ctx-core/array')
+import fs from 'fs'
+import { promisify } from 'util'
+import { each } from '@ctx-core/array'
 const readFile = promisify(fs.readFile)
 const writeFile = promisify(fs.writeFile)
-import { map_package_json_path_glob } from '../src'
 const { keys } = Object
-refresh_ctx_core_package().then()
-async function refresh_ctx_core_package() {
+import { map_package_json_path_glob } from './map_package_json_path_glob'
+export async function refresh_ctx_core_package() {
 	await map_package_json_path_glob(
-		`${__dirname}/../../*/package.json`,
+		`${__dirname}/../../../**/package.json`,
 		async (package_json:string)=>{
-			const txt = await readFile(package_json)
-			const in_json = JSON.parse(txt)
-			const out_json = {} as out_json_T
-			each(keys(in_json), (key:keyof out_json_T)=>{
+			const txt = await readFile(package_json).toString()
+			const in_json:json_T = JSON.parse(txt)
+			const out_json = {} as json_T
+			each(keys(in_json), (key:string)=>{
 				if (key === 'main') {
 					out_json.main = in_json[key]
 					out_json.module = in_json[key]
@@ -34,10 +31,11 @@ async function refresh_ctx_core_package() {
 			await writeFile(package_json, JSON.stringify(out_json, null, '\t'))
 		})
 }
-type out_json_T = {
+interface json_T extends Record<string, string|{ access:string }> {
 	main:string
 	module:string
 	homepage:string
+	access:string
 	publishConfig:{
 		access:string
 	}

@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 15.3.1
+
+### Patch Changes
+
+- update dependencies
+
 ## 15.3.0
 
 ### Minor Changes

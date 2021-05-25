@@ -1,5 +1,20 @@
 # @ctx-core/monorepo
 
+## 15.3.0
+
+### Minor Changes
+
+- fix tsc build directory issues
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - @ctx-core/array@20.5.0
+  - @ctx-core/cli-args@7.5.0
+  - @ctx-core/package@6.4.0
+  - @ctx-core/queue@3.3.0
+  - @ctx-core/ctx-core-package-tools@6.4.0
+
 ## 15.2.2
 
 ### Patch Changes

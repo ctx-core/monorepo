@@ -1,5 +1,16 @@
 # @ctx-core/monorepo
 
+## 15.3.2
+
+### Patch Changes
+
+- update dependencies
+- Updated dependencies [undefined]
+  - @ctx-core/cli-args@7.5.1
+  - @ctx-core/package@6.4.1
+  - @ctx-core/queue@3.3.1
+  - @ctx-core/ctx-core-package-tools@6.4.2
+
 ## 15.3.1
 
 ### Patch Changes

@@ -51,11 +51,11 @@
 	},
 	"dependencies": {
 		"@ctx-core/array": "workspace:^20.5.1",
-		"@ctx-core/cli-args": "workspace:^7.5.1",
+		"@ctx-core/cli-args": "workspace:^7.6.0",
 		"@ctx-core/ctx-core-package-tools": "workspace:^6.4.2",
 		"@ctx-core/package": "workspace:^6.4.1",
 		"@ctx-core/queue": "workspace:^3.3.1",
-		"detect-indent": "^6.0.0",
+		"detect-indent": "^6.1.0",
 		"esm": "^3.2.25",
 		"globby": "^11.0.3",
 		"ora": "5.4.0",

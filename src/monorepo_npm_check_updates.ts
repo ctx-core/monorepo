@@ -4,37 +4,37 @@ import detect_indent from 'detect-indent'
 import { flatten } from '@ctx-core/array'
 import { _queue } from '@ctx-core/queue'
 import type { monorepo_thread_opts_T } from './monorepo_thread_opts_T'
-import { _projects } from './_projects'
+import { projects_ } from './projects_'
 import { readFile } from './readFile'
 import { writeFile } from './writeFile'
 import { exec } from './exec'
 import type { project_T } from './project_T'
-import { _package_name_h_project } from './_package_name_h_project'
-import { _stdout_h0_package_name_h1 } from './_stdout_h0_package_name_h1'
+import { package_name_h_project_ } from './package_name_h_project_'
+import { stdout_h_package_name_ } from './stdout_h_package_name_'
 const { valid, coerce, compare } = semver
 export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_T = {}) {
 	const package_name_h_latest_version_promise = {} as Record<string, Promise<string>>
 	const package_name_h_already_warned = {} as Record<string, boolean>
 	const queue = _queue(opts.threads || 20)
-	const projects = await _projects()
-	const package_name_h_project = _package_name_h_project(projects)
+	const projects = await projects_()
+	const package_name_h_project = package_name_h_project_(projects)
 	let current_count = 0
-	const package_name_a1 =
+	const package_name_a =
 		opts.package_name
 		? flatten<string>([opts.package_name] as string[]|string[][])
 		: Object.keys(package_name_h_project)
-	const stdout_a1_async_a1 = projects.map((project:project_T)=>
+	const stdout_a_async_a = projects.map((project:project_T)=>
 		_project_stdout_async(project)
 	) as Promise<string>[]
 	if (!opts.package_name) {
-		package_name_a1.push('.')
-		stdout_a1_async_a1.push(_stdout_async('.'))
+		package_name_a.push('.')
+		stdout_a_async_a.push(_stdout_async('.'))
 	}
-	const total_count = stdout_a1_async_a1.length
+	const total_count = stdout_a_async_a.length
 	const spinner = ora(_ora_message(current_count, total_count)).start()
-	const stdout_a1 = await Promise.all(stdout_a1_async_a1)
+	const stdout_a = await Promise.all(stdout_a_async_a)
 	spinner.stop()
-	return _stdout_h0_package_name_h1(package_name_a1, stdout_a1)
+	return stdout_h_package_name_(package_name_a, stdout_a)
 	async function _stdout_async(location = '.') {
 		const package_json_path = `${location}/package.json`
 		const pkg_json = (await readFile(package_json_path)).toString()
@@ -44,14 +44,14 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_T = {
 		update_a2.push(await update_dependencies(dependencies, noUpdate))
 		update_a2.push(await update_dependencies(devDependencies, noUpdate))
 		update_a2.push(await update_dependencies(peerDependencies, noUpdate))
-		const update_a1 = flatten<string>(update_a2)
-		if (update_a1.length) {
+		const update_a = flatten<string>(update_a2)
+		if (update_a.length) {
 			const indent = detect_indent(pkg_json).indent || '\t'
 			await writeFile(package_json_path, JSON.stringify(pkg, null, indent))
 		}
 		current_count += 1
 		spinner.text = _ora_message(current_count, total_count)
-		return update_a1.join('\n')
+		return update_a.join('\n')
 	}
 	async function _project_stdout_async(project:project_T):Promise<string> {
 		const { package_dir } = project
@@ -59,7 +59,7 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_T = {
 	}
 	async function update_dependencies(dependencies:Record<string, string>, noUpdate = [] as string[]) {
 		noUpdate = noUpdate || []
-		const update_a1:string[] = []
+		const update_a:string[] = []
 		for (let package_name in dependencies) {
 			if (~noUpdate.indexOf(package_name)) continue
 			const in_version = dependencies[package_name] as string
@@ -98,16 +98,16 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_T = {
 				) > 0
 			) {
 				const latest_version = `${has_carrot ? '^' : ''}${latest_stripped_version}`
-				push_update_a1(update_a1, package_name, in_version, latest_version)
+				push_update_a(update_a, package_name, in_version, latest_version)
 				dependencies[package_name] = latest_version
 			}
 		}
-		return update_a1 as string[]
+		return update_a as string[]
 	}
 	function _ora_message(current_count:number, total_count:number) {
 		return `Checking for updates...${current_count} of ${total_count}`
 	}
-	function push_update_a1(update_a1:string[], package_name:string, version:string, latest_version:string) {
-		update_a1.push(`${package_name}: ${version} -> ${latest_version}`)
+	function push_update_a(update_a:string[], package_name:string, version:string, latest_version:string) {
+		update_a.push(`${package_name}: ${version} -> ${latest_version}`)
 	}
 }

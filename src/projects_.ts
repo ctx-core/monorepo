@@ -1,6 +1,6 @@
 import type { project_T } from './project_T'
 import { exec } from './exec'
-export async function _projects() {
+export async function projects_() {
 	const raw_projects_str = (await exec(
 		`pnpm list -r --depth -1 | grep -v WARN | sed '/^\\s*$/d'`
 	)).stdout.trim()

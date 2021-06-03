@@ -52,7 +52,7 @@
 	"dependencies": {
 		"@ctx-core/array": "workspace:^21.1.0",
 		"@ctx-core/cli-args": "workspace:^8.0.5",
-		"@ctx-core/ctx-core-package-tools": "workspace:^7.0.4",
+		"@ctx-core/ctx-core-package-tools": "workspace:^7.0.5",
 		"@ctx-core/package": "workspace:^7.0.0",
 		"@ctx-core/queue": "workspace:^4.0.0",
 		"detect-indent": "^6.1.0",

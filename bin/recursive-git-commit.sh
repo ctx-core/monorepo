@@ -10,4 +10,4 @@ else
 fi||echo ''
 EOF
 "$EDITOR" "$TEMP"
-pnpm recursive exec --workspace-concurrency 1 -- sh "$TEMP"
+pnpm recursive exec -- sh "$TEMP"

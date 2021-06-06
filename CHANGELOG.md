@@ -1,5 +1,17 @@
 # @ctx-core/monorepo
 
+## 16.0.11
+
+### Patch Changes
+
+- fix: build: clean up old build files in dist
+- Updated dependencies [undefined]
+  - @ctx-core/array@21.2.6
+  - @ctx-core/cli-args@8.0.14
+  - @ctx-core/package@7.0.1
+  - @ctx-core/queue@4.0.1
+  - @ctx-core/ctx-core-package-tools@7.0.13
+
 ## 16.0.10
 
 ### Patch Changes

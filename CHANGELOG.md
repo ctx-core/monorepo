@@ -1,5 +1,17 @@
 # @ctx-core/monorepo
 
+## 16.0.12
+
+### Patch Changes
+
+- version bump: run build
+- Updated dependencies [undefined]
+  - @ctx-core/array@21.2.7
+  - @ctx-core/cli-args@8.0.15
+  - @ctx-core/package@7.0.2
+  - @ctx-core/queue@4.0.2
+  - @ctx-core/ctx-core-package-tools@7.0.14
+
 ## 16.0.11
 
 ### Patch Changes

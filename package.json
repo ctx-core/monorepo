@@ -50,8 +50,8 @@
 		"prepublishOnly": "npm run compile"
 	},
 	"dependencies": {
-		"@ctx-core/array": "workspace:^21.2.8",
-		"@ctx-core/cli-args": "workspace:^8.0.16",
+		"@ctx-core/array": "workspace:^21.2.9",
+		"@ctx-core/cli-args": "workspace:^8.0.17",
 		"@ctx-core/ctx-core-package-tools": "workspace:^7.0.16",
 		"@ctx-core/package": "workspace:^7.0.2",
 		"@ctx-core/queue": "workspace:^4.0.2",

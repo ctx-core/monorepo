@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 16.0.14
+
+### Patch Changes
+
+- update dependencies
+
 ## 16.0.13
 
 ### Patch Changes

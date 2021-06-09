@@ -1,5 +1,14 @@
 # @ctx-core/monorepo
 
+## 16.0.17
+
+### Patch Changes
+
+- update dependencies
+- Updated dependencies [undefined]
+  - @ctx-core/cli-args@8.0.19
+  - @ctx-core/ctx-core-package-tools@7.0.18
+
 ## 16.0.16
 
 ### Patch Changes

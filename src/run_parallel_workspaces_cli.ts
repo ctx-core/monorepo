@@ -1,10 +1,10 @@
 import { _param_h } from '@ctx-core/cli-args'
 import { run_parallel_workspaces } from './run_parallel_workspaces'
-const cmd_a1 = process.argv.slice(2)
+const cmd_a = process.argv.slice(2)
 export async function run_parallel_workspaces_cli() {
 	const opts = _opts()
 	const workspace_name_stdout =
-		await run_parallel_workspaces(cmd_a1, opts)
+		await run_parallel_workspaces(cmd_a, opts)
 	for (let workspace_name in workspace_name_stdout) {
 		console.info(workspace_name)
 		console.info(workspace_name_stdout[workspace_name])

@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 17.0.5
+
+### Patch Changes
+
+- update dependencies
+
 ## 17.0.4
 
 ### Patch Changes

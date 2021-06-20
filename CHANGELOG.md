@@ -1,5 +1,16 @@
 # @ctx-core/monorepo
 
+## 17.1.1
+
+### Patch Changes
+
+- npm run prepare instead of npm run prepublishOnly
+- Updated dependencies [undefined]
+  - @ctx-core/array@22.0.6
+  - @ctx-core/cli-args@9.0.6
+  - @ctx-core/package@8.0.4
+  - @ctx-core/queue@5.0.4
+
 ## 17.1.0
 
 ### Minor Changes

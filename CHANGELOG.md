@@ -1,5 +1,16 @@
 # @ctx-core/monorepo
 
+## 17.1.2
+
+### Patch Changes
+
+- "prepare": "npm run clean && npm run compile"
+- Updated dependencies [undefined]
+  - @ctx-core/array@22.0.7
+  - @ctx-core/cli-args@9.0.7
+  - @ctx-core/package@8.0.5
+  - @ctx-core/queue@5.0.5
+
 ## 17.1.1
 
 ### Patch Changes

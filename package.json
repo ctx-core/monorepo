@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "17.1.1",
+	"version": "17.1.2",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -49,14 +49,14 @@
 		"clean": "rm -f tsconfig.tsbuildinfo && rm -f src/**/*.js && rm -f src/**/*.d.ts && rm -f src/**/*.map",
 		"compile": "./node_modules/.bin/tsc -b && chmod a+x bin/*.js",
 		"exec": "$@",
-		"prepare": "npm run build"
+		"prepare": "npm run clean && npm run compile"
 	},
 	"dependencies": {
-		"@ctx-core/array": "workspace:^22.0.6",
-		"@ctx-core/cli-args": "workspace:^9.0.6",
+		"@ctx-core/array": "workspace:^22.0.7",
+		"@ctx-core/cli-args": "workspace:^9.0.7",
 		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.6",
-		"@ctx-core/package": "workspace:^8.0.4",
-		"@ctx-core/queue": "workspace:^5.0.4",
+		"@ctx-core/package": "workspace:^8.0.5",
+		"@ctx-core/queue": "workspace:^5.0.5",
 		"detect-indent": "^6.1.0",
 		"esm": "^3.2.25",
 		"globby": "^11.0.4",

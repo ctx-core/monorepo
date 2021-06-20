@@ -1,5 +1,17 @@
 # @ctx-core/monorepo
 
+## 17.1.3
+
+### Patch Changes
+
+- fix: deploying \*.js files
+- Updated dependencies [undefined]
+  - @ctx-core/array@22.0.8
+  - @ctx-core/cli-args@9.0.8
+  - @ctx-core/package@8.0.6
+  - @ctx-core/queue@5.0.6
+  - @ctx-core/ctx-core-package-tools@8.0.7
+
 ## 17.1.2
 
 ### Patch Changes

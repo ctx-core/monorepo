@@ -1,5 +1,21 @@
 # @ctx-core/monorepo
 
+## 17.1.0
+
+### Minor Changes
+
+- - sort-packages,sort-packages-exec,sorted*pkg_o_a*,sort_packages_call
+
+### Patch Changes
+
+- fix: npm run clean
+- Updated dependencies [undefined]
+  - @ctx-core/array@22.0.5
+  - @ctx-core/cli-args@9.0.5
+  - @ctx-core/package@8.0.3
+  - @ctx-core/queue@5.0.3
+  - @ctx-core/ctx-core-package-tools@8.0.6
+
 ## 17.0.5
 
 ### Patch Changes

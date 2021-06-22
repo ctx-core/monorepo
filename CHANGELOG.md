@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 17.2.0
+
+### Minor Changes
+
+- sort_packages_call: + opts: retry_delay
+
 ## 17.1.3
 
 ### Patch Changes

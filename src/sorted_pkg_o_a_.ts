@@ -15,14 +15,15 @@ export async function sorted_pkg_o_a_():Promise<pkg_o_T[]> {
   }
   return pkg_o_a
   function push_pkg_o_a(pkg:pnpm_list_package_T) {
-    if (!pkg_set.has(pkg)) {
+    const run_pkg = !pkg_set.has(pkg)
+    if (run_pkg) {
       pkg_set.add(pkg)
     }
     const dependency_pkg_a = []
     dependency_pkg_a.push(...dependency_pkg_a_(pkg, pkg.dependencies))
     dependency_pkg_a.push(...dependency_pkg_a_(pkg, pkg.devDependencies))
     dependency_pkg_a.push(...dependency_pkg_a_(pkg, pkg.peerDependencies))
-    if (!pkg_set.has(pkg)) {
+    if (run_pkg) {
       pkg_o_a.push({
         pkg,
         dependency_pkg_a,

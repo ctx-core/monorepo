@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 17.2.3
+
+### Patch Changes
+
+- fix: sorted*pkg_o_a*: issue introduced in guarding against infinite loop
+
 ## 17.2.2
 
 ### Patch Changes

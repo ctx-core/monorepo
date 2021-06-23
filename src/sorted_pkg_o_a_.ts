@@ -15,6 +15,9 @@ export async function sorted_pkg_o_a_():Promise<pkg_o_T[]> {
   }
   return pkg_o_a
   function push_pkg_o_a(pkg:pnpm_list_package_T) {
+    if (!pkg_set.has(pkg)) {
+      pkg_set.add(pkg)
+    }
     const dependency_pkg_a = []
     dependency_pkg_a.push(...dependency_pkg_a_(pkg, pkg.dependencies))
     dependency_pkg_a.push(...dependency_pkg_a_(pkg, pkg.devDependencies))
@@ -24,7 +27,6 @@ export async function sorted_pkg_o_a_():Promise<pkg_o_T[]> {
         pkg,
         dependency_pkg_a,
       })
-      pkg_set.add(pkg)
     }
   }
   function dependency_pkg_a_(pkg:pnpm_list_package_T, dependencies:pnpm_list_package_dependencies_T|undefined) {

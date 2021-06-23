@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 17.2.2
+
+### Patch Changes
+
+- fix: sorted*pkg_o_a*: infinite loop when package self-references
+
 ## 17.2.1
 
 ### Patch Changes

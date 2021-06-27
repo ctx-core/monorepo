@@ -1,7 +1,7 @@
 import { exec } from './exec'
 export async function sorted_pkg_o_a_():Promise<pkg_o_T[]> {
   const pkg_a_json = (await exec(
-    `pnpm list -r --json`
+    `pnpm list --json`
   )).stdout.trim()
   const pkg_a:pnpm_list_package_T[] = JSON.parse(pkg_a_json)
   const lookup_pkg_o = pkg_a.reduce((pkg_o, pkg)=> {
@@ -13,6 +13,8 @@ export async function sorted_pkg_o_a_():Promise<pkg_o_T[]> {
   for (const pkg of pkg_a) {
     push_pkg_o_a(pkg)
   }
+  console.debug('pkg_o_a|debug|1')
+  console.debug(pkg_a_json)
   return pkg_o_a
   function push_pkg_o_a(pkg:pnpm_list_package_T) {
     const run_pkg = !pkg_set.has(pkg)

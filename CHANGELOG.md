@@ -1,5 +1,23 @@
 # @ctx-core/monorepo
 
+## 17.2.8
+
+### Patch Changes
+
+- dist directory
+- Updated dependencies [undefined]
+  - @ctx-core/array@22.0.16
+  - @ctx-core/cli-args@9.0.16
+  - @ctx-core/package@8.0.11
+  - @ctx-core/queue@5.0.9
+  - @ctx-core/ctx-core-package-tools@8.0.12
+
+## 17.2.7
+
+### Patch Changes
+
+- fix: sorted*pkg_o_a*: pnpm list --json
+
 ## 17.2.6
 
 ### Patch Changes

@@ -1,4 +1,4 @@
-import { _param_h } from '@ctx-core/cli-args'
+import { param_r_ } from '@ctx-core/cli-args'
 import { run_parallel_workspaces } from './run_parallel_workspaces'
 const cmd_a = process.argv.slice(2)
 export async function run_parallel_workspaces_cli() {
@@ -11,19 +11,19 @@ export async function run_parallel_workspaces_cli() {
 	}
 }
 function opts_() {
-	const { threads, help } = _param_h(process.argv.slice(2), {
+	const { threads, help } = param_r_(process.argv.slice(2), {
 		threads: '-t, --threads',
 		help: '-h, --help',
 	})
 	if (help) {
-		console.info(_help_msg)
+		console.info(help_msg_)
 		process.exit(0)
 	}
 	return {
 		threads: parseInt(threads.toString()) || 20,
 	}
 }
-function _help_msg() {
+function help_msg_() {
 	return `
 Usage: run-parallel--workspaces.js [-t <thread-count>]
 

@@ -2,7 +2,7 @@ import semver from 'semver'
 import ora from 'ora'
 import detect_indent from 'detect-indent'
 import { flatten } from '@ctx-core/array'
-import { _queue } from '@ctx-core/queue'
+import { queue_ } from '@ctx-core/queue'
 import type { monorepo_thread_opts_T } from './monorepo_thread_opts_T'
 import { projects_ } from './projects_'
 import { readFile } from './readFile'
@@ -15,7 +15,7 @@ const { valid, coerce, compare } = semver
 export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_T = {}) {
 	const package_name_h_latest_version_promise = {} as Record<string, Promise<string>>
 	const package_name_h_already_warned = {} as Record<string, boolean>
-	const queue = _queue(opts.threads || 20)
+	const queue = queue_(opts.threads || 20)
 	const projects = await projects_()
 	const package_name_h_project = package_name_h_project_(projects)
 	let current_count = 0

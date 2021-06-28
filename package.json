@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "17.2.11",
+	"version": "17.2.12",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -52,9 +52,9 @@
 		"prepublishOnly": "npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/array": "workspace:^22.0.16",
-		"@ctx-core/cli-args": "workspace:^9.0.20",
-		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.12",
+		"@ctx-core/array": "workspace:^22.1.0",
+		"@ctx-core/cli-args": "workspace:^9.0.21",
+		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.13",
 		"@ctx-core/package": "workspace:^8.0.14",
 		"@ctx-core/queue": "workspace:^5.0.9",
 		"detect-indent": "^6.1.0",

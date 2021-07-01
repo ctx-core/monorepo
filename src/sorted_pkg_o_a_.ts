@@ -13,8 +13,6 @@ export async function sorted_pkg_o_a_():Promise<pkg_o_T[]> {
   for (const pkg of pkg_a) {
     push_pkg_o_a(pkg)
   }
-  console.debug('pkg_o_a|debug|1')
-  console.debug(pkg_a_json)
   return pkg_o_a
   function push_pkg_o_a(pkg:pnpm_list_package_T) {
     const run_pkg = !pkg_set.has(pkg)

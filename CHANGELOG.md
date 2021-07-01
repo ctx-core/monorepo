@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 17.2.14
+
+### Patch Changes
+
+- remove console.debug
+
 ## 17.2.13
 
 ### Patch Changes

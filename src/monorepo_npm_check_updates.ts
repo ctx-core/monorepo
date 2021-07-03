@@ -24,18 +24,18 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_T = {
 		? flatten<string>([opts.package_name] as string[]|string[][])
 		: Object.keys(package_name_h_project)
 	const stdout_a_async_a = projects.map((project:project_T)=>
-		_project_stdout_async(project)
+		project_stdout_async_(project)
 	) as Promise<string>[]
 	if (!opts.package_name) {
 		package_name_a.push('.')
-		stdout_a_async_a.push(_stdout_async('.'))
+		stdout_a_async_a.push(stdout_async_('.'))
 	}
 	const total_count = stdout_a_async_a.length
-	const spinner = ora(_ora_message(current_count, total_count)).start()
+	const spinner = ora(ora_message_(current_count, total_count)).start()
 	const stdout_a = await Promise.all(stdout_a_async_a)
 	spinner.stop()
 	return stdout_h_package_name_(package_name_a, stdout_a)
-	async function _stdout_async(location = '.') {
+	async function stdout_async_(location = '.') {
 		const package_json_path = `${location}/package.json`
 		const pkg_json = (await readFile(package_json_path)).toString()
 		const pkg = JSON.parse(pkg_json)
@@ -50,12 +50,12 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_T = {
 			await writeFile(package_json_path, JSON.stringify(pkg, null, indent))
 		}
 		current_count += 1
-		spinner.text = _ora_message(current_count, total_count)
+		spinner.text = ora_message_(current_count, total_count)
 		return update_a.join('\n')
 	}
-	async function _project_stdout_async(project:project_T):Promise<string> {
+	async function project_stdout_async_(project:project_T):Promise<string> {
 		const { package_dir } = project
-		return _stdout_async(package_dir)
+		return stdout_async_(package_dir)
 	}
 	async function update_dependencies(dependencies:Record<string, string>, noUpdate = [] as string[]) {
 		noUpdate = noUpdate || []
@@ -104,7 +104,7 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_T = {
 		}
 		return update_a as string[]
 	}
-	function _ora_message(current_count:number, total_count:number) {
+	function ora_message_(current_count:number, total_count:number) {
 		return `Checking for updates...${current_count} of ${total_count}`
 	}
 	function push_update_a(update_a:string[], package_name:string, version:string, latest_version:string) {

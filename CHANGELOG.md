@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 17.2.22
+
+### Patch Changes
+
+- fix: sorted*pkg_o_a*,sort-packages,sort-packages-exec: read directly from package.json: returns all packages in monorepo
+
 ## 17.2.21
 
 ### Patch Changes

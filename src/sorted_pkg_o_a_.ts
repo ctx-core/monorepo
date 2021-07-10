@@ -3,7 +3,7 @@ import yaml from 'js-yaml'
 import globby from 'globby'
 import { promisify } from 'util'
 const readFile_p_ = promisify(readFile)
-export async function sorted_pkg_o_a_():Promise<pkg_o_T[]> {
+export async function sorted_pkg_o_a_():Promise<pkg_r_T[]> {
 	const file = await readFile_p_('./pnpm-workspace.yaml')
 	const doc = yaml.load(file.toString()) as { packages:string[] }
 	const pkg_glob_a = doc['packages']
@@ -18,16 +18,16 @@ export async function sorted_pkg_o_a_():Promise<pkg_o_T[]> {
 			}
 		)
 	)
-	const lookup_pkg_o = pkg_a.reduce((pkg_o, pkg)=>{
-		pkg_o[pkg.name] = pkg
-		return pkg_o
+	const lookup_pkg_r = pkg_a.reduce((pkg_r, pkg)=>{
+		pkg_r[pkg.name] = pkg
+		return pkg_r
 	}, {} as Record<string, pnpm_list_package_T>)
-	const pkg_o_a:pkg_o_T[] = []
+	const pkg_r_a:pkg_r_T[] = []
 	const pkg_set = new Set<pnpm_list_package_T>()
 	for (const pkg of pkg_a) {
 		push_pkg_o_a(pkg)
 	}
-	return pkg_o_a
+	return pkg_r_a
 	function push_pkg_o_a(pkg:pnpm_list_package_T) {
 		const run_pkg = !pkg_set.has(pkg)
 		if (run_pkg) {
@@ -38,7 +38,7 @@ export async function sorted_pkg_o_a_():Promise<pkg_o_T[]> {
 		dependency_pkg_a.push(...dependency_pkg_a_(pkg, pkg.devDependencies))
 		dependency_pkg_a.push(...dependency_pkg_a_(pkg, pkg.peerDependencies))
 		if (run_pkg) {
-			pkg_o_a.push({
+			pkg_r_a.push({
 				pkg,
 				dependency_pkg_a,
 			})
@@ -47,10 +47,10 @@ export async function sorted_pkg_o_a_():Promise<pkg_o_T[]> {
 	function dependency_pkg_a_(pkg:pnpm_list_package_T, dependencies:pnpm_list_package_dependencies_T|undefined) {
 		const dependency_pkg_a:pnpm_list_package_T[] = []
 		if (!dependencies) return dependency_pkg_a
-		for (const [dep_pkg_name, dep_pkg_brief] of Object.entries(dependencies)) {
+		for (const [dep_pkg_name, dep_pkg_version] of Object.entries(dependencies)) {
 			if (pkg.name === dep_pkg_name) continue
-			if (/^link:/.test(dep_pkg_brief.version)) {
-				const dep_pkg = lookup_pkg_o[dep_pkg_name]
+			if (/^workspace:/.test(dep_pkg_version)) {
+				const dep_pkg = lookup_pkg_r[dep_pkg_name]
 				if (dep_pkg && !pkg_set.has(dep_pkg)) {
 					push_pkg_o_a(dep_pkg)
 				}
@@ -59,12 +59,7 @@ export async function sorted_pkg_o_a_():Promise<pkg_o_T[]> {
 		return dependency_pkg_a
 	}
 }
-export interface pnpm_list_package_dependency_T {
-	from:string
-	version:string
-	resolved?:string
-}
-export type pnpm_list_package_dependencies_T = Record<string, pnpm_list_package_dependency_T>
+export type pnpm_list_package_dependencies_T = Record<string, string>
 export interface pnpm_list_package_T {
 	name:string
 	version:string
@@ -73,7 +68,7 @@ export interface pnpm_list_package_T {
 	devDependencies?:pnpm_list_package_dependencies_T
 	peerDependencies?:pnpm_list_package_dependencies_T
 }
-export interface pkg_o_T {
+export interface pkg_r_T {
 	pkg:pnpm_list_package_T,
 	dependency_pkg_a:pnpm_list_package_T[]
 }

@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 17.2.23
+
+### Patch Changes
+
+- fix: sorted*pkg_o_a*: dependency sorting
+
 ## 17.2.22
 
 ### Patch Changes

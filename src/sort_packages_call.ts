@@ -1,6 +1,6 @@
 import { sleep } from '@ctx-core/function'
 import { queue_ } from '@ctx-core/queue'
-import { pkg_o_T, pnpm_list_package_T, sorted_pkg_o_a_ } from './sorted_pkg_o_a_'
+import { pkg_r_T, pnpm_list_package_T, sorted_pkg_o_a_ } from './sorted_pkg_o_a_'
 export async function sort_packages_call(
 	fn:(pkg:pnpm_list_package_T)=>Promise<void>, opts:sort_packages_call_opts_T = {}
 ) {
@@ -12,7 +12,7 @@ export async function sort_packages_call(
 	}
 	await queue.close()
 
-	async function process_pkg_o(pkg_o:pkg_o_T) {
+	async function process_pkg_o(pkg_o:pkg_r_T) {
 		const { pkg, dependency_pkg_a } = pkg_o
 		for (const dependency_pkg of dependency_pkg_a) {
 			if (!completed_pkg_set.has(dependency_pkg)) {

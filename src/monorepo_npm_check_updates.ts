@@ -40,11 +40,11 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_T = {
 		const pkg_json = (await readFile(package_json_path)).toString()
 		const pkg = JSON.parse(pkg_json)
 		const { dependencies, peerDependencies, devDependencies, noUpdate } = pkg
-		const update_a2 = [] as string[][]
-		update_a2.push(await update_dependencies(dependencies, noUpdate))
-		update_a2.push(await update_dependencies(devDependencies, noUpdate))
-		update_a2.push(await update_dependencies(peerDependencies, noUpdate))
-		const update_a = flatten<string>(update_a2)
+		const update_aa = [] as string[][]
+		update_aa.push(await update_dependencies(dependencies, noUpdate))
+		update_aa.push(await update_dependencies(devDependencies, noUpdate))
+		update_aa.push(await update_dependencies(peerDependencies, noUpdate))
+		const update_a = flatten<string>(update_aa)
 		if (update_a.length) {
 			const indent = detect_indent(pkg_json).indent || '\t'
 			await writeFile(package_json_path, JSON.stringify(pkg, null, indent))

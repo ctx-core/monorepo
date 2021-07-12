@@ -53,8 +53,8 @@
 	},
 	"dependencies": {
 		"@ctx-core/array": "workspace:^22.3.0",
-		"@ctx-core/cli-args": "workspace:^9.0.29",
-		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.22",
+		"@ctx-core/cli-args": "workspace:^9.0.30",
+		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.23",
 		"@ctx-core/function": "workspace:^19.2.0",
 		"@ctx-core/package": "workspace:^8.0.16",
 		"@ctx-core/queue": "workspace:^5.0.10",

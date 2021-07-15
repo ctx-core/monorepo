@@ -1,9 +1,7 @@
 #!/bin/env node
 'use strict'
-require = require('esm')(module)
-const { sorted_pkg_o_a_ } = require('../dist')
-sorted_pkg_o_a_().then(sorted_pkg_o_a=>{
-  for (const { pkg } of sorted_pkg_o_a) {
-    console.info(pkg.name, pkg.path)
-  }
-})
+import { sorted_pkg_o_a_ } from '../dist'
+const sorted_pkg_o_a = await sorted_pkg_o_a_()
+for (const { pkg } of sorted_pkg_o_a) {
+	console.info(pkg.name, pkg.path)
+}

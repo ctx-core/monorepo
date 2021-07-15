@@ -1,17 +1,15 @@
-import { readFile } from 'fs'
+import { readFile } from 'fs/promises'
 import yaml from 'js-yaml'
 import globby from 'globby'
-import { promisify } from 'util'
-const readFile_p_ = promisify(readFile)
 export async function sorted_pkg_o_a_():Promise<pkg_r_T[]> {
-	const file = await readFile_p_('./pnpm-workspace.yaml')
+	const file = await readFile('./pnpm-workspace.yaml')
 	const doc = yaml.load(file.toString()) as { packages:string[] }
 	const pkg_glob_a = doc['packages']
 	const pkg_path_a = await globby(pkg_glob_a, { onlyDirectories: true })
 	const pkg_a:pnpm_list_package_T[] = await Promise.all(
 		pkg_path_a.map(async (pkg_path:string)=>{
 				const pkg = JSON.parse(
-					(await readFile_p_(`${pkg_path}/package.json`)).toString()
+					(await readFile(`${pkg_path}/package.json`)).toString()
 				)
 				pkg.path = pkg_path
 				return pkg

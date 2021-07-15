@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-require = require('esm')(module)
-require('../dist').run_parallel_workspaces_cli().then()
+import { run_parallel_workspaces_cli } from '../dist'
+await run_parallel_workspaces_cli()

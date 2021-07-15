@@ -1,5 +1,5 @@
 import { param_r_ } from '@ctx-core/cli-args'
-import { monorepo_npm_check_updates } from './monorepo_npm_check_updates'
+import { monorepo_npm_check_updates } from './monorepo_npm_check_updates.js'
 export async function monorepo_npm_check_updates_cli() {
 	const param_r = param_r_(process.argv.slice(2), {
 		threads: '-t, --threads',

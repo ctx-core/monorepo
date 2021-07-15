@@ -1,6 +1,6 @@
 import { sleep } from '@ctx-core/function'
 import { queue_ } from '@ctx-core/queue'
-import { pkg_r_T, pnpm_list_package_T, sorted_pkg_o_a_ } from './sorted_pkg_o_a_'
+import { pkg_r_T, pnpm_list_package_T, sorted_pkg_o_a_ } from './sorted_pkg_o_a_.js'
 export async function sort_packages_call(
 	fn:(pkg:pnpm_list_package_T)=>Promise<void>, opts:sort_packages_call_opts_T = {}
 ) {

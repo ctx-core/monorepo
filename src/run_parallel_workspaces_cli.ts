@@ -1,5 +1,5 @@
 import { param_r_ } from '@ctx-core/cli-args'
-import { run_parallel_workspaces } from './run_parallel_workspaces'
+import { run_parallel_workspaces } from './run_parallel_workspaces.js'
 const cmd_a = process.argv.slice(2)
 export async function run_parallel_workspaces_cli() {
 	const opts = opts_()

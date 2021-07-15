@@ -4,7 +4,7 @@ import { each } from '@ctx-core/array'
 const readFile = promisify(fs.readFile)
 const writeFile = promisify(fs.writeFile)
 const { keys } = Object
-import { map_package_json_path_glob } from './map_package_json_path_glob'
+import { map_package_json_path_glob } from './map_package_json_path_glob.js'
 export async function refresh_ctx_core_package() {
 	await map_package_json_path_glob(
 		`${__dirname}/../../../**/package.json`,

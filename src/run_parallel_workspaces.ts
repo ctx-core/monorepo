@@ -1,10 +1,10 @@
 import { queue_ } from '@ctx-core/queue'
-import { projects_ } from './projects_'
-import { promise_a_ } from './promise_a_'
-import { exec } from './exec'
-import type { monorepo_thread_opts_T } from './monorepo_thread_opts_T'
-import type { project_T } from './project_T'
-import { stdout_h_package_name_ } from './stdout_h_package_name_'
+import { projects_ } from './projects_.js'
+import { promise_a_ } from './promise_a_.js'
+import { exec } from './exec.js'
+import type { monorepo_thread_opts_T } from './monorepo_thread_opts_T.js'
+import type { project_T } from './project_T.js'
+import { stdout_h_package_name_ } from './stdout_h_package_name_.js'
 export async function run_parallel_workspaces(cmd_a:string[], opts:monorepo_thread_opts_T = {}) {
 	const queue = queue_(opts.threads || 20)
 	const projects = await projects_()

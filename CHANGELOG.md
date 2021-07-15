@@ -1,5 +1,13 @@
 # @ctx-core/monorepo
 
+## 18.0.3
+
+### Patch Changes
+
+- fix: import.meta.url instead of \_\_dirname
+- Updated dependencies [undefined]
+  - @ctx-core/package@9.0.3
+
 ## 18.0.2
 
 ### Patch Changes

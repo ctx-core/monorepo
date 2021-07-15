@@ -1,13 +1,11 @@
-import fs from 'fs'
-import { promisify } from 'util'
+import { readFile, writeFile } from 'fs/promises'
+import { dirname } from 'path'
 import { each } from '@ctx-core/array'
-const readFile = promisify(fs.readFile)
-const writeFile = promisify(fs.writeFile)
 const { keys } = Object
 import { map_package_json_path_glob } from './map_package_json_path_glob.js'
 export async function refresh_ctx_core_package() {
 	await map_package_json_path_glob(
-		`${__dirname}/../../../**/package.json`,
+		`${dirname(new URL(import.meta.url).pathname)}/../../../**/package.json`,
 		async (package_json:string)=>{
 			const txt = await readFile(package_json).toString()
 			const in_json:json_T = JSON.parse(txt)

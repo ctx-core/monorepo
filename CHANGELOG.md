@@ -1,5 +1,18 @@
 # @ctx-core/monorepo
 
+## 18.0.9
+
+### Patch Changes
+
+- fix: cjs: load as a Promise
+- Updated dependencies [undefined]
+  - @ctx-core/array@23.0.9
+  - @ctx-core/cli-args@10.0.9
+  - @ctx-core/function@20.0.8
+  - @ctx-core/package@9.0.9
+  - @ctx-core/queue@6.0.7
+  - @ctx-core/ctx-core-package-tools@8.0.32
+
 ## 18.0.8
 
 ### Patch Changes

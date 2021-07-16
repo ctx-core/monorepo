@@ -1,5 +1,31 @@
 # @ctx-core/monorepo
 
+## 18.0.12
+
+### Patch Changes
+
+- fix: sourceMappingURL: "mapRoot": ""
+- Updated dependencies [undefined]
+  - @ctx-core/array@23.0.11
+  - @ctx-core/cli-args@10.0.11
+  - @ctx-core/function@20.0.10
+  - @ctx-core/package@9.0.11
+  - @ctx-core/queue@6.0.9
+  - @ctx-core/ctx-core-package-tools@8.0.35
+
+## 18.0.11
+
+### Patch Changes
+
+- tsconfig.json: "target": "es2019"
+- Updated dependencies [undefined]
+  - @ctx-core/array@23.0.10
+  - @ctx-core/cli-args@10.0.10
+  - @ctx-core/function@20.0.9
+  - @ctx-core/package@9.0.10
+  - @ctx-core/queue@6.0.8
+  - @ctx-core/ctx-core-package-tools@8.0.34
+
 ## 18.0.10
 
 ### Patch Changes

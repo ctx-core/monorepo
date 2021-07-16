@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 18.0.10
+
+### Patch Changes
+
+- fix: update-npm-packages.sh: reference to \$DIR/npm-check-updates--monorepo.mjs
+
 ## 18.0.9
 
 ### Patch Changes

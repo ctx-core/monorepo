@@ -1,5 +1,5 @@
 #!/bin/env node
-import { exec, sort_packages_call } from '../dist/index.mjs'
+import { exec, sort_packages_call } from '../dist/index.js'
 const cmd = process.argv.slice(process.argv.indexOf('--') + 1).join(' ')
 await sort_packages_call(async (pkg)=>{
   try {

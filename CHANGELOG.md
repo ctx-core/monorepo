@@ -1,5 +1,31 @@
 # @ctx-core/monorepo
 
+## 18.0.6
+
+### Patch Changes
+
+- back to esm module with cjs using esm npm package to load library
+- Updated dependencies [undefined]
+  - @ctx-core/array@23.0.6
+  - @ctx-core/cli-args@10.0.6
+  - @ctx-core/function@20.0.5
+  - @ctx-core/package@9.0.6
+  - @ctx-core/queue@6.0.4
+  - @ctx-core/ctx-core-package-tools@8.0.29
+
+## 18.0.5
+
+### Patch Changes
+
+- back to esm module with cjs using esm npm package to load library
+- Updated dependencies [undefined]
+  - @ctx-core/array@23.0.5
+  - @ctx-core/cli-args@10.0.5
+  - @ctx-core/function@20.0.4
+  - @ctx-core/package@9.0.5
+  - @ctx-core/queue@6.0.4
+  - @ctx-core/ctx-core-package-tools@8.0.29
+
 ## 18.0.4
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "18.0.7",
+	"version": "18.0.8",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -18,7 +18,7 @@
 	"license": "Apache-2.0",
 	"author": "Brian Takita",
 	"type": "module",
-	"main": "./dist/index.js",
+	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"exports": {
@@ -58,12 +58,12 @@
 		"prepublishOnly": "npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/array": "workspace:^23.0.7",
-		"@ctx-core/cli-args": "workspace:^10.0.7",
-		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.30",
-		"@ctx-core/function": "workspace:^20.0.6",
-		"@ctx-core/package": "workspace:^9.0.7",
-		"@ctx-core/queue": "workspace:^6.0.5",
+		"@ctx-core/array": "workspace:^23.0.8",
+		"@ctx-core/cli-args": "workspace:^10.0.8",
+		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.31",
+		"@ctx-core/function": "workspace:^20.0.7",
+		"@ctx-core/package": "workspace:^9.0.8",
+		"@ctx-core/queue": "workspace:^6.0.6",
 		"detect-indent": "^6.1.0",
 		"esm": "^3.2.25",
 		"globby": "^11.0.4",

@@ -1,5 +1,18 @@
 # @ctx-core/monorepo
 
+## 18.0.8
+
+### Patch Changes
+
+- "main": "./dist/index.cjs"
+- Updated dependencies [undefined]
+  - @ctx-core/array@23.0.8
+  - @ctx-core/cli-args@10.0.8
+  - @ctx-core/function@20.0.7
+  - @ctx-core/package@9.0.8
+  - @ctx-core/queue@6.0.6
+  - @ctx-core/ctx-core-package-tools@8.0.31
+
 ## 18.0.7
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @ctx-core/monorepo
 
+## 18.0.4
+
+### Patch Changes
+
+- support cjs & esm: + "exports"
+- Updated dependencies [undefined]
+  - @ctx-core/array@23.0.3
+  - @ctx-core/cli-args@10.0.3
+  - @ctx-core/function@20.0.3
+  - @ctx-core/package@9.0.4
+  - @ctx-core/queue@6.0.3
+  - @ctx-core/ctx-core-package-tools@8.0.28
+
 ## 18.0.3
 
 ### Patch Changes

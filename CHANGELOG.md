@@ -1,5 +1,17 @@
 # @ctx-core/monorepo
 
+## 18.0.14
+
+### Patch Changes
+
+- fix: "exports": "./package.json": "./package.json"
+- Updated dependencies [undefined]
+  - @ctx-core/array@23.0.13
+  - @ctx-core/cli-args@10.0.13
+  - @ctx-core/function@20.0.12
+  - @ctx-core/package@9.0.13
+  - @ctx-core/queue@6.0.11
+
 ## 18.0.13
 
 ### Patch Changes

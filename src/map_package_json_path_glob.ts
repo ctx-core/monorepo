@@ -1,4 +1,4 @@
-import globby from 'globby'
+import { globby } from 'globby'
 import { map } from '@ctx-core/array'
 export async function map_package_json_path_glob<Out extends unknown = unknown>(
 	glob_txt:string, fn:(path:string)=>Out

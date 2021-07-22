@@ -1,6 +1,6 @@
 import { readFile } from 'fs/promises'
 import yaml from 'js-yaml'
-import globby from 'globby'
+import { globby } from 'globby'
 export async function sorted_pkg_o_a_():Promise<pkg_r_T[]> {
 	const file = await readFile('./pnpm-workspace.yaml')
 	const doc = yaml.load(file.toString()) as { packages:string[] }

@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 18.0.18
+
+### Patch Changes
+
+- fix: #!/usr/bin/env node
+
 ## 18.0.17
 
 ### Patch Changes

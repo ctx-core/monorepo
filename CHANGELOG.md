@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 18.0.26
+
+### Patch Changes
+
+- detect-indent: ^6.1.0 -> ^7.0.0
+
 ## 18.0.25
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 18.0.29
+
+### Patch Changes
+
+- update dependencies
+
 ## 18.0.28
 
 ### Patch Changes

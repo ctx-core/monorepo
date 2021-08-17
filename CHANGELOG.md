@@ -1,5 +1,13 @@
 # @ctx-core/monorepo
 
+## 18.0.30
+
+### Patch Changes
+
+- globby: ^12.0.0 -> ^12.0.1
+- Updated dependencies [undefined]
+  - @ctx-core/ctx-core-package-tools@8.0.51
+
 ## 18.0.29
 
 ### Patch Changes

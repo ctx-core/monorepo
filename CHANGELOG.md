@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 18.0.34
+
+### Patch Changes
+
+- @pnpm/logger: ^3.2.3 -> ^4.0.0
+
 ## 18.0.33
 
 ### Patch Changes

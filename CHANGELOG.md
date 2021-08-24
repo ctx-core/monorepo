@@ -1,5 +1,14 @@
 # @ctx-core/monorepo
 
+## 18.0.35
+
+### Patch Changes
+
+- globby: ^12.0.1 -> ^12.0.2
+- ora: 5.4.1 -> 6.0.0
+- Updated dependencies [undefined]
+  - @ctx-core/ctx-core-package-tools@8.0.55
+
 ## 18.0.34
 
 ### Patch Changes

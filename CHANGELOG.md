@@ -1,5 +1,20 @@
 # @ctx-core/monorepo
 
+## 18.0.60
+
+### Patch Changes
+
+- typescript: ^4.4.3 -> ^4.4.4
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+- Updated dependencies [undefined]
+  - @ctx-core/array@23.0.22
+  - @ctx-core/cli-args@10.0.22
+  - @ctx-core/function@20.2.2
+  - @ctx-core/package@9.0.17
+  - @ctx-core/queue@6.0.14
+  - @ctx-core/ctx-core-package-tools@8.0.77
+
 ## 18.0.59
 
 ### Patch Changes

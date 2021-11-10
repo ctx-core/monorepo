@@ -19,14 +19,11 @@ export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_T = {
 	const projects = await projects_()
 	const package_name_h_project = package_name_h_project_(projects)
 	let current_count = 0
-	const package_name_a =
-		opts.package_name
-		? flatten<string>([opts.package_name] as string[]|string[][])
-		: Object.keys(package_name_h_project)
+	const package_name_a = opts.package_name_a ? opts.package_name_a : Object.keys(package_name_h_project)
 	const stdout_a_async_a = projects.map((project:project_T)=>
 		project_stdout_async_(project)
 	) as Promise<string>[]
-	if (!opts.package_name) {
+	if (!opts.package_name_a) {
 		package_name_a.push('.')
 		stdout_a_async_a.push(stdout_async_('.'))
 	}

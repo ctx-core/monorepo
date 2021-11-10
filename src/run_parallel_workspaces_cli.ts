@@ -11,8 +11,8 @@ export async function run_parallel_workspaces_cli() {
 	}
 }
 function opts_() {
-	const { threads, help } = param_r_(process.argv.slice(2), {
-		threads: '-t, --threads',
+	const { threads_a, help } = param_r_(process.argv.slice(2), {
+		threads_a: '-t, --threads',
 		help: '-h, --help',
 	})
 	if (help) {
@@ -20,7 +20,7 @@ function opts_() {
 		process.exit(0)
 	}
 	return {
-		threads: parseInt(threads.toString()) || 20,
+		threads: parseInt(threads_a[0]) || 20,
 	}
 }
 function help_msg_() {

@@ -1,5 +1,26 @@
 # @ctx-core/monorepo
 
+## 18.1.0
+
+### Minor Changes
+
+- engines*node* from node*version*
+
+### Patch Changes
+
+- compile using swc
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/package@9.1.0
+  - @ctx-core/array@23.0.23
+  - @ctx-core/cli-args@11.0.0
+  - @ctx-core/function@20.2.3
+  - @ctx-core/queue@6.0.15
+
 ## 18.0.60
 
 ### Patch Changes

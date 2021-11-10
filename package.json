@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "18.0.60",
+	"version": "18.1.0",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -18,9 +18,9 @@
 	"license": "Apache-2.0",
 	"author": "Brian Takita",
 	"type": "module",
-	"main": "./dist/index.cjs",
+	"main": "./dist/index.js",
 	"module": "./dist/index.js",
-	"types": "./dist/index.d.ts",
+	"types": "./src/index.ts",
 	"exports": {
 		".": {
 			"require": "./dist/index.cjs",
@@ -53,28 +53,28 @@
 		"update-git-module--github--ssh": "bin/update-git-module--github--ssh.sh"
 	},
 	"scripts": {
-		"build": "npm run clean && npm run copy-mjs && npm run compile",
-		"clean": "rm -f tsconfig.tsbuildinfo && rm -f src/**/*.js && rm -f src/**/*.d.ts && rm -f src/**/*.map",
-		"copy-mjs": "cd dist && echo \"module.exports = (async () => import('./index.js'))()\" > index.cjs",
-		"compile": "./node_modules/.bin/tsc -b && chmod a+x bin/*.mjs",
+		"build": "npm run compile",
+		"clean": "rm -rf dist",
+		"compile": "swc src --out-dir dist --copy-files --source-maps --config-file .swcrc",
 		"exec": "$@",
 		"prepublishOnly": "npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/array": "workspace:^23.0.22",
-		"@ctx-core/cli-args": "workspace:^10.0.22",
+		"@ctx-core/array": "workspace:^23.0.23",
+		"@ctx-core/cli-args": "workspace:^11.0.0",
 		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.77",
-		"@ctx-core/function": "workspace:^20.2.2",
-		"@ctx-core/package": "workspace:^9.0.17",
-		"@ctx-core/queue": "workspace:^6.0.14",
+		"@ctx-core/function": "workspace:^20.2.3",
+		"@ctx-core/package": "workspace:^9.1.0",
+		"@ctx-core/queue": "workspace:^6.0.15",
 		"detect-indent": "^7.0.0",
-		"esm": "^3.2.25",
 		"globby": "^12.0.2",
 		"ora": "6.0.1",
 		"semver": "^7.3.5"
 	},
 	"devDependencies": {
 		"@pnpm/logger": "^4.0.0",
+		"@swc/cli": "^0.1.51",
+		"@swc/core": "^1.2.107",
 		"js-yaml": "^4.1.0",
 		"typescript": "^4.4.4"
 	},

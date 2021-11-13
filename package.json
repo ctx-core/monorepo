@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "18.1.0",
+	"version": "18.1.1",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -60,12 +60,12 @@
 		"prepublishOnly": "npm run clean && npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/array": "workspace:^23.0.23",
-		"@ctx-core/cli-args": "workspace:^11.0.0",
+		"@ctx-core/array": "workspace:^23.0.24",
+		"@ctx-core/cli-args": "workspace:^11.0.1",
 		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.77",
-		"@ctx-core/function": "workspace:^20.2.3",
-		"@ctx-core/package": "workspace:^9.1.0",
-		"@ctx-core/queue": "workspace:^6.0.15",
+		"@ctx-core/function": "workspace:^20.2.4",
+		"@ctx-core/package": "workspace:^9.1.1",
+		"@ctx-core/queue": "workspace:^6.0.16",
 		"detect-indent": "^7.0.0",
 		"globby": "^12.0.2",
 		"ora": "6.0.1",
@@ -74,7 +74,7 @@
 	"devDependencies": {
 		"@pnpm/logger": "^4.0.0",
 		"@swc/cli": "^0.1.51",
-		"@swc/core": "^1.2.107",
+		"@swc/core": "^1.2.108",
 		"js-yaml": "^4.1.0",
 		"typescript": "^4.4.4"
 	},

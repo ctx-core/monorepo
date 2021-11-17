@@ -1,8 +1,8 @@
 import { queue_ } from '@ctx-core/queue'
-import { projects_ } from './projects_.js'
-import { promise_a_ } from './promise_a_.js'
 import { exec } from './exec.js'
 import type { monorepo_thread_opts_T } from './monorepo_thread_opts_T.js'
+import { projects_ } from './projects_.js'
+import { promise_a_ } from './promise_a_.js'
 import type { project_T } from './project_T.js'
 import { stdout_h_package_name_ } from './stdout_h_package_name_.js'
 export async function run_parallel_workspaces(cmd_a:string[], opts:monorepo_thread_opts_T = {}) {

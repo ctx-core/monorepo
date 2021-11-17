@@ -1,16 +1,16 @@
-import semver from 'semver'
-import ora from 'ora'
 import detect_indent from 'detect-indent'
+import ora from 'ora'
+import semver from 'semver'
 import { flatten } from '@ctx-core/array'
 import { queue_ } from '@ctx-core/queue'
+import { exec } from './exec.js'
 import type { monorepo_thread_opts_T } from './monorepo_thread_opts_T.js'
+import { package_name_h_project_ } from './package_name_h_project_.js'
+import type { project_T } from './project_T.js'
 import { projects_ } from './projects_.js'
 import { readFile } from './readFile.js'
-import { writeFile } from './writeFile.js'
-import { exec } from './exec.js'
-import type { project_T } from './project_T.js'
-import { package_name_h_project_ } from './package_name_h_project_.js'
 import { stdout_h_package_name_ } from './stdout_h_package_name_.js'
+import { writeFile } from './writeFile.js'
 const { valid, coerce, compare } = semver
 export async function monorepo_npm_check_updates(opts:monorepo_thread_opts_T = {}) {
 	const package_name_h_latest_version_promise = {} as Record<string, Promise<string>>

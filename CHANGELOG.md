@@ -1,5 +1,35 @@
 # @ctx-core/monorepo
 
+## 18.1.4
+
+### Patch Changes
+
+- @swc/cli: ^0.1.51 -> ^0.1.52
+- @swc/core: ^1.2.111 -> ^1.2.113
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/package@9.1.4
+  - @ctx-core/ctx-core-package-tools@8.0.80
+  - @ctx-core/array@23.0.27
+  - @ctx-core/cli-args@11.0.4
+  - @ctx-core/function@20.2.7
+  - @ctx-core/queue@6.1.3
+
+## 18.1.3
+
+### Patch Changes
+
+- @swc/core: ^1.2.110 -> ^1.2.111
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/package@9.1.3
+  - @ctx-core/ctx-core-package-tools@8.0.79
+  - @ctx-core/array@23.0.26
+  - @ctx-core/cli-args@11.0.3
+  - @ctx-core/function@20.2.6
+  - @ctx-core/queue@6.1.2
+
 ## 18.1.2
 
 ### Patch Changes

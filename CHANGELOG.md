@@ -1,5 +1,17 @@
 # @ctx-core/monorepo
 
+## 18.1.6
+
+### Patch Changes
+
+- @swc/core: ^1.2.116 -> ^1.2.117
+- Updated dependencies
+  - @ctx-core/array@23.0.29
+  - @ctx-core/cli-args@11.0.6
+  - @ctx-core/function@20.2.9
+  - @ctx-core/package@9.1.6
+  - @ctx-core/queue@6.1.5
+
 ## 18.1.5
 
 ### Patch Changes

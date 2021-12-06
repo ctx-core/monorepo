@@ -63,7 +63,7 @@
 		"@ctx-core/array": "workspace:^23.0.30",
 		"@ctx-core/cli-args": "workspace:^11.0.7",
 		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.81",
-		"@ctx-core/function": "workspace:^20.2.10",
+		"@ctx-core/function": "workspace:^20.2.11",
 		"@ctx-core/package": "workspace:^9.1.7",
 		"@ctx-core/queue": "workspace:^6.1.6",
 		"detect-indent": "^7.0.0",

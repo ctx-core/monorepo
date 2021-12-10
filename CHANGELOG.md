@@ -1,5 +1,16 @@
 # @ctx-core/monorepo
 
+## 18.1.12
+
+### Patch Changes
+
+- package.json: - module
+- Updated dependencies
+  - @ctx-core/array@23.0.33
+  - @ctx-core/cli-args@11.0.11
+  - @ctx-core/package@9.1.11
+  - @ctx-core/queue@6.1.8
+
 ## 18.1.11
 
 ### Patch Changes

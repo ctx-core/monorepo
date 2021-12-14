@@ -58,7 +58,7 @@ if [ "$VERSION" = "$LATEST" ]; then
 	exit 0
 fi
 if [ -z $DRY ]; then
-	pnpm publish --tag latest
+	pnpm publish --tag latest --access public
 	if [ $? -ne 0 ]; then
 		not_published 'Publish failed'
 		exit 1

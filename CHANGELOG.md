@@ -1,5 +1,18 @@
 # @ctx-core/monorepo
 
+## 18.1.17
+
+### Patch Changes
+
+- \*.d.ts export
+- Updated dependencies
+  - @ctx-core/array@23.0.37
+  - @ctx-core/cli-args@11.0.15
+  - @ctx-core/function@20.2.16
+  - @ctx-core/package@9.1.16
+  - @ctx-core/queue@6.1.12
+  - @ctx-core/ctx-core-package-tools@8.0.91
+
 ## 18.1.16
 
 ### Patch Changes

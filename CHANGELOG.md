@@ -1,5 +1,19 @@
 # @ctx-core/monorepo
 
+## 18.1.14
+
+### Patch Changes
+
+- package.json: svelte: ./dist/index.js
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/ctx-core-package-tools@8.0.88
+  - @ctx-core/array@23.0.34
+  - @ctx-core/cli-args@11.0.12
+  - @ctx-core/function@20.2.13
+  - @ctx-core/package@9.1.13
+  - @ctx-core/queue@6.1.9
+
 ## 18.1.13
 
 ### Patch Changes

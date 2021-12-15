@@ -1,5 +1,18 @@
 # @ctx-core/monorepo
 
+## 18.1.16
+
+### Patch Changes
+
+- fix: tsconfig.json: "rootDir": "."
+- Updated dependencies
+  - @ctx-core/array@23.0.36
+  - @ctx-core/cli-args@11.0.14
+  - @ctx-core/function@20.2.15
+  - @ctx-core/package@9.1.15
+  - @ctx-core/queue@6.1.11
+  - @ctx-core/ctx-core-package-tools@8.0.90
+
 ## 18.1.15
 
 ### Patch Changes

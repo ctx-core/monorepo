@@ -1,5 +1,18 @@
 # @ctx-core/monorepo
 
+## 18.1.21
+
+### Patch Changes
+
+- fix: error TS6059: \* is not under 'rootDir': package.json: types: ./dist/index.d.ts
+- Updated dependencies
+  - @ctx-core/array@23.0.41
+  - @ctx-core/cli-args@11.0.19
+  - @ctx-core/function@20.2.20
+  - @ctx-core/package@9.1.20
+  - @ctx-core/queue@6.1.16
+  - @ctx-core/ctx-core-package-tools@8.0.95
+
 ## 18.1.20
 
 ### Patch Changes

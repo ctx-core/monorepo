@@ -1,5 +1,18 @@
 # @ctx-core/monorepo
 
+## 18.1.19
+
+### Patch Changes
+
+- package.json: "types": "./src/index.ts": better editing experience
+- Updated dependencies
+  - @ctx-core/array@23.0.39
+  - @ctx-core/cli-args@11.0.17
+  - @ctx-core/function@20.2.18
+  - @ctx-core/package@9.1.18
+  - @ctx-core/queue@6.1.14
+  - @ctx-core/ctx-core-package-tools@8.0.93
+
 ## 18.1.18
 
 ### Patch Changes

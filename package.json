@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "18.1.17",
+	"version": "18.1.18",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -18,10 +18,10 @@
 	"license": "Apache-2.0",
 	"author": "Brian Takita",
 	"type": "module",
+	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
-			"import": "./dist/index.js",
-			"types": "./dist/index.d.ts"
+			"import": "./dist/index.js"
 		},
 		"./package.json": "./package.json"
 	},
@@ -51,20 +51,21 @@
 	},
 	"scripts": {
 		"build": "npm run compile",
-		"clean": "rimraf dist",
+		"clean": "rimraf dist && npm run clean_tsbuildinfo",
+		"clean_tsbuildinfo": "rm -f tsconfig.tsbuildinfo && rm -f dist/**/*.d.ts",
 		"compile": "npm run compile_source && npm run compile_declaration",
 		"compile_source": "swc src --out-dir dist --copy-files --source-maps --config-file .swcrc",
-		"compile_declaration": "tsc src/index.ts --declaration --emitDeclarationOnly --declarationDir dist",
+		"compile_declaration": "npm run clean_tsbuildinfo && tsc --declaration --emitDeclarationOnly --declarationDir dist",
 		"exec": "$@",
 		"prepublishOnly": "npm run clean && npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/array": "workspace:^23.0.37",
-		"@ctx-core/cli-args": "workspace:^11.0.15",
-		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.91",
-		"@ctx-core/function": "workspace:^20.2.16",
-		"@ctx-core/package": "workspace:^9.1.16",
-		"@ctx-core/queue": "workspace:^6.1.12",
+		"@ctx-core/array": "workspace:^23.0.38",
+		"@ctx-core/cli-args": "workspace:^11.0.16",
+		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.92",
+		"@ctx-core/function": "workspace:^20.2.17",
+		"@ctx-core/package": "workspace:^9.1.17",
+		"@ctx-core/queue": "workspace:^6.1.13",
 		"detect-indent": "^7.0.0",
 		"globby": "^12.0.2",
 		"ora": "6.0.1",

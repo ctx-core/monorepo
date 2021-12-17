@@ -1,5 +1,18 @@
 # @ctx-core/monorepo
 
+## 18.1.20
+
+### Patch Changes
+
+- tsconfig.json: "target": "ES2021"
+- Updated dependencies
+  - @ctx-core/array@23.0.40
+  - @ctx-core/cli-args@11.0.18
+  - @ctx-core/function@20.2.19
+  - @ctx-core/package@9.1.19
+  - @ctx-core/queue@6.1.15
+  - @ctx-core/ctx-core-package-tools@8.0.94
+
 ## 18.1.19
 
 ### Patch Changes

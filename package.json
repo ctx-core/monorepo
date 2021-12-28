@@ -60,7 +60,7 @@
 		"prepublishOnly": "npm run clean && npm run build"
 	},
 	"dependencies": {
-		"@ctx-core/array": "workspace:^23.0.41",
+		"@ctx-core/array": "workspace:^23.1.0",
 		"@ctx-core/cli-args": "workspace:^11.0.19",
 		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.99",
 		"@ctx-core/function": "workspace:^20.2.20",

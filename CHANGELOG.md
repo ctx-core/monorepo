@@ -1,5 +1,16 @@
 # @ctx-core/monorepo
 
+## 18.1.23
+
+### Patch Changes
+
+- .js + .d.ts instead of .ts
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/function@20.2.21
+  - @ctx-core/package@9.1.21
+  - @ctx-core/queue@6.1.17
+
 ## 18.1.22
 
 ### Patch Changes

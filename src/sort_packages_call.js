@@ -1,18 +1,17 @@
 import { sleep } from '@ctx-core/function'
 import { queue_ } from '@ctx-core/queue'
-import { pkg_r_T, pnpm_list_package_T, sorted_pkg_o_a_ } from './sorted_pkg_o_a_.js'
-export async function sort_packages_call(
-	fn:(pkg:pnpm_list_package_T)=>Promise<void>, opts:sort_packages_call_opts_T = {}
-) {
-	const completed_pkg_set = new Set<pnpm_list_package_T>()
+import { sorted_pkg_o_a_ } from './sorted_pkg_o_a_.js'
+/** @type {import('./sort_packages_call.d.ts').sort_packages_call} */
+export const sort_packages_call = async (fn, opts = {})=>{
+	const completed_pkg_set = new Set()
 	const pkg_o_a = await sorted_pkg_o_a_()
 	const queue = queue_(8)
-	for (const pkg_o of pkg_o_a) {
-		queue.add(()=>process_pkg_o(pkg_o))
+	for (const pkg_o1 of pkg_o_a) {
+		queue.add(()=>process_pkg_o(pkg_o1)
+		)
 	}
 	await queue.close()
-
-	async function process_pkg_o(pkg_o:pkg_r_T) {
+	async function process_pkg_o(pkg_o) {
 		const { pkg, dependency_pkg_a } = pkg_o
 		for (const dependency_pkg of dependency_pkg_a) {
 			if (!completed_pkg_set.has(dependency_pkg)) {
@@ -29,7 +28,4 @@ export async function sort_packages_call(
 		await fn(pkg)
 		completed_pkg_set.add(pkg)
 	}
-}
-export interface sort_packages_call_opts_T {
-	retry_delay?: number,
 }

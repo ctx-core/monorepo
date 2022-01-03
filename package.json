@@ -61,10 +61,10 @@
 		"test-unit-coverage": "c8 pnpm test-unit"
 	},
 	"dependencies": {
-		"@ctx-core/array": "workspace:^23.1.0",
-		"@ctx-core/cli-args": "workspace:^11.0.19",
+		"@ctx-core/array": "workspace:^23.1.1",
+		"@ctx-core/cli-args": "workspace:^11.0.20",
 		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.100",
-		"@ctx-core/function": "workspace:^20.2.21",
+		"@ctx-core/function": "workspace:^20.2.22",
 		"@ctx-core/package": "workspace:^9.1.21",
 		"@ctx-core/queue": "workspace:^6.1.17",
 		"@types/node": "^17.0.6",

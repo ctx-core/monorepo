@@ -1,5 +1,21 @@
 # @ctx-core/monorepo
 
+## 18.1.28
+
+### Patch Changes
+
+- uvu: ^0.5.2 -> ^0.5.3
+- @types/node: ^17.0.7 -> ^17.0.8
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/array@23.1.3
+  - @ctx-core/cli-args@11.0.22
+  - @ctx-core/function@20.2.24
+  - @ctx-core/package@9.1.25
+  - @ctx-core/queue@6.1.19
+  - @ctx-core/ctx-core-package-tools@8.0.103
+
 ## 18.1.27
 
 ### Patch Changes

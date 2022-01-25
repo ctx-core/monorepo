@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 18.1.34
+
+### Patch Changes
+
+- globby: ^13.0.0 -> ^13.1.0
+
 ## 18.1.33
 
 ### Patch Changes

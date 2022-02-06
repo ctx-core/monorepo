@@ -60,12 +60,12 @@
 		"test-unit-coverage": "c8 pnpm test-unit"
 	},
 	"dependencies": {
-		"@ctx-core/array": "workspace:^24.0.1",
-		"@ctx-core/cli-args": "workspace:^11.0.24",
-		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.105",
-		"@ctx-core/function": "workspace:^20.4.0",
-		"@ctx-core/package": "workspace:^9.1.26",
-		"@ctx-core/queue": "workspace:^6.1.20",
+		"@ctx-core/array": "^24.0.1",
+		"@ctx-core/cli-args": "^11.0.24",
+		"@ctx-core/ctx-core-package-tools": "^8.0.105",
+		"@ctx-core/function": "^20.4.0",
+		"@ctx-core/package": "^9.1.26",
+		"@ctx-core/queue": "^6.1.20",
 		"@types/node": "^17.0.15",
 		"detect-indent": "^7.0.0",
 		"globby": "^13.1.1",

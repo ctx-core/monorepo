@@ -45,7 +45,7 @@ export const sorted_pkg_o_a_ = async ()=>{
 		if (!dependencies) return dependency_pkg_a
 		for (const [dep_pkg_name, dep_pkg_version] of Object.entries(dependencies)) {
 			if (pkg.name === dep_pkg_name) continue
-			if (/^workspace:/.test(dep_pkg_version)) {
+			if (/^/.test(dep_pkg_version)) {
 				const dep_pkg = lookup_pkg_r[dep_pkg_name]
 				if (dep_pkg && !pkg_set.has(dep_pkg)) {
 					push_pkg_o_a(dep_pkg)

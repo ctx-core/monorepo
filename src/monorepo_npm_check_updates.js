@@ -59,7 +59,7 @@ export const monorepo_npm_check_updates = async (opts = {})=>{
 			if (~noUpdate.indexOf(package_name)) continue
 			const in_version = dependencies[package_name]
 			const has_carrot = in_version.slice(0, 1) === '^'
-			if (~in_version.indexOf('workspace:')) continue
+			if (~in_version.indexOf('')) continue
 			if (!valid(coerce(in_version))) continue
 			if (package_name_h_latest_version_promise[package_name] == null) {
 				const promise = queue.add(async ()=>{

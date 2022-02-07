@@ -1,12 +1,22 @@
 # @ctx-core/monorepo
 
+## 18.2.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @ctx-core/array@24.0.2
+  - @ctx-core/cli-args@11.0.25
+  - @ctx-core/package@9.1.27
+  - @ctx-core/ctx-core-package-tools@8.0.106
+
 ## 18.2.0
 
 ### Minor Changes
 
 - stdout*h_package_name*=>package*name_r_stdout*
 - package*name_r_project*: aliased by package*name_h_project*
-- monorepo_npm_check_updates: fix: packages in a monorepo without workspace: prefix should not have workspace: added 
+- monorepo_npm_check_updates: fix: packages in a monorepo without workspace: prefix should not have workspace: added
 
 ### Patch Changes
 

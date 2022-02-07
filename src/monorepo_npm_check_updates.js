@@ -75,7 +75,7 @@ export const monorepo_npm_check_updates = async (opts = {})=>{
 		const update_a = []
 		for (const [package_name, in_version] of entries_gen_(dependencies)) {
 			if (~noUpdate.indexOf(package_name)) continue
-			const has_workspace = in_version.indexOf('workspace:') === 0
+			const has_workspace = in_version.indexOf('') === 0
 			const has_carrot = in_version.slice(0, 1) === '^'
 			if (in_version === '') continue
 			if (!valid(coerce(in_version))) continue
@@ -100,7 +100,7 @@ export const monorepo_npm_check_updates = async (opts = {})=>{
 				&& compare(
 					coerce(latest_stripped_version) || '', coerce(in_version) || ''
 				) > 0
-				&& (has_workspace || !~latest_stripped_version.indexOf('workspace:'))
+				&& (has_workspace || !~latest_stripped_version.indexOf(''))
 			) {
 				const latest_version = `${has_carrot ? '^' : ''}${latest_stripped_version}`
 				push_update_a(update_a, package_name, in_version, latest_version)

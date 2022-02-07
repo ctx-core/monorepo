@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 18.2.2
+
+### Patch Changes
+
+- fix: update_dependencies: if (in_version === '') continue
+
 ## 18.2.1
 
 ### Patch Changes

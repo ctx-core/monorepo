@@ -1,5 +1,20 @@
 # @ctx-core/monorepo
 
+## 18.2.0
+
+### Minor Changes
+
+- stdout*h_package_name*=>package*name_r_stdout*
+- package*name_r_project*: aliased by package*name_h_project*
+- monorepo_npm_check_updates: fix: packages in a monorepo without workspace: prefix should not have workspace: added 
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/queue@6.2.0
+  - @ctx-core/object@22.1.0
+
 ## 18.1.34
 
 ### Patch Changes

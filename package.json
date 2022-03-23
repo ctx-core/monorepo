@@ -64,7 +64,7 @@
 		"@ctx-core/cli-args": "^11.0.26",
 		"@ctx-core/ctx-core-package-tools": "^8.0.106",
 		"@ctx-core/function": "^20.6.0",
-		"@ctx-core/object": "*",
+		"@ctx-core/object": "^22.1.2",
 		"@ctx-core/package": "^9.1.27",
 		"@ctx-core/queue": "^7.1.0",
 		"@types/node": "^17.0.23",

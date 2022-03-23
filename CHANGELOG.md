@@ -1,5 +1,18 @@
 # @ctx-core/monorepo
 
+## 18.2.5
+
+### Patch Changes
+
+- update dependencies
+
+## 18.2.4
+
+### Patch Changes
+
+- Updated dependencies
+  - @ctx-core/queue@7.0.0
+
 ## 18.2.3
 
 ### Patch Changes

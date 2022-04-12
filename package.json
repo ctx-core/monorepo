@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "18.2.8",
+	"version": "18.2.9",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -58,13 +58,13 @@
 		"test-unit-coverage": "c8 pnpm test-unit"
 	},
 	"dependencies": {
-		"@ctx-core/array": "workspace:*",
-		"@ctx-core/cli-args": "workspace:^11.0.28",
-		"@ctx-core/ctx-core-package-tools": "workspace:^8.0.107",
-		"@ctx-core/function": "workspace:^20.6.1",
-		"@ctx-core/object": "workspace:^22.1.4",
-		"@ctx-core/package": "workspace:^9.1.29",
-		"@ctx-core/queue": "workspace:^7.1.1",
+		"@ctx-core/array": "^26.1.4",
+		"@ctx-core/cli-args": "^11.0.29",
+		"@ctx-core/ctx-core-package-tools": "^8.0.108",
+		"@ctx-core/function": "^20.6.1",
+		"@ctx-core/object": "^22.1.5",
+		"@ctx-core/package": "^9.1.30",
+		"@ctx-core/queue": "^7.1.1",
 		"@types/node": "^17.0.23",
 		"detect-indent": "^7.0.0",
 		"globby": "^13.1.1",

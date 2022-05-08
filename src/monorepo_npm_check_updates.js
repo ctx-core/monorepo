@@ -18,6 +18,7 @@ export const monorepo_npm_check_updates = async (opts = {})=>{
 	const package_name_r_already_warned = {}
 	/** @type {queue_T<string>} */
 	const queue = queue_(opts.threads || 20)
+	const noUpdate_warn_a = []
 	const projects = await projects_()
 	const package_name_r_project = package_name_r_project_(projects)
 	let current_count = 0
@@ -31,6 +32,9 @@ export const monorepo_npm_check_updates = async (opts = {})=>{
 	const spinner = ora(ora_message_()).start()
 	const stdout_a = await Promise.all(stdout_a_async_a)
 	spinner.stop()
+	for (const noUpdate_warn of noUpdate_warn_a) {
+		console.warn(noUpdate_warn)
+	}
 	return package_name_r_stdout_(package_name_a, stdout_a)
 	/**
 	 * @param {string}location
@@ -74,7 +78,6 @@ export const monorepo_npm_check_updates = async (opts = {})=>{
 		/** @type {string[]} */
 		const update_a = []
 		for (const [package_name, in_version] of entries_gen_(dependencies)) {
-			if (~noUpdate.indexOf(package_name)) continue
 			const has_workspace = in_version.indexOf('') === 0
 			const has_carrot = in_version.slice(0, 1) === '^'
 			if (in_version === '') continue
@@ -103,8 +106,12 @@ export const monorepo_npm_check_updates = async (opts = {})=>{
 				&& (has_workspace || !~latest_stripped_version.indexOf(''))
 			) {
 				const latest_version = `${has_carrot ? '^' : ''}${latest_stripped_version}`
-				push_update_a(update_a, package_name, in_version, latest_version)
-				dependencies[package_name] = latest_version
+				if (~noUpdate.indexOf(package_name)) {
+					noUpdate_warn_a.push(`noUpdate: ${package_name}: ${latest_version}`)
+				} else {
+					push_update_a(update_a, package_name, in_version, latest_version)
+					dependencies[package_name] = latest_version
+				}
 			}
 		}
 		return update_a

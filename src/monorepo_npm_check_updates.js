@@ -18,7 +18,7 @@ export const monorepo_npm_check_updates = async (opts = {})=>{
 	const package_name_r_already_warned = {}
 	/** @type {queue_T<string>} */
 	const queue = queue_(opts.threads || 20)
-	const noUpdate_warn_a = []
+	const warn_msg_a = []
 	const projects = await projects_()
 	const package_name_r_project = package_name_r_project_(projects)
 	let current_count = 0
@@ -32,8 +32,8 @@ export const monorepo_npm_check_updates = async (opts = {})=>{
 	const spinner = ora(ora_message_()).start()
 	const stdout_a = await Promise.all(stdout_a_async_a)
 	spinner.stop()
-	for (const noUpdate_warn of noUpdate_warn_a) {
-		console.warn(noUpdate_warn)
+	for (const warn_msg of warn_msg_a) {
+		console.warn(warn_msg)
 	}
 	return package_name_r_stdout_(package_name_a, stdout_a)
 	/**
@@ -96,7 +96,7 @@ export const monorepo_npm_check_updates = async (opts = {})=>{
 			const latest_stripped_version = await package_name_r_latest_version_promise[package_name]
 			if (!latest_stripped_version && !package_name_r_already_warned[package_name]) {
 				package_name_r_already_warned[package_name] = true
-				console.warn(`WARN: Unable to parse ${package_name} from npm registry`)
+				warn_msg_a.push(`WARN: Unable to parse ${package_name} from npm registry`)
 			}
 			if (
 				latest_stripped_version
@@ -107,7 +107,7 @@ export const monorepo_npm_check_updates = async (opts = {})=>{
 			) {
 				const latest_version = `${has_carrot ? '^' : ''}${latest_stripped_version}`
 				if (~noUpdate.indexOf(package_name)) {
-					noUpdate_warn_a.push(`noUpdate: ${package_name}: ${latest_version}`)
+					warn_msg_a.push(`noUpdate: ${package_name}: ${latest_version}`)
 				} else {
 					push_update_a(update_a, package_name, in_version, latest_version)
 					dependencies[package_name] = latest_version

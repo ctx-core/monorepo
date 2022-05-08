@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 18.3.1
+
+### Patch Changes
+
+- monorepo_npm_check_updates: fix: WARN: Unable to parse \${package_name} from npm registry: warn at the end of the fn call
+
 ## 18.3.0
 
 ### Minor Changes

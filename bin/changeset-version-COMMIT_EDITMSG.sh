@@ -1,4 +1,4 @@
 #!/bin/sh
-pnpx changeset version \
+pnpm changeset version \
 	&& package-refactor \
 	&& CHANGELOG-diff-COMMIT_EDITMSG

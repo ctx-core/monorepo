@@ -58,7 +58,7 @@
 		"test-unit-coverage": "c8 pnpm test-unit"
 	},
 	"dependencies": {
-		"@ctx-core/array": "^26.5.1",
+		"@ctx-core/array": "^26.5.2",
 		"@ctx-core/cli-args": "^11.0.39",
 		"@ctx-core/ctx-core-package-tools": "^8.0.117",
 		"@ctx-core/function": "^20.8.0",

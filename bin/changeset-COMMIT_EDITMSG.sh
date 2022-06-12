@@ -23,13 +23,14 @@ while IFS= read -r CHANGESET_MD_PATH; do
 	# sed script; See https://stackoverflow.com/questions/7359527/removing-trailing-starting-newlines-with-sed-awk-tr-and-friends
 	PKGS="$(echo "$FRONTMATTER" | awk '{print $1}' | tr -d '":')"
 	while IFS= read -r PKG; do
-		DIR="$(echo "$LIST" | grep "$PKG@" | awk '{print $2}')"
-		if [[ ! -f "$DIR/COMMIT_EDITMSG" || -z "$(grep -F "$MSG" "$DIR/COMMIT_EDITMSG")" ]]; then
-			(cd "$DIR" && echo "- $MSG" >>COMMIT_EDITMSG)
-		else
-			if [ -n "$FORCE" ]; then
-				(cd "$DIR" && echo "- $MSG" >COMMIT_EDITMSG)
+		for DIR in $(echo "$LIST" | grep "$PKG@" | awk '{print $2}'); do
+			if [[ ! -f "$DIR/COMMIT_EDITMSG" || -z "$(grep -F "$MSG" "$DIR/COMMIT_EDITMSG")" ]]; then
+				(cd "$DIR" && echo "- $MSG" >>COMMIT_EDITMSG)
+			else
+				if [ -n "$FORCE" ]; then
+					(cd "$DIR" && echo "- $MSG" >COMMIT_EDITMSG)
+				fi
 			fi
-		fi
+		done
 	done <<<"$PKGS"
 done <<<"$CHANGESETS"

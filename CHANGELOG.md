@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 18.3.14
+
+### Patch Changes
+
+- npm-check-updates--monorepo: fix: + process.exit()
+
 ## 18.3.13
 
 ### Patch Changes

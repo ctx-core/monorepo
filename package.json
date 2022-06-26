@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "18.3.12",
+	"version": "18.3.13",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -68,7 +68,7 @@
 		"@types/node": "^18.0.0",
 		"detect-indent": "^7.0.0",
 		"globby": "^13.1.2",
-		"ora": "6.1.0",
+		"ora": "6.1.1",
 		"semver": "^7.3.7"
 	},
 	"devDependencies": {

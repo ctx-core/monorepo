@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 18.4.0
+
+### Minor Changes
+
+- .js + .d.ts instead of .ts
+
 ## 18.3.16
 
 ### Patch Changes

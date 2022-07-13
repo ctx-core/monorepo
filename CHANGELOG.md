@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 18.3.16
+
+### Patch Changes
+
+- projects\_,npm-check-updates--monorepo,run_parallel_workspaces: fix: exclude pnpm ' hook' output
+
 ## 18.3.15
 
 ### Patch Changes

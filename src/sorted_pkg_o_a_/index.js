@@ -1,17 +1,20 @@
 import { readFile } from 'fs/promises'
+import { dirname, join } from 'path'
 import { globby } from 'globby'
 import yaml from 'js-yaml'
+import { compact } from '@ctx-core/array'
 /** @type {import('./index.d.ts').sorted_pkg_o_a_} */
 export const sorted_pkg_o_a_ = async ()=>{
 	const file = await readFile('./pnpm-workspace.yaml')
 	const doc = yaml.load(file.toString())
 	const pkg_glob_a = doc['packages']
-	const pkg_path_a = await globby(pkg_glob_a)
-	const pkg_a = await Promise.all(pkg_path_a.map(async (pkg_path)=>{
-		const pkg = JSON.parse((await readFile(`${pkg_path}/package.json`)).toString())
-		pkg.path = pkg_path
+	const pkg_json_glob_a = pkg_glob_a.map($=>join($, 'package.json'))
+	const pkg_json_path_a = await globby(pkg_json_glob_a)
+	const pkg_a = await Promise.all(pkg_json_path_a.map(async $=>{
+		const pkg = JSON.parse(await readFile($).then($=>$.toString()))
+		pkg.path = dirname($)
 		return pkg
-	}))
+	})).then($a=>compact($a))
 	const lookup_pkg_r = pkg_a.reduce((pkg_r, pkg)=>{
 		pkg_r[pkg.name] = pkg
 		return pkg_r

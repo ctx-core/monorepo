@@ -4,9 +4,9 @@ import { sorted_pkg_o_a_ } from '../sorted_pkg_o_a_/index.js'
 /** @type {import('./index.d.ts').sort_packages_call} */
 export const sort_packages_call = async (fn, opts = {})=>{
 	const completed_pkg_set = new Set()
-	const pkg_o_a = await sorted_pkg_o_a_()
+	const sorted_pkg_o_a = await sorted_pkg_o_a_()
 	const queue = queue_(8)
-	for (const pkg_o of pkg_o_a) {
+	for (const pkg_o of sorted_pkg_o_a) {
 		queue.add(()=>process_pkg_o(pkg_o)).then()
 	}
 	await queue.close()
@@ -14,13 +14,11 @@ export const sort_packages_call = async (fn, opts = {})=>{
 		const { pkg, dependency_pkg_a } = pkg_o
 		for (const dependency_pkg of dependency_pkg_a) {
 			if (!completed_pkg_set.has(dependency_pkg)) {
-				queue.add(async ()=>{
-					const retry_delay = opts.retry_delay || 0
-					if (retry_delay) {
-						await sleep(retry_delay)
-					}
-					await process_pkg_o(pkg_o)
-				}).then()
+				const retry_delay = opts.retry_delay || 0
+				if (retry_delay) {
+					await sleep(retry_delay)
+				}
+				await process_pkg_o(pkg_o)
 				return
 			}
 		}

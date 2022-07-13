@@ -1,5 +1,12 @@
 # @ctx-core/monorepo
 
+## 18.4.1
+
+### Patch Changes
+
+- sort-packages-exec: fix: error when directory does not contain package.json
+- sort-packages-exec: fix: error with no given cmd: default cmd to pwd
+
 ## 18.4.0
 
 ### Minor Changes

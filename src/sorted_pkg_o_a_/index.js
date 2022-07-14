@@ -6,7 +6,7 @@ import { compact } from '@ctx-core/array'
 /** @type {import('./index.d.ts').sorted_pkg_o_a_} */
 export const sorted_pkg_o_a_ = async ()=>{
 	const file = await readFile('./pnpm-workspace.yaml')
-	const doc = yaml.load(file.toString())
+	const doc = yaml.load(file.toString(), {})
 	const pkg_glob_a = doc['packages']
 	const pkg_json_glob_a = pkg_glob_a.map($=>join($, 'package.json'))
 	const pkg_json_path_a = await globby(pkg_json_glob_a)

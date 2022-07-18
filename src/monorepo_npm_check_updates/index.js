@@ -84,13 +84,14 @@ export const monorepo_npm_check_updates = async (opts = {})=>{
 			if (!valid(coerce(in_version, {}), {})) continue
 			if (package_name_r_latest_version_promise[package_name] == null) {
 				const promise = queue.add(async ()=>
-					(await exec(`
+					await exec(`
 							npm show ${package_name}@latest | \
 							sed -r "s/\x1B\\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g" | \
 							grep "^latest\:" | \
 							grep \\: | \
 							cut -f2 -d: | \
-							xargs echo`)).stdout.trim())
+							xargs echo`
+					).then($=>$.stdout.trim()))
 				package_name_r_latest_version_promise[package_name] = promise
 			}
 			const latest_stripped_version = await package_name_r_latest_version_promise[package_name]

@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 18.4.6
+
+### Patch Changes
+
+- exec: fix: bundle on browser
+
 ## 18.4.5
 
 ### Patch Changes

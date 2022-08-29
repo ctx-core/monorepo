@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "18.4.9",
+	"version": "18.4.10",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -58,13 +58,13 @@
 		"test-unit-coverage": "c8 pnpm test-unit"
 	},
 	"dependencies": {
-		"@ctx-core/array": "^26.7.6",
-		"@ctx-core/cli-args": "^11.0.47",
+		"@ctx-core/array": "^26.7.7",
+		"@ctx-core/cli-args": "^11.0.48",
 		"@ctx-core/ctx-core-package-tools": "^8.0.120",
-		"@ctx-core/function": "^21.0.0",
-		"@ctx-core/object": "^22.2.6",
-		"@ctx-core/package": "^9.1.42",
-		"@ctx-core/queue": "^7.3.1",
+		"@ctx-core/function": "^21.0.1",
+		"@ctx-core/object": "^22.2.7",
+		"@ctx-core/package": "^9.1.43",
+		"@ctx-core/queue": "^7.3.2",
 		"@types/node": "^18.7.13",
 		"detect-indent": "^7.0.0",
 		"globby": "^13.1.2",
@@ -76,7 +76,7 @@
 		"c8": "^7.12.0",
 		"check-dts": "^0.6.7",
 		"js-yaml": "^4.1.0",
-		"tsx": "^3.8.2",
+		"tsx": "^3.9.0",
 		"typescript": "next",
 		"uvu": "^0.5.6"
 	},

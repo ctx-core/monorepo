@@ -61,7 +61,7 @@
 		"@ctx-core/array": "^26.7.8",
 		"@ctx-core/cli-args": "^11.0.49",
 		"@ctx-core/ctx-core-package-tools": "^8.0.120",
-		"@ctx-core/function": "^21.3.0",
+		"@ctx-core/function": "^21.4.0",
 		"@ctx-core/object": "^22.2.8",
 		"@ctx-core/package": "^9.1.43",
 		"@ctx-core/queue": "^7.3.2",

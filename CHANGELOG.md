@@ -1,5 +1,13 @@
 # @ctx-core/monorepo
 
+## 18.4.13
+
+### Patch Changes
+
+- pnpm-publish--force: fix: false positive
+
+  help: -d
+
 ## 18.4.12
 
 ### Patch Changes

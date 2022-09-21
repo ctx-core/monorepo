@@ -1,6 +1,6 @@
 #!/bin/sh
 usage() {
-	echo "Usage: $0 [-s] [-p] [-h]" 1>&2
+	echo "Usage: $0 [-s] [-d] [-h]" 1>&2
 	exit 1
 }
 while getopts "sdh" o; do
@@ -50,7 +50,7 @@ if [ "$PRIVATE" = 'true' ]; then
 	exit 0
 fi
 VERSION=$(cat package.json | jq -r '.version')
-LATEST=$(npm show "$NAME" | grep latest | awk '{print $2}')
+LATEST=$(npm show "$NAME" | grep 'latest:' | awk '{print $2}')
 if [ "$VERSION" = "$LATEST" ]; then
 	if [ -z $DRY ]; then
 		not_published 'Latest version'

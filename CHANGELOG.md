@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 18.4.16
+
+### Patch Changes
+
+- sorted*pkg_o_a*: fix: const pkg_json_path_a = flatten(Array.from(pkg_json_path_set))
+
 ## 18.4.15
 
 ### Patch Changes

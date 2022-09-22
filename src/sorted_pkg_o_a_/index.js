@@ -2,7 +2,7 @@ import { readFile } from 'fs/promises'
 import { dirname, join } from 'path'
 import glob from 'tiny-glob'
 import yaml from 'js-yaml'
-import { compact } from '@ctx-core/array'
+import { compact, flatten } from '@ctx-core/array'
 /** @typedef {import('./index').pkg_r_T}pkg_r_T */
 /**
  * @returns {Promise<pkg_r_T[]>}
@@ -14,7 +14,7 @@ export async function sorted_pkg_o_a_() {
 	const pkg_glob_a = doc['packages']
 	const pkg_json_glob_a = pkg_glob_a.map($=>join($, 'package.json'))
 	const pkg_json_path_set = new Set(compact(await Promise.all(pkg_json_glob_a.map($=>glob($)))))
-	const pkg_json_path_a = pkg_json_path_set.entries()
+	const pkg_json_path_a = flatten(Array.from(pkg_json_path_set))
 	const pkg_a = await Promise.all(pkg_json_path_a.map(async $=>{
 		const pkg = JSON.parse(await readFile($).then($=>$.toString()))
 		pkg.path = dirname($)

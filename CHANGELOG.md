@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 18.4.18
+
+### Patch Changes
+
+- fix: js-yaml dependency
+
 ## 18.4.17
 
 ### Patch Changes

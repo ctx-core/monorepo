@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "18.4.22",
+	"version": "18.4.23",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -60,10 +60,10 @@
 	"dependencies": {
 		"@ctx-core/array": "^26.8.2",
 		"@ctx-core/cli-args": "^11.0.51",
-		"@ctx-core/ctx-core-package-tools": "^8.0.122",
+		"@ctx-core/ctx-core-package-tools": "^8.0.123",
 		"@ctx-core/function": "^21.6.0",
 		"@ctx-core/object": "^22.6.0",
-		"@ctx-core/package": "^9.1.47",
+		"@ctx-core/package": "^9.1.48",
 		"@ctx-core/queue": "^7.3.2",
 		"@types/node": "^18.11.18",
 		"detect-indent": "^7.0.1",

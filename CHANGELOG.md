@@ -1,5 +1,13 @@
 # @ctx-core/monorepo
 
+## 18.4.47
+
+### Patch Changes
+
+- @ctx-core/queue: ^7.3.3 -> ^7.3.4
+- @ctx-core/package: ^9.1.61 -> ^9.1.62
+- @ctx-core/ctx-core-package-tools: ^8.0.134 -> ^8.0.135
+
 ## 18.4.46
 
 ### Patch Changes

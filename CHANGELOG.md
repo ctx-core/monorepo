@@ -1,5 +1,19 @@
 # @ctx-core/monorepo
 
+## 18.4.45
+
+### Patch Changes
+
+- tsconfig.json: - importsNotUsedAsValues
+- Updated dependencies
+  - @ctx-core/array@26.8.13
+  - @ctx-core/cli-args@11.0.62
+  - @ctx-core/function@21.6.1
+  - @ctx-core/object@24.1.1
+  - @ctx-core/package@9.1.61
+  - @ctx-core/queue@7.3.3
+  - @ctx-core/ctx-core-package-tools@8.0.134
+
 ## 18.4.44
 
 ### Patch Changes

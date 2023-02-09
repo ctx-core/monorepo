@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 19.0.5
+
+### Patch Changes
+
+- npm-check-updates--monorepo: exit code fixes
+
 ## 19.0.4
 
 ### Patch Changes

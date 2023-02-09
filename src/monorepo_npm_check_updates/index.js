@@ -48,9 +48,9 @@ export const monorepo_npm_check_updates = async (opts = {})=>{
 		const { dependencies, peerDependencies, devDependencies, noUpdate } = pkg
 		/** @type {string[][]} */
 		const update_aa = []
-		update_aa.push(await update_dependencies(dependencies, noUpdate))
-		update_aa.push(await update_dependencies(devDependencies, noUpdate))
-		update_aa.push(await update_dependencies(peerDependencies, noUpdate))
+		update_aa.push(await dependencies__update(dependencies, noUpdate))
+		update_aa.push(await dependencies__update(devDependencies, noUpdate))
+		update_aa.push(await dependencies__update(peerDependencies, noUpdate))
 		const update_a = update_aa.flat()
 		if (update_a.length) {
 			const indent = detect_indent(pkg_json).indent || '\t'
@@ -73,7 +73,7 @@ export const monorepo_npm_check_updates = async (opts = {})=>{
 	 * @param {string[]}noUpdate
 	 * @return {Promise<string[]>}
 	 */
-	async function update_dependencies(dependencies, noUpdate = []) {
+	async function dependencies__update(dependencies, noUpdate = []) {
 		noUpdate = noUpdate || []
 		/** @type {string[]} */
 		const update_a = []
@@ -85,12 +85,12 @@ export const monorepo_npm_check_updates = async (opts = {})=>{
 			if (package_name_r_latest_version_promise[package_name] == null) {
 				const promise = queue.add(async ()=>
 					await exec(`
-							npm show ${package_name}@latest | \
-							sed -r "s/\x1B\\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g" | \
-							grep "^latest\:" | \
-							grep \\: | \
-							cut -f2 -d: | \
-							xargs echo`
+						npm show ${package_name}@latest | \
+						sed -r "s/\x1B\\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g" | \
+						grep "^latest\:" | \
+						grep \\: | \
+						cut -f2 -d: | \
+						xargs echo`
 					).then($=>$.stdout.trim()))
 				package_name_r_latest_version_promise[package_name] = promise
 			}

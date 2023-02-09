@@ -1,4 +1,4 @@
-/** @type {import('./index.d.ts').package_name_r_project_} */
+/** @type {typeof import('./index.d.ts').package_name_r_project_} */
 export const package_name_r_project_ = projects=>{
 	const $ret = {}
 	for (const project of projects) {

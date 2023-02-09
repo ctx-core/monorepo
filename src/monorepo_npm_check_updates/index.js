@@ -10,7 +10,7 @@ import { readFile } from '../readFile/index.js'
 import { package_name_r_stdout_ } from '../package_name_r_stdout_/index.js'
 import { writeFile } from '../writeFile/index.js'
 const { valid, coerce, compare } = semver
-/** @type {import('./index.d.ts').monorepo_npm_check_updates} */
+/** @type {typeof import('./index.d.ts').monorepo_npm_check_updates} */
 export const monorepo_npm_check_updates = async (opts = {})=>{
 	/** @type {Record<string, Promise<string>>} */
 	const package_name_r_latest_version_promise = {}

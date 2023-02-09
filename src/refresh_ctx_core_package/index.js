@@ -3,7 +3,7 @@ import { dirname } from 'path'
 import { each } from '@ctx-core/array'
 import { map_package_json_path_glob } from '../map_package_json_path_glob/index.js'
 const { keys } = Object
-/** @type {import('./index.d.ts').refresh_ctx_core_package} */
+/** @type {typeof import('./index.d.ts').refresh_ctx_core_package} */
 export const refresh_ctx_core_package = async ()=>{
 	await map_package_json_path_glob(`${dirname(new URL(import.meta.url).pathname)}/../../../**/package.json`, async (package_json)=>{
 		const txt = await readFile(package_json).toString()

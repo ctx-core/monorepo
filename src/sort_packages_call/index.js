@@ -1,7 +1,7 @@
 import { sleep } from '@ctx-core/function'
 import { queue_ } from '@ctx-core/queue'
 import { sorted_pkg_o_a_ } from '../sorted_pkg_o_a_/index.js'
-/** @type {import('./index.d.ts').sort_packages_call} */
+/** @type {typeof import('./index.d.ts').sort_packages_call} */
 export const sort_packages_call = async (fn, opts = {})=>{
 	const completed_pkg_set = new Set()
 	const sorted_pkg_o_a = await sorted_pkg_o_a_()

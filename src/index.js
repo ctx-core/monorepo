@@ -1,4 +1,3 @@
-export * from './exec/index.js'
 export * from './map_package_json_path_glob/index.js'
 export * from './monorepo_npm_check_updates/index.js'
 export * from './monorepo_npm_check_updates_cli/index.js'

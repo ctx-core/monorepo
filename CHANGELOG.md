@@ -1,5 +1,20 @@
 # @ctx-core/monorepo
 
+## 19.0.2
+
+### Patch Changes
+
+- version bump
+
+## 19.0.1
+
+### Patch Changes
+
+- fix: jsdoc types
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/child_process@7.2.0
+
 ## 19.0.0
 
 ### Major Changes

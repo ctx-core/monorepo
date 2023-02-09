@@ -1,7 +1,7 @@
 import { param_r_ } from '@ctx-core/cli-args'
 import { monorepo_npm_check_updates } from '../monorepo_npm_check_updates/index.js'
 import { entries_gen_ } from '@ctx-core/object'
-/** @type {import('./index.d.ts').monorepo_npm_check_updates_cli} */
+/** @type {typeof import('./index.d.ts').monorepo_npm_check_updates_cli} */
 export const monorepo_npm_check_updates_cli = async ()=>{
 	const param_r = param_r_(process.argv.slice(2), {
 		package_name_a: '-p, --package-name',

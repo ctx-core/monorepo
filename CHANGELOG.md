@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 19.0.0
+
+### Major Changes
+
+- - exec: import { exec } from '@ctx-core/child_process'
+
 ## 18.4.53
 
 ### Patch Changes

@@ -1,4 +1,4 @@
-import { exec } from '../exec/index.js'
+import { exec } from '@ctx-core/child_process'
 /** @type {import('./index.d.ts').projects_} */
 export const projects_ = async ()=>{
 	const raw_projects_str = (await exec(`pnpm list -r --depth -1 | grep -v WARN | sed '/^\\s*$/d' | grep -v ' hook'`)).stdout.trim()

@@ -1,5 +1,5 @@
 import { queue_ } from '@ctx-core/queue'
-import { exec } from '../exec/index.js'
+import { exec } from '@ctx-core/child_process'
 import { projects_ } from '../projects_/index.js'
 import { promise_a_ } from '../promise_a_/index.js'
 import { package_name_r_stdout_ } from '../package_name_r_stdout_/index.js'

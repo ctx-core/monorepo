@@ -66,7 +66,7 @@
 		"@ctx-core/object": "^24.1.4",
 		"@ctx-core/package": "^9.2.1",
 		"@ctx-core/queue": "^7.4.0",
-		"@types/node": "^18.13.0",
+		"@types/node": "^18.14.0",
 		"detect-indent": "^7.0.1",
 		"dir-glob": "^3.0.1",
 		"js-yaml": "^4.1.0",

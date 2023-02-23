@@ -1,5 +1,12 @@
 # @ctx-core/monorepo
 
+## 19.0.31
+
+### Patch Changes
+
+- @ctx-core/package: ^9.2.8 -> ^9.2.9
+- @ctx-core/ctx-core-package-tools: ^8.0.149 -> ^8.0.150
+
 ## 19.0.30
 
 ### Patch Changes

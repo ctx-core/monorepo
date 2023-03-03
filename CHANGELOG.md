@@ -1,5 +1,14 @@
 # @ctx-core/monorepo
 
+## 19.0.45
+
+### Patch Changes
+
+- @ctx-core/package: ^9.2.14 -> ^9.2.15
+- @ctx-core/ctx-core-package-tools: ^8.0.154 -> ^8.0.155
+- Updated dependencies
+  - @ctx-core/child_process@7.2.19
+
 ## 19.0.44
 
 ### Patch Changes

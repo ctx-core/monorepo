@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.0.1
+
+### Patch Changes
+
+- monorepo-npm-check-updates: fix: outfile printed to STDOUT multiple times
+
 ## 20.0.0
 
 ### Major Changes

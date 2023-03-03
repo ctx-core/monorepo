@@ -1,5 +1,15 @@
 # @ctx-core/monorepo
 
+## 20.0.0
+
+### Major Changes
+
+- npm-check-updates--monorepo=>monorepo-npm-check-updates
+
+### Minor Changes
+
+- monorepo-npm-check-updates: -o, --output cli args
+
 ## 19.0.47
 
 ### Patch Changes

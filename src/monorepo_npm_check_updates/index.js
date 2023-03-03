@@ -9,9 +9,16 @@ import { projects_ } from '../projects_/index.js'
 import { readFile } from '../readFile/index.js'
 import { package_name_r_stdout_ } from '../package_name_r_stdout_/index.js'
 import { writeFile } from '../writeFile/index.js'
-const { valid, coerce, compare } = semver
-/** @type {typeof import('./index.d.ts').monorepo_npm_check_updates} */
-export const monorepo_npm_check_updates = async (opts = {})=>{
+const {
+	valid,
+	coerce,
+	compare
+} = semver
+/**
+ * @param {import('../_types').monorepo_thread_opts_T}opts
+ * @returns {Promise<Record<string, string>>}
+ */
+export async function monorepo_npm_check_updates(opts = {}) {
 	/** @type {Record<string, Promise<string>>} */
 	const package_name_r_latest_version_promise = {}
 	/** @type {Record<string, boolean>} */

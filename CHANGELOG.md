@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.0.5
+
+### Patch Changes
+
+- package-manifest-changeset: fix: blank line check
+
 ## 20.0.4
 
 ### Patch Changes

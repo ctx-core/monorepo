@@ -18,7 +18,7 @@ LIST="$(pnpm list -r --depth -1)"
 BIN_DIR="$(dirname $0)"
 echo $DIR
 while read line; do
-	if [ -z "$($line | xargs)" ]; then
+	if [ -z "$(echo "$line" | xargs)" ]; then
 		continue
 	fi
 	PKG="$(echo "$line" | awk '{print $1}')"

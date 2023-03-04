@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.0.3
+
+### Patch Changes
+
+- monorepo-npm-check-updates: -o, --output: fix: print output path after file is written to filesystem
+
 ## 20.0.2
 
 ### Patch Changes

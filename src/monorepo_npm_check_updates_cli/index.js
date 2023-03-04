@@ -37,14 +37,12 @@ export async function monorepo_npm_check_updates_cli() {
 				}
 			}
 		}
-		if (outstream) {
-			console.info(output)
-		}
 	} finally {
 		if (outstream) {
 			outstream.close(()=>process.exit(0))
 			// Ensure that the contents are written to file before ending process
 			await readFile(output)
+			console.info(output)
 		}
 	}
 }

@@ -1,5 +1,12 @@
 # @ctx-core/monorepo
 
+## 20.0.2
+
+### Patch Changes
+
+- monorepo-npm-check-updates: -o, --output: fix: separate update outputs with \n
+- monorepo-npm-check-updates: -o, --output: fix: wait for output file to write to file system before ending process
+
 ## 20.0.1
 
 ### Patch Changes

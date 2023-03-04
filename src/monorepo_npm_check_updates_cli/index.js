@@ -1,6 +1,7 @@
 import { param_r_ } from '@ctx-core/cli-args'
 import { entries_gen_ } from '@ctx-core/object'
 import { createWriteStream } from 'fs'
+import { readFile } from 'fs/promises'
 import { monorepo_npm_check_updates } from '../monorepo_npm_check_updates/index.js'
 /**
  * @returns {Promise<void>}
@@ -29,7 +30,7 @@ export async function monorepo_npm_check_updates_cli() {
 			if (stdout) {
 				for (const stdout_line of stdout.split('\n')) {
 					if (outstream) {
-						outstream.write(`${package_name} ${stdout_line}`)
+						outstream.write(`${package_name} ${stdout_line}\n`)
 					} else {
 						console.info(package_name, stdout_line)
 					}
@@ -41,7 +42,9 @@ export async function monorepo_npm_check_updates_cli() {
 		}
 	} finally {
 		if (outstream) {
-			outstream.close()
+			outstream.close(()=>process.exit(0))
+			// Ensure that the contents are written to file before ending process
+			await readFile(output)
 		}
 	}
 }

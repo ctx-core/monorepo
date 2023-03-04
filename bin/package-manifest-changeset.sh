@@ -18,6 +18,9 @@ LIST="$(pnpm list -r --depth -1)"
 BIN_DIR="$(dirname $0)"
 echo $DIR
 while read line; do
+	if [ -z "$($line | xargs)" ]; then
+		continue
+	fi
 	PKG="$(echo "$line" | awk '{print $1}')"
 	MSG="$(echo "$line" | awk '{$1=""; print $0}' | "$BIN_DIR/surrounding-trim.sh")"
 	DIR="$(echo "$LIST" | grep "$PKG" | awk '{print $2}')"
@@ -26,7 +29,7 @@ while read line; do
 	if [ -f "$CHANGESET_MD_PATH" ]; then
 		FRONTMATTER="$(perl -ne '/^---/ && $i++; !/^---/ && $i < 2 && print' "$CHANGESET_MD_PATH")"
 	fi
-	if [ -z "$(echo "$FRONTMATTER" | grep $PKG)" ]; then
+	if [ -z "$(echo "$FRONTMATTER" | xargs | grep $PKG)" ]; then
 		FRONTMATTER="$(
 			echo "$FRONTMATTER"
 			echo \"$PKG\": $BUMP

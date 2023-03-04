@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.0.4
+
+### Patch Changes
+
+- package-manifest-changeset: fix: skip empty lines
+
 ## 20.0.3
 
 ### Patch Changes

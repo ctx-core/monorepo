@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.0.7
+
+### Patch Changes
+
+- sort-packages-exec: fix: import { exec } from '@ctx-core/child_process'
+
 ## 20.0.6
 
 ### Patch Changes

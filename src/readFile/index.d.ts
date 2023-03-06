@@ -1,2 +1,2 @@
 /// <reference types="node" />
-export type { readFile } from 'fs/promises'
+export { readFile } from 'fs/promises'

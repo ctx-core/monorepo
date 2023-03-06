@@ -1,5 +1,14 @@
 # @ctx-core/monorepo
 
+## 20.0.16
+
+### Patch Changes
+
+- readFile: fix: export { readFile } from 'fs/promises'
+- Updated dependencies
+  - @ctx-core/object@27.1.4
+  - @ctx-core/child_process@7.2.28
+
 ## 20.0.15
 
 ### Patch Changes

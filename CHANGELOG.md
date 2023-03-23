@@ -1,5 +1,13 @@
 # @ctx-core/monorepo
 
+## 20.0.43
+
+### Patch Changes
+
+- @ctx-core/ctx-core-package-tools: ^8.0.168 -> ^8.0.169
+- @ctx-core/package: ^9.2.30 -> ^9.2.31
+- @ctx-core/child_process: ^7.2.43 -> ^7.2.44
+
 ## 20.0.42
 
 ### Patch Changes

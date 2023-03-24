@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.0.44
+
+### Patch Changes
+
+- ora: 6.2.0 -> 6.3.0
+
 ## 20.0.43
 
 ### Patch Changes

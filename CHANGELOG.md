@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.0.68
+
+### Patch Changes
+
+- @ctx-core/child_process: ^7.3.4 -> ^7.3.5
+
 ## 20.0.67
 
 ### Patch Changes

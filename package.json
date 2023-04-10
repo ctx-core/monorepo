@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "20.0.72",
+	"version": "20.0.73",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -64,7 +64,7 @@
 		"@ctx-core/ctx-core-package-tools": "^8.0.175",
 		"@ctx-core/function": "^21.17.0",
 		"@ctx-core/object": "^27.4.4",
-		"@ctx-core/package": "^9.2.40",
+		"@ctx-core/package": "^9.2.41",
 		"@ctx-core/queue": "^7.5.1",
 		"@types/node": "^18.15.11",
 		"detect-indent": "^7.0.1",
@@ -72,7 +72,7 @@
 		"js-yaml": "^4.1.0",
 		"ora": "6.3.0",
 		"path-type": "^5.0.0",
-		"semver": "^7.3.8",
+		"semver": "^7.4.0",
 		"tiny-glob": "^0.2.9"
 	},
 	"devDependencies": {

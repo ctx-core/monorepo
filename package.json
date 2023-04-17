@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "20.0.73",
+	"version": "20.1.0",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -30,9 +30,10 @@
 		"CHANGELOG-diff-COMMIT_EDITMSG": "bin/CHANGELOG-diff-COMMIT_EDITMSG.sh",
 		"ensure.sh": "bin/ensure.sh",
 		"git-commit--submodules": "bin/git-commit--submodules.sh",
+		"monorepo_npm__dependencies__update": "bin/monorepo_npm__dependencies__update/index.sh",
+		"monorepo_npm__version__sync": "bin/monorepo_npm__version__sync/index.sh",
 		"package-manifest-changeset": "bin/package-manifest-changeset.sh",
 		"package-manifest-COMMIT_EDITMSG": "bin/package-manifest-COMMIT_EDITMSG.sh",
-		"monorepo-npm-check-updates": "bin/monorepo-npm-check-updates/index.mjs",
 		"npm-copy--package-bin-config": "bin/npm-copy--package-bin-config.sh",
 		"npm-publish--force": "bin/pnpm-publish--force.sh",
 		"pnpm-publish--force": "bin/pnpm-publish--force.sh",
@@ -59,12 +60,12 @@
 	},
 	"dependencies": {
 		"@ctx-core/array": "^26.12.12",
-		"@ctx-core/child_process": "^7.3.8",
+		"@ctx-core/child_process": "^7.3.9",
 		"@ctx-core/cli-args": "^11.3.1",
 		"@ctx-core/ctx-core-package-tools": "^8.0.175",
 		"@ctx-core/function": "^21.17.0",
 		"@ctx-core/object": "^27.4.4",
-		"@ctx-core/package": "^9.2.41",
+		"@ctx-core/package": "^9.2.42",
 		"@ctx-core/queue": "^7.5.1",
 		"@types/node": "^18.15.11",
 		"detect-indent": "^7.0.1",
@@ -73,13 +74,13 @@
 		"ora": "6.3.0",
 		"path-type": "^5.0.0",
 		"semver": "^7.4.0",
-		"tiny-glob": "^0.2.9"
+		"tiny-glob": "^0.2.9",
+		"tsx": "^3.12.6"
 	},
 	"devDependencies": {
 		"@pnpm/logger": "^5.0.0",
 		"c8": "^7.13.0",
 		"check-dts": "^0.7.1",
-		"tsx": "^3.12.6",
 		"typescript": "next",
 		"uvu": "^0.5.6"
 	},

@@ -1,17 +1,25 @@
 import { param_r_ } from '@ctx-core/cli-args'
 import { run_parallel_workspaces } from '../run_parallel_workspaces/index.js'
 const cmd_a = process.argv.slice(2)
-/** @type {typeof import('./index.d.ts').run_parallel_workspaces_cli} */
+/**
+ * @returns {Promise<void>}
+ */
 export async function run_parallel_workspaces_cli() {
-	const opts = opts_()
-	const workspace_name_stdout = await run_parallel_workspaces(cmd_a, opts)
+	const params = params_()
+	const workspace_name_stdout =
+		await run_parallel_workspaces(
+			cmd_a,
+			params)
 	for (let workspace_name in workspace_name_stdout) {
 		console.info(workspace_name)
 		console.info(workspace_name_stdout[workspace_name])
 	}
 }
-function opts_() {
-	const { threads_a, help } = param_r_(process.argv.slice(2), {
+function params_() {
+	const {
+		threads_a,
+		help
+	} = param_r_(process.argv.slice(2), {
 		threads_a: '-t, --threads',
 		help: '-h, --help'
 	})

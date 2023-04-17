@@ -4,10 +4,10 @@ import semver from 'semver'
 import { entries_gen_, keys } from '@ctx-core/object'
 import { queue_ } from '@ctx-core/queue'
 import { exec } from '@ctx-core/child_process'
-import { package_name_r_project_ } from '../package_name_r_project_/index.js'
-import { projects_ } from '../projects_/index.js'
+import { package_name_R_project_ } from '../package_name_R_project_/index.js'
+import { project_a_ } from '../project_a_/index.js'
 import { readFile } from '../readFile/index.js'
-import { package_name_r_stdout_ } from '../package_name_r_stdout_/index.js'
+import { package_name_R_stdout_ } from '../package_name_R_stdout_/index.js'
 import { writeFile } from '../writeFile/index.js'
 const {
 	valid,
@@ -15,23 +15,31 @@ const {
 	compare
 } = semver
 /**
- * @param {import('../_types').monorepo_thread_opts_T}opts
+ * @param {import('../_types').monorepo_thread_params_T}params
  * @returns {Promise<Record<string, string>>}
  */
-export async function monorepo_npm_check_updates(opts = {}) {
+export async function monorepo_npm__dependencies__update(
+	params = {}
+) {
 	/** @type {Record<string, Promise<string>>} */
-	const package_name_r_latest_version_promise = {}
+	const package_name_R_latest_version_promise = {}
 	/** @type {Record<string, boolean>} */
-	const package_name_r_already_warned = {}
+	const package_name_R_already_warned = {}
 	/** @type {queue_T<string>} */
-	const queue = queue_(opts.threads || 20)
+	const queue = queue_(params.threads || 20)
 	const warn_msg_a = []
-	const projects = await projects_()
-	const package_name_r_project = package_name_r_project_(projects)
+	const projects = await project_a_()
+	const package_name_R_project =
+		package_name_R_project_(projects)
 	let current_count = 0
-	const package_name_a = opts.package_name_a ? opts.package_name_a : keys(package_name_r_project)
-	const stdout_a_async_a = projects.map($=>project_stdout_async_($))
-	if (!opts.package_name_a) {
+	const package_name_a =
+		params.package_name_a
+		? params.package_name_a
+		: keys(package_name_R_project)
+	const stdout_a_async_a =
+		projects.map(project =>
+			project_stdout_async_(project))
+	if (!params.package_name_a) {
 		package_name_a.push('.')
 		stdout_a_async_a.push(stdout_async_('.'))
 	}
@@ -42,7 +50,7 @@ export async function monorepo_npm_check_updates(opts = {}) {
 	for (const warn_msg of warn_msg_a) {
 		console.warn(warn_msg)
 	}
-	return package_name_r_stdout_(package_name_a, stdout_a)
+	return package_name_R_stdout_(package_name_a, stdout_a)
 	/**
 	 * @param {string}location
 	 * @return {Promise<string>}
@@ -50,9 +58,16 @@ export async function monorepo_npm_check_updates(opts = {}) {
 	 */
 	async function stdout_async_(location = '.') {
 		const package_json_path = `${location}/package.json`
-		const pkg_json = (await readFile(package_json_path)).toString()
+		const pkg_json =
+			await readFile(package_json_path)
+				.then($ => $.toString())
 		const pkg = JSON.parse(pkg_json)
-		const { dependencies, peerDependencies, devDependencies, noUpdate } = pkg
+		const {
+			dependencies,
+			peerDependencies,
+			devDependencies,
+			noUpdate
+		} = pkg
 		/** @type {string[][]} */
 		const update_aa = []
 		update_aa.push(await dependencies__update(dependencies, noUpdate))
@@ -61,7 +76,9 @@ export async function monorepo_npm_check_updates(opts = {}) {
 		const update_a = update_aa.flat()
 		if (update_a.length) {
 			const indent = detect_indent(pkg_json).indent || '\t'
-			await writeFile(package_json_path, JSON.stringify(pkg, null, indent))
+			await writeFile(
+				package_json_path,
+				JSON.stringify(pkg, null, indent))
 		}
 		current_count += 1
 		spinner.text = ora_message_()
@@ -80,17 +97,23 @@ export async function monorepo_npm_check_updates(opts = {}) {
 	 * @param {string[]}noUpdate
 	 * @return {Promise<string[]>}
 	 */
-	async function dependencies__update(dependencies, noUpdate = []) {
+	async function dependencies__update(
+		dependencies,
+		noUpdate = []
+	) {
 		noUpdate = noUpdate || []
 		/** @type {string[]} */
 		const update_a = []
-		for (const [package_name, in_version] of entries_gen_(dependencies)) {
+		for (const [
+			package_name,
+			in_version
+		] of entries_gen_(dependencies)) {
 			const has_workspace = in_version.indexOf('') === 0
 			const has_carrot = in_version.slice(0, 1) === '^'
 			if (in_version === '') continue
 			if (!valid(coerce(in_version, {}), {})) continue
-			if (package_name_r_latest_version_promise[package_name] == null) {
-				const promise = queue.add(async ()=>
+			if (package_name_R_latest_version_promise[package_name] == null) {
+				const promise = queue.add(async () =>
 					await exec(`
 						npm show ${package_name}@latest | \
 						sed -r "s/\x1B\\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g" | \
@@ -98,12 +121,16 @@ export async function monorepo_npm_check_updates(opts = {}) {
 						grep \\: | \
 						cut -f2 -d: | \
 						xargs echo`
-					).then($=>$.stdout.trim()))
-				package_name_r_latest_version_promise[package_name] = promise
+					).then($ => $.stdout.trim()))
+				package_name_R_latest_version_promise[package_name] = promise
 			}
-			const latest_stripped_version = await package_name_r_latest_version_promise[package_name]
-			if (!latest_stripped_version && !package_name_r_already_warned[package_name]) {
-				package_name_r_already_warned[package_name] = true
+			const latest_stripped_version =
+				await package_name_R_latest_version_promise[package_name]
+			if (
+				!latest_stripped_version
+				&& !package_name_R_already_warned[package_name]
+			) {
+				package_name_R_already_warned[package_name] = true
 				warn_msg_a.push(`WARN: Unable to parse ${package_name} from npm registry`)
 			}
 			if (

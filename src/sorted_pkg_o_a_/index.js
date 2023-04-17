@@ -11,16 +11,28 @@ export async function sorted_pkg_o_a_() {
 	const file = await readFile('./pnpm-workspace.yaml')
 	const doc = yaml.load(file.toString(), {})
 	/** @type {string[]} */
-	const pkg_glob_a = doc['packages']
-	const pkg_json_glob_a = pkg_glob_a.map($=>join($, 'package.json'))
-	const pkg_json_path_set = new Set(compact(await Promise.all(pkg_json_glob_a.map($=>glob($)))))
-	const pkg_json_path_a = flatten(Array.from(pkg_json_path_set))
-	const pkg_a = await Promise.all(pkg_json_path_a.map(async $=>{
-		const pkg = JSON.parse(await readFile($).then($=>$.toString()))
-		pkg.path = dirname($)
-		return pkg
-	})).then($a=>compact($a))
-	const lookup_pkg_r = pkg_a.reduce((pkg_r, pkg)=>{
+	const pkg_dir_a = doc['packages']
+	const pkg_path_a =
+		pkg_dir_a.map(project_dir =>
+			join(project_dir, 'package.json'))
+	const pkg_json_path_set =
+		new Set(
+			compact(
+				await Promise.all(
+					pkg_path_a.map(pkg_path =>
+						glob(pkg_path)))))
+	const pkg_json_path_a =
+		flatten([...pkg_json_path_set])
+	const pkg_a =
+		await Promise.all(pkg_json_path_a
+			.map(async $ => {
+				const pkg =
+					JSON.parse(
+						await readFile($).then($ => $.toString()))
+				pkg.path = dirname($)
+				return pkg
+			})).then($a => compact($a))
+	const lookup_pkg_r = pkg_a.reduce((pkg_r, pkg) => {
 		pkg_r[pkg.name] = pkg
 		return pkg_r
 	}, {})

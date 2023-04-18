@@ -17,17 +17,20 @@ const {
 	coerce,
 	compare
 } = semver
+/** @typedef {import('../_types').monorepo_npm__dependencies__update__params_T}monorepo_npm__dependencies__update__params_T */
 /**
- * @param {import('../_types').monorepo_thread_params_T}params
+ * @param {monorepo_npm__dependencies__update__params_T}[params]
  * @returns {Promise<Record<string, string>>}
  */
 export async function monorepo_npm__dependencies__update(
 	params = {}
 ) {
 	/** @type {Record<string, Promise<string>>} */
-	const package_name_R_latest_version_promise = {}
+	const pkg_name_R_latest_version_promise =
+		params.pkg_name_R_latest_version
+		|| {}
 	/** @type {Record<string, boolean>} */
-	const package_name_R_already_warned = {}
+	const pkg_name_R_already_warned = {}
 	/** @type {queue_T<string>} */
 	const queue = queue_(params.threads || 20)
 	const warn_msg_a = []
@@ -143,7 +146,7 @@ export async function monorepo_npm__dependencies__update(
 			const has_carrot = in_version.slice(0, 1) === '^'
 			if (in_version === '') continue
 			if (!valid(coerce(in_version, {}), {})) continue
-			if (package_name_R_latest_version_promise[package_name] == null) {
+			if (pkg_name_R_latest_version_promise[package_name] == null) {
 				const promise = queue.add(async ()=>
 					await exec(`
 						npm show ${package_name}@latest | \
@@ -153,15 +156,15 @@ export async function monorepo_npm__dependencies__update(
 						cut -f2 -d: | \
 						xargs echo`
 					).then($=>$.stdout.trim()))
-				package_name_R_latest_version_promise[package_name] = promise
+				pkg_name_R_latest_version_promise[package_name] = promise
 			}
 			const latest_stripped_version =
-				await package_name_R_latest_version_promise[package_name]
+				await pkg_name_R_latest_version_promise[package_name]
 			if (
 				!latest_stripped_version
-				&& !package_name_R_already_warned[package_name]
+				&& !pkg_name_R_already_warned[package_name]
 			) {
-				package_name_R_already_warned[package_name] = true
+				pkg_name_R_already_warned[package_name] = true
 				warn_msg_a.push(`WARN: Unable to parse ${package_name} from npm registry`)
 			}
 			if (

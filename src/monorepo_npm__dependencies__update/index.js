@@ -37,17 +37,17 @@ export async function monorepo_npm__dependencies__update(
 	let current_count = 0
 	const package_name_a =
 		params.package_name_a
-		? params.package_name_a
-		: keys(package_name_R_project)
+			? params.package_name_a
+			: keys(package_name_R_project)
 	const stdout_a_async_a =
-		projects.map(project =>
+		projects.map(project=>
 			project_stdout_async_(project))
 	if (!params.package_name_a) {
 		const cwd = import_meta_env_().CWD || process.cwd()
 		package_name_a.push(
-			await path__exists_(cwd)
-			? await pkg_pair_(cwd).then(([pkg])=>pkg.name)
-			: cwd)
+			await pkg_triple_(cwd)
+				.then(([pkg])=>
+					pkg?.name ?? cwd))
 		stdout_a_async_a.push(stdout_async_(cwd))
 	}
 	const total_count = stdout_a_async_a.length
@@ -66,9 +66,13 @@ export async function monorepo_npm__dependencies__update(
 	async function stdout_async_(
 		location = import_meta_env_().CWD || process.cwd()
 	) {
-		const [pkg, pkg_json] = await pkg_pair_()
+		const [
+			pkg,
+			pkg_json,
+			pkg_json_path
+		] = await pkg_triple_()
 		if (!pkg) {
-			return `${package_json_path} does not exist`
+			return `${pkg_json_path} does not exist`
 		}
 		const {
 			dependencies,
@@ -82,12 +86,12 @@ export async function monorepo_npm__dependencies__update(
 			dependencies__update(devDependencies, noUpdate),
 			dependencies__update(peerDependencies, noUpdate),
 		])
-			.then(update_aa =>
+			.then(update_aa=>
 				update_aa.flat())
 		if (update_a.length) {
 			const indent = detect_indent(pkg_json).indent || '\t'
 			await writeFile(
-				package_json_path,
+				pkg_json_path,
 				JSON.stringify(pkg, null, indent))
 		}
 		current_count += 1
@@ -96,20 +100,20 @@ export async function monorepo_npm__dependencies__update(
 	}
 	/**
 	 * @param {string}[location]
-	 * @returns {Promise<[object, string]>}
+	 * @returns {Promise<[object, string, string]>}
 	 * @private
 	 */
-	async function pkg_pair_(
+	async function pkg_triple_(
 		location = import_meta_env_().CWD || process.cwd()
 	) {
-		const package_json_path = join(location, 'package.json')
-		if (!await path__exists_(package_json_path)) {
-			return null
+		const pkg_json_path = join(location, 'package.json')
+		if (!await path__exists_(pkg_json_path)) {
+			return [null, null, pkg_json_path]
 		}
 		const pkg_json =
-			await readFile(package_json_path)
-				.then($ => $.toString())
-		return [JSON.parse(pkg_json), pkg_json]
+			await readFile(pkg_json_path)
+				.then($=>$.toString())
+		return [JSON.parse(pkg_json), pkg_json, pkg_json_path]
 	}
 	/**
 	 * @param {project_T}project
@@ -140,7 +144,7 @@ export async function monorepo_npm__dependencies__update(
 			if (in_version === '') continue
 			if (!valid(coerce(in_version, {}), {})) continue
 			if (package_name_R_latest_version_promise[package_name] == null) {
-				const promise = queue.add(async () =>
+				const promise = queue.add(async ()=>
 					await exec(`
 						npm show ${package_name}@latest | \
 						sed -r "s/\x1B\\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g" | \
@@ -148,7 +152,7 @@ export async function monorepo_npm__dependencies__update(
 						grep \\: | \
 						cut -f2 -d: | \
 						xargs echo`
-					).then($ => $.stdout.trim()))
+					).then($=>$.stdout.trim()))
 				package_name_R_latest_version_promise[package_name] = promise
 			}
 			const latest_stripped_version =

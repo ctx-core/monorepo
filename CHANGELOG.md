@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.1.4
+
+### Patch Changes
+
+- monorepo_npm**dependencies**update: fix: missing pkg_json_path
+
 ## 20.1.3
 
 ### Patch Changes

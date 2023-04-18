@@ -13,7 +13,7 @@ export async function _monorepo_npm__dependencies__update__cli(
 ) {
 	const {
 		help_msg_,
-		monorepo_pnpm__dependencies__update,
+		monorepo_npm__dependencies__update,
 	} = params
 	const param_r = param_r_(
 		process.argv.slice(2), {
@@ -29,7 +29,7 @@ export async function _monorepo_npm__dependencies__update__cli(
 		process.exit(0)
 	}
 	const package_name_R_stdout =
-		await monorepo_pnpm__dependencies__update({
+		await monorepo_npm__dependencies__update({
 			package_name_a: param_r.package_name_a,
 			threads: parseInt(param_r.threads_a[0])
 		})

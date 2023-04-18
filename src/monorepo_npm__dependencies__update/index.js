@@ -46,7 +46,7 @@ export async function monorepo_npm__dependencies__update(
 		const cwd = import_meta_env_().CWD || process.cwd()
 		package_name_a.push(
 			await path__exists_(cwd)
-			? await pkg_(cwd).then(pkg=>pkg.name)
+			? await pkg_pair_(cwd).then(([pkg])=>pkg.name)
 			: cwd)
 		stdout_a_async_a.push(stdout_async_(cwd))
 	}
@@ -66,7 +66,7 @@ export async function monorepo_npm__dependencies__update(
 	async function stdout_async_(
 		location = import_meta_env_().CWD || process.cwd()
 	) {
-		const pkg = await pkg_()
+		const [pkg, pkg_json] = await pkg_pair_()
 		if (!pkg) {
 			return `${package_json_path} does not exist`
 		}
@@ -96,10 +96,10 @@ export async function monorepo_npm__dependencies__update(
 	}
 	/**
 	 * @param {string}[location]
-	 * @returns {Promise<object>}
+	 * @returns {Promise<[object, string]>}
 	 * @private
 	 */
-	async function pkg_(
+	async function pkg_pair_(
 		location = import_meta_env_().CWD || process.cwd()
 	) {
 		const package_json_path = join(location, 'package.json')
@@ -109,7 +109,7 @@ export async function monorepo_npm__dependencies__update(
 		const pkg_json =
 			await readFile(package_json_path)
 				.then($ => $.toString())
-		return JSON.parse(pkg_json)
+		return [JSON.parse(pkg_json), pkg_json]
 	}
 	/**
 	 * @param {project_T}project

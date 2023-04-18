@@ -44,7 +44,10 @@ export async function monorepo_npm__dependencies__update(
 			project_stdout_async_(project))
 	if (!params.package_name_a) {
 		const cwd = import_meta_env_().CWD || process.cwd()
-		package_name_a.push(cwd)
+		package_name_a.push(
+			await path__exists_(cwd)
+			? await pkg_(cwd).then(pkg=>pkg.name)
+			: cwd)
 		stdout_a_async_a.push(stdout_async_(cwd))
 	}
 	const total_count = stdout_a_async_a.length
@@ -63,14 +66,10 @@ export async function monorepo_npm__dependencies__update(
 	async function stdout_async_(
 		location = import_meta_env_().CWD || process.cwd()
 	) {
-		const package_json_path = join(location, 'package.json')
-		if (!await path__exists_(package_json_path)) {
+		const pkg = await pkg_()
+		if (!pkg) {
 			return `${package_json_path} does not exist`
 		}
-		const pkg_json =
-			await readFile(package_json_path)
-				.then($ => $.toString())
-		const pkg = JSON.parse(pkg_json)
 		const {
 			dependencies,
 			peerDependencies,
@@ -83,7 +82,7 @@ export async function monorepo_npm__dependencies__update(
 			dependencies__update(devDependencies, noUpdate),
 			dependencies__update(peerDependencies, noUpdate),
 		])
-			.then(update_aa=>
+			.then(update_aa =>
 				update_aa.flat())
 		if (update_a.length) {
 			const indent = detect_indent(pkg_json).indent || '\t'
@@ -94,6 +93,23 @@ export async function monorepo_npm__dependencies__update(
 		current_count += 1
 		spinner.text = ora_message_()
 		return update_a.join('\n')
+	}
+	/**
+	 * @param {string}[location]
+	 * @returns {Promise<object>}
+	 * @private
+	 */
+	async function pkg_(
+		location = import_meta_env_().CWD || process.cwd()
+	) {
+		const package_json_path = join(location, 'package.json')
+		if (!await path__exists_(package_json_path)) {
+			return null
+		}
+		const pkg_json =
+			await readFile(package_json_path)
+				.then($ => $.toString())
+		return JSON.parse(pkg_json)
 	}
 	/**
 	 * @param {project_T}project

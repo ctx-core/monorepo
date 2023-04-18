@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.1.2
+
+### Patch Changes
+
+- monorepo_npm**dependencies**update: cwd package: fix: read from package.json > name
+
 ## 20.1.1
 
 ### Patch Changes

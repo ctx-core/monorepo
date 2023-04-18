@@ -1,5 +1,34 @@
 # @ctx-core/monorepo
 
+## 20.1.10
+
+### Patch Changes
+
+- @ctx-core/git-tools: ^7.0.49 -> ^7.0.50
+- @ctx-core/function: ^21.17.4 -> ^21.17.5
+- @ctx-core/dev-tools: 8.1.98 -> 8.1.99
+- @ctx-core/build: 1.0.286 -> 1.0.287
+- @ctx-core/monorepo: ^20.1.8 -> ^20.1.9
+- @ctx-core/ctx-core-package-tools: 8.0.179 -> 8.0.180
+- @ctx-core/queue: ^7.5.5 -> ^7.5.6
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/array@26.12.18
+  - @ctx-core/child_process@7.3.15
+  - @ctx-core/cli-args@11.3.7
+  - @ctx-core/env@17.2.69
+  - @ctx-core/fs@1.0.6
+  - @ctx-core/function@21.17.6
+  - @ctx-core/object@27.4.10
+  - @ctx-core/package@9.2.49
+  - @ctx-core/queue@7.5.7
+  - @ctx-core/ctx-core-package-tools@8.0.181
+
 ## 20.1.9
 
 ### Patch Changes

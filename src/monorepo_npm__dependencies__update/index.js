@@ -1,9 +1,12 @@
-import detect_indent from 'detect-indent'
-import ora from 'ora'
-import semver from 'semver'
+import { import_meta_env_ } from '@ctx-core/env'
+import { path__exists_ } from '@ctx-core/fs'
 import { entries_gen_, keys } from '@ctx-core/object'
 import { queue_ } from '@ctx-core/queue'
 import { exec } from '@ctx-core/child_process'
+import detect_indent from 'detect-indent'
+import ora from 'ora'
+import { join } from 'path'
+import semver from 'semver'
 import { package_name_R_project_ } from '../package_name_R_project_/index.js'
 import { project_a_ } from '../project_a_/index.js'
 import { readFile } from '../readFile/index.js'
@@ -40,8 +43,9 @@ export async function monorepo_npm__dependencies__update(
 		projects.map(project =>
 			project_stdout_async_(project))
 	if (!params.package_name_a) {
-		package_name_a.push('.')
-		stdout_a_async_a.push(stdout_async_('.'))
+		const cwd = import_meta_env_().CWD || process.cwd()
+		package_name_a.push(cwd)
+		stdout_a_async_a.push(stdout_async_(cwd))
 	}
 	const total_count = stdout_a_async_a.length
 	const spinner = ora(ora_message_()).start()
@@ -56,8 +60,13 @@ export async function monorepo_npm__dependencies__update(
 	 * @return {Promise<string>}
 	 * @private
 	 */
-	async function stdout_async_(location = '.') {
-		const package_json_path = `${location}/package.json`
+	async function stdout_async_(
+		location = import_meta_env_().CWD || process.cwd()
+	) {
+		const package_json_path = join(location, 'package.json')
+		if (!await path__exists_(package_json_path)) {
+			return `${package_json_path} does not exist`
+		}
 		const pkg_json =
 			await readFile(package_json_path)
 				.then($ => $.toString())
@@ -69,11 +78,13 @@ export async function monorepo_npm__dependencies__update(
 			noUpdate
 		} = pkg
 		/** @type {string[][]} */
-		const update_aa = []
-		update_aa.push(await dependencies__update(dependencies, noUpdate))
-		update_aa.push(await dependencies__update(devDependencies, noUpdate))
-		update_aa.push(await dependencies__update(peerDependencies, noUpdate))
-		const update_a = update_aa.flat()
+		const update_a = await Promise.all([
+			dependencies__update(dependencies, noUpdate),
+			dependencies__update(devDependencies, noUpdate),
+			dependencies__update(peerDependencies, noUpdate),
+		])
+			.then(update_aa=>
+				update_aa.flat())
 		if (update_a.length) {
 			const indent = detect_indent(pkg_json).indent || '\t'
 			await writeFile(
@@ -146,7 +157,7 @@ export async function monorepo_npm__dependencies__update(
 				if (~noUpdate.indexOf(package_name)) {
 					warn_msg_a.push(`noUpdate: ${package_name}: ${latest_version}`)
 				} else {
-					push_update_a(update_a, package_name, in_version, latest_version)
+					update_a__push(update_a, package_name, in_version, latest_version)
 					dependencies[package_name] = latest_version
 				}
 			}
@@ -166,7 +177,12 @@ export async function monorepo_npm__dependencies__update(
 	 * @param {string}version
 	 * @param {string}latest_version
 	 */
-	function push_update_a(update_a, package_name, version, latest_version) {
+	function update_a__push(
+		update_a,
+		package_name,
+		version,
+		latest_version
+	) {
 		update_a.push(`${package_name}: ${version} -> ${latest_version}`)
 	}
 }

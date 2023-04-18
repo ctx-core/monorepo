@@ -53,13 +53,15 @@ export async function monorepo_npm__dependencies__update__cli() {
 				console.info(output)
 				outstream.end(() =>
 					res(null))
+			} else {
+				res(null)
 			}
 		}
 	})
 }
 function help_msg_() {
 	return `
-Usage: monorepo-npm-check-updates
+Usage: monorepo_npm__dependencies__update
 
 Options:
 

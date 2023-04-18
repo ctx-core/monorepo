@@ -55,7 +55,7 @@ export async function monorepo_npm__version__sync__cli() {
 }
 function help_msg_() {
 	return `
-Usage: monorepo-npm-check-updates
+Usage: monorepo_npm__version__sync
 
 Options:
 

@@ -1,14 +1,26 @@
 # @ctx-core/monorepo
 
+## 20.1.1
+
+### Patch Changes
+
+- monorepo_npm\_\_dependencies\_\_update,monorepo_npm\_\_version\_\_sync:
+
+      fix: help message
+
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/fs@1.0.0
+
 ## 20.1.0
 
 ### Minor Changes
 
 - - project*a*: aliased by projects\_
-- - monorepo_npm**version**sync,monorepo_npm**version**sync\_\_cli
+- - monorepo_npm\_\_version\_\_sync,monorepo_npm\_\_version\_\_sync\_\_cli
 - - monorepo_thread_params_T: aliased by monorepo_thread_opts_T
 - - package_name_R_project_T: aliased by typepackage_name_r_project_T
-- - package_a**sort**params_T: aliased by sort_packages_call_opts_T
+- - package_a\_\_sort\_\_params_T: aliased by sort_packages_call_opts_T
 - - package_a\_\_sort: aliased by sort_packages_call
 
 ## 21.0.0
@@ -1572,7 +1584,7 @@
 
 ### Patch Changes
 
-- monorepo_npm**dependencies**update: fix: WARN: Unable to parse \${package_name} from npm registry: warn at the end of the fn call
+- monorepo_npm\_\_dependencies\_\_update: fix: WARN: Unable to parse \${package_name} from npm registry: warn at the end of the fn call
 
 ## 18.3.0
 
@@ -1654,7 +1666,7 @@
 
 ### Patch Changes
 
-- fix: @ctx-core/\* dependencies
+- fix: @ctx-core/\_ dependencies
 - Updated dependencies
   - @ctx-core/array@26.1.4
   - @ctx-core/cli-args@11.0.29
@@ -1736,7 +1748,7 @@
 
 - stdout*h_package_name*=>package*name_r_stdout*
 - package*name_r_project*: aliased by package*name_h_project*
-- monorepo_npm**dependencies**update: fix: packages in a monorepo without workspace: prefix should not have workspace: added
+- monorepo_npm\_\_dependencies\_\_update: fix: packages in a monorepo without workspace: prefix should not have workspace: added
 
 ### Patch Changes
 
@@ -1867,7 +1879,7 @@
 
 ### Patch Changes
 
-- fix: error TS6059: \* is not under 'rootDir': package.json: types: ./dist/index.d.ts
+- fix: error TS6059: \_ is not under 'rootDir': package.json: types: ./dist/index.d.ts
 - Updated dependencies
   - @ctx-core/array@23.0.41
   - @ctx-core/cli-args@11.0.19
@@ -1920,7 +1932,7 @@
 
 ### Patch Changes
 
-- \*.d.ts export
+- \_.d.ts export
 - Updated dependencies
   - @ctx-core/array@23.0.37
   - @ctx-core/cli-args@11.0.15
@@ -2880,7 +2892,7 @@
 
 ### Patch Changes
 
-- fix: deploying \*.js files
+- fix: deploying \_.js files
 - Updated dependencies [undefined]
   - @ctx-core/array@22.0.8
   - @ctx-core/cli-args@9.0.8
@@ -3221,7 +3233,7 @@
 
 ### Patch Changes
 
-- .gitignore: - \*.js
+- .gitignore: - \_.js
 - Updated dependencies [undefined]
   - @ctx-core/array@20.4.1
   - @ctx-core/cli-args@7.4.1
@@ -3858,7 +3870,7 @@
 
 ### Patch Changes
 
-- fix: bin/npm-check-updates--monorepo.js: loading monorepo_npm**dependencies**update\_\_cli
+- fix: bin/npm-check-updates--monorepo.js: loading monorepo_npm\_\_dependencies\_\_update\_\_cli
 
 ## 15.0.1
 
@@ -4403,7 +4415,7 @@
 
 ### Patch Changes
 
-- fix: npm-check-updates--monorepo,monorepo_npm**dependencies**update\_\_cli: packages with multiple dependency updates have package name in first column
+- fix: npm-check-updates--monorepo,monorepo_npm\_\_dependencies\_\_update\_\_cli: packages with multiple dependency updates have package name in first column
 
 ## 14.0.2
 

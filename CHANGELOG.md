@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.2.0
+
+### Minor Changes
+
+- - monorepo_pnpm**dependencies**update,monorepo_pnpm**dependencies**update\_\_cli
+
 ## 20.1.18
 
 ### Patch Changes

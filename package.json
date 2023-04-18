@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "20.1.18",
+	"version": "20.2.0",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -32,6 +32,7 @@
 		"git-commit--submodules": "bin/git-commit--submodules.sh",
 		"monorepo_npm__dependencies__update": "bin/monorepo_npm__dependencies__update/index.sh",
 		"monorepo_npm__version__sync": "bin/monorepo_npm__version__sync/index.sh",
+		"monorepo_pnpm__dependencies__update": "bin/monorepo_pnpm__dependencies__update/index.sh",
 		"package-manifest-changeset": "bin/package-manifest-changeset.sh",
 		"package-manifest-COMMIT_EDITMSG": "bin/package-manifest-COMMIT_EDITMSG.sh",
 		"npm-copy--package-bin-config": "bin/npm-copy--package-bin-config.sh",

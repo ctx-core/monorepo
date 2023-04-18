@@ -1,17 +1,17 @@
-import { monorepo_npm__dependencies__update } from '../monorepo_npm__dependencies__update/index.js'
 import { _monorepo_npm__dependencies__update__cli } from "../_monorepo_npm__dependencies__update__cli/index.js";
+import { monorepo_pnpm__dependencies__update } from "../monorepo_pnpm__dependencies__update/index.js";
 /**
  * @returns {Promise<void>}
  */
-export async function monorepo_npm__dependencies__update__cli() {
+export async function monorepo_pnpm__dependencies__update__cli() {
 	return _monorepo_npm__dependencies__update__cli({
 		help_msg_,
-		monorepo_npm__dependencies__update
+		monorepo_pnpm__dependencies__update
 	})
 }
 function help_msg_() {
 	return `
-Usage: monorepo_npm__dependencies__update
+Usage: monorepo_pnpm__dependencies__update
 
 Options:
 

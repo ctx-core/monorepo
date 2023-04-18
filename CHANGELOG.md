@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.1.11
+
+### Patch Changes
+
+- dependencies: @ctx-core/env,@ctx-core/fs: fix: version: - workspace:
+
 ## 20.1.10
 
 ### Patch Changes

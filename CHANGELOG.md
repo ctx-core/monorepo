@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.3.0
+
+### Minor Changes
+
+- - monorepo_pnpm**circular_dependencies**detect,monorepo_pnpm**circular_dependencies**detect\_\_cli
+
 ## 20.2.4
 
 ### Patch Changes

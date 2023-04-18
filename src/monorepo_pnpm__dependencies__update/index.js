@@ -12,6 +12,10 @@ export async function monorepo_pnpm__dependencies__update(params = {}) {
 		...params,
 		pkg_name_R_latest_version
 	})
+	/**
+	 * @returns {Promise<Record<string, string>>}
+	 * @private
+	 */
 	async function pkg_name_R_latest_version_() {
 		const pkg_name_R_latest_version = {}
 		await new Promise(res=>{

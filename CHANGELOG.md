@@ -1,11 +1,17 @@
 # @ctx-core/monorepo
 
+## 20.4.2
+
+### Patch Changes
+
+- @ctx-core/package: ^9.2.62 -> ^9.2.63
+
 ## 20.4.1
 
 ### Patch Changes
 
-- monorepo_npm__dependencies__update: fix: update monorepo packages: stdout_async_: await pkg_triple_(location)
-- package_name_R_stdout_: format
+- monorepo*npm**dependencies**update: fix: update monorepo packages: stdout_async*: await pkg*triple*(location)
+- package*name_R_stdout*: format
 
 ## 20.4.0
 
@@ -623,7 +629,7 @@
 
 ### Minor Changes
 
-- - project_a_: aliased by projects\_
+- - project*a*: aliased by projects\_
 - - monorepo_npm\_\_version\_\_sync,monorepo_npm\_\_version\_\_sync\_\_cli
 - - monorepo_thread_params_T: aliased by monorepo_thread_opts_T
 - - package_name_R_project_T: aliased by typepackage_name_r_project_T
@@ -638,8 +644,8 @@
 
 ### Minor Changes
 
-- - package_name_R_project_: aliased by package_name_r_project_
-- - package_name_R_stdout_: aliased by package_name_r_stdout_
+- - package*name_R_project*: aliased by package*name_r_project*
+- - package*name_R_stdout*: aliased by package*name_r_stdout*
 
 ## 20.0.73
 
@@ -1935,7 +1941,7 @@
 
 ### Patch Changes
 
-- sorted_pkg_o_a_: fix: const pkg_json_path_a = flatten(Array.from(pkg_json_path_set))
+- sorted*pkg_o_a*: fix: const pkg_json_path_a = flatten(Array.from(pkg_json_path_set))
 
 ## 18.4.15
 
@@ -2353,8 +2359,8 @@
 
 ### Minor Changes
 
-- stdout_h_package_name_=>package_name_r_stdout_
-- package_name_r_project_: aliased by package_name_h_project_
+- stdout*h_package_name*=>package*name_r_stdout*
+- package*name_r_project*: aliased by package*name_h_project*
 - monorepo_npm\_\_dependencies\_\_update: fix: packages in a monorepo without workspace: prefix should not have workspace: added
 
 ### Patch Changes
@@ -2743,7 +2749,7 @@
 
 ### Minor Changes
 
-- engines_node_ from node_version_
+- engines*node* from node*version*
 
 ### Patch Changes
 
@@ -3312,13 +3318,13 @@
 
 ### Patch Changes
 
-- fix: sorted_pkg_o_a_: dependency sorting
+- fix: sorted*pkg_o_a*: dependency sorting
 
 ## 17.2.22
 
 ### Patch Changes
 
-- fix: sorted_pkg_o_a_,sort-packages,sort-packages-exec: read directly from package.json: returns all packages in monorepo
+- fix: sorted*pkg_o_a*,sort-packages,sort-packages-exec: read directly from package.json: returns all packages in monorepo
 
 ## 17.2.21
 
@@ -3410,7 +3416,7 @@
 
 ### Patch Changes
 
-- use param_r_ instead of \_param_r
+- use param*r* instead of \_param_r
 - use queue\_ instead of \_queue
 - Updated dependencies [undefined]
   - @ctx-core/cli-args@9.0.17
@@ -3431,7 +3437,7 @@
 
 ### Patch Changes
 
-- fix: sorted_pkg_o_a_: pnpm list --json
+- fix: sorted*pkg_o_a*: pnpm list --json
 
 ## 17.2.6
 
@@ -3469,13 +3475,13 @@
 
 ### Patch Changes
 
-- fix: sorted_pkg_o_a_: issue introduced in guarding against infinite loop
+- fix: sorted*pkg_o_a*: issue introduced in guarding against infinite loop
 
 ## 17.2.2
 
 ### Patch Changes
 
-- fix: sorted_pkg_o_a_: infinite loop when package self-references
+- fix: sorted*pkg_o_a*: infinite loop when package self-references
 
 ## 17.2.1
 
@@ -3533,7 +3539,7 @@
 
 ### Minor Changes
 
-- - sort-packages,sort-packages-exec,sorted_pkg_o_a_,package_a\_\_sort
+- - sort-packages,sort-packages-exec,sorted*pkg_o_a*,package_a\_\_sort
 
 ### Patch Changes
 

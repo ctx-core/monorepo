@@ -11,7 +11,10 @@ export function package_name_R_stdout_(
 	stdout_aa
 ) {
 	const $ret = {}
-	for (const [i, package_name] of entries_gen_(package_name_a)) {
+	for (const [
+		i,
+		package_name
+	] of entries_gen_(package_name_a)) {
 		$ret[package_name] = stdout_aa[i]
 	}
 	return $ret

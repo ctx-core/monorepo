@@ -42,6 +42,10 @@ export async function monorepo_npm__dependencies__update(
 		params.package_name_a
 			? params.package_name_a
 			: keys(package_name_R_project)
+	const total_count =
+		project_a.length
+		+ (params.package_name_a ? 0 : 1)
+	const spinner = ora(ora_message_()).start()
 	const stdout_a_async_a =
 		project_a.map(project=>
 			project_stdout_async_(project))
@@ -53,8 +57,6 @@ export async function monorepo_npm__dependencies__update(
 					pkg?.name ?? cwd))
 		stdout_a_async_a.push(stdout_async_(cwd))
 	}
-	const total_count = stdout_a_async_a.length
-	const spinner = ora(ora_message_()).start()
 	const stdout_a = await Promise.all(stdout_a_async_a)
 	spinner.stop()
 	for (const warn_msg of warn_msg_a) {
@@ -73,7 +75,7 @@ export async function monorepo_npm__dependencies__update(
 			pkg,
 			pkg_json,
 			pkg_json_path
-		] = await pkg_triple_()
+		] = await pkg_triple_(location)
 		if (!pkg) {
 			return `${pkg_json_path} does not exist`
 		}

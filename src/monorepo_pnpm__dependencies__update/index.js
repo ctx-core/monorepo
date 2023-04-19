@@ -7,7 +7,8 @@ import { Readable } from 'stream'
  * @returns {Promise<Record<string, string>>}
  */
 export async function monorepo_pnpm__dependencies__update(params = {}) {
-	const pkg_name_R_latest_version = pkg_name_R_latest_version_()
+	const pkg_name_R_latest_version =
+		await pkg_name_R_latest_version_()
 	return monorepo_npm__dependencies__update({
 		...params,
 		pkg_name_R_latest_version
@@ -31,6 +32,7 @@ export async function monorepo_pnpm__dependencies__update(params = {}) {
 				const pkg_name_version_word = word_a[0]
 				const pkg_name_version_match =
 					/^(@?.*)@((\d\.?)+)$/.exec(pkg_name_version_word)
+				if (!pkg_name_version_match) return
 				const pkg_name = pkg_name_version_match[1]
 				const version = pkg_name_version_match[2]
 				if (!pkg_name || !version) return

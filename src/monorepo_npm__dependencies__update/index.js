@@ -139,33 +139,33 @@ export async function monorepo_npm__dependencies__update(
 		/** @type {string[]} */
 		const update_a = []
 		for (const [
-			package_name,
+			pkg_name,
 			in_version
 		] of entries_gen_(dependencies)) {
 			const has_workspace = in_version.indexOf('') === 0
 			const has_carrot = in_version.slice(0, 1) === '^'
 			if (in_version === '') continue
 			if (!valid(coerce(in_version, {}), {})) continue
-			if (pkg_name_R_latest_version_promise[package_name] == null) {
+			if (pkg_name_R_latest_version_promise[pkg_name] == null) {
 				const promise = queue.add(async ()=>
 					await exec(`
-						npm show ${package_name}@latest | \
+						npm show ${pkg_name}@latest | \
 						sed -r "s/\x1B\\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g" | \
 						grep "^latest\:" | \
 						grep \\: | \
 						cut -f2 -d: | \
 						xargs echo`
 					).then($=>$.stdout.trim()))
-				pkg_name_R_latest_version_promise[package_name] = promise
+				pkg_name_R_latest_version_promise[pkg_name] = promise
 			}
 			const latest_stripped_version =
-				await pkg_name_R_latest_version_promise[package_name]
+				await pkg_name_R_latest_version_promise[pkg_name]
 			if (
 				!latest_stripped_version
-				&& !pkg_name_R_already_warned[package_name]
+				&& !pkg_name_R_already_warned[pkg_name]
 			) {
-				pkg_name_R_already_warned[package_name] = true
-				warn_msg_a.push(`WARN: Unable to parse ${package_name} from npm registry`)
+				pkg_name_R_already_warned[pkg_name] = true
+				warn_msg_a.push(`WARN: Unable to parse ${pkg_name} from npm registry`)
 			}
 			if (
 				latest_stripped_version
@@ -177,11 +177,11 @@ export async function monorepo_npm__dependencies__update(
 				&& (has_workspace || !~latest_stripped_version.indexOf(''))
 			) {
 				const latest_version = `${has_carrot ? '^' : ''}${latest_stripped_version}`
-				if (~noUpdate.indexOf(package_name)) {
-					warn_msg_a.push(`noUpdate: ${package_name}: ${latest_version}`)
+				if (~noUpdate.indexOf(pkg_name)) {
+					warn_msg_a.push(`noUpdate: ${pkg_name}: ${latest_version}`)
 				} else {
-					update_a__push(update_a, package_name, in_version, latest_version)
-					dependencies[package_name] = latest_version
+					update_a__push(update_a, pkg_name, in_version, latest_version)
+					dependencies[pkg_name] = latest_version
 				}
 			}
 		}

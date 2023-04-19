@@ -1,5 +1,12 @@
 # @ctx-core/monorepo
 
+## 20.3.4
+
+### Patch Changes
+
+- bin/monorepo_pnpm\__dependencies\__update: fix: call monorepo_pnpm\__dependencies\__update\__cli
+- monorepo_pnpm\__dependencies\__update: fix: await pkg_name_R_latest_version_()
+
 ## 20.3.3
 
 ### Patch Changes
@@ -91,7 +98,7 @@
 
 ### Minor Changes
 
-- - monorepo_pnpm**circular_dependencies**detect,monorepo_pnpm**circular_dependencies**detect\_\_cli
+- - monorepo_pnpm\__circular_dependencies\__detect,monorepo_pnpm\__circular_dependencies\__detect\__cli
 
 ## 20.2.4
 
@@ -205,7 +212,7 @@
 
 ### Minor Changes
 
-- - monorepo_pnpm**dependencies**update,monorepo_pnpm**dependencies**update\_\_cli
+- - monorepo_pnpm\__dependencies\__update,monorepo_pnpm\__dependencies\__update\__cli
 
 ## 20.1.18
 
@@ -556,25 +563,25 @@
 
 ### Patch Changes
 
-- monorepo_npm**dependencies**update: fix: missing pkg_json_path
+- monorepo_npm\__dependencies\__update: fix: missing pkg_json_path
 
 ## 20.1.3
 
 ### Patch Changes
 
-- monorepo_npm**dependencies**update: fix: pkg_json missing error
+- monorepo_npm\__dependencies\__update: fix: pkg_json missing error
 
 ## 20.1.2
 
 ### Patch Changes
 
-- monorepo_npm**dependencies**update: cwd package: fix: read from package.json > name
+- monorepo_npm\__dependencies\__update: cwd package: fix: read from package.json > name
 
 ## 20.1.1
 
 ### Patch Changes
 
-- monorepo_npm\_\_dependencies\_\_update,monorepo_npm\_\_version\_\_sync:
+- monorepo_npm\__dependencies\__update,monorepo_npm\__version\__sync:
 
       fix: help message
 
@@ -587,17 +594,17 @@
 ### Minor Changes
 
 - - project*a*: aliased by projects\_
-- - monorepo_npm\_\_version\_\_sync,monorepo_npm\_\_version\_\_sync\_\_cli
+- - monorepo_npm\__version\__sync,monorepo_npm\__version\__sync\__cli
 - - monorepo_thread_params_T: aliased by monorepo_thread_opts_T
 - - package_name_R_project_T: aliased by typepackage_name_r_project_T
-- - package_a\_\_sort\_\_params_T: aliased by sort_packages_call_opts_T
-- - package_a\_\_sort: aliased by sort_packages_call
+- - package_a\__sort\__params_T: aliased by sort_packages_call_opts_T
+- - package_a\__sort: aliased by sort_packages_call
 
 ## 21.0.0
 
 ### Major Changes
 
-- monorepo-npm-check-updates=>monorepo_npm\_\_dependencies\_\_update\_\_cli
+- monorepo-npm-check-updates=>monorepo_npm\__dependencies\__update\__cli
 
 ### Minor Changes
 
@@ -2154,7 +2161,7 @@
 
 ### Patch Changes
 
-- monorepo_npm\_\_dependencies\_\_update: fix: WARN: Unable to parse \${package_name} from npm registry: warn at the end of the fn call
+- monorepo_npm\__dependencies\__update: fix: WARN: Unable to parse \${package_name} from npm registry: warn at the end of the fn call
 
 ## 18.3.0
 
@@ -2318,7 +2325,7 @@
 
 - stdout*h_package_name*=>package*name_r_stdout*
 - package*name_r_project*: aliased by package*name_h_project*
-- monorepo_npm\_\_dependencies\_\_update: fix: packages in a monorepo without workspace: prefix should not have workspace: added
+- monorepo_npm\__dependencies\__update: fix: packages in a monorepo without workspace: prefix should not have workspace: added
 
 ### Patch Changes
 
@@ -3189,7 +3196,7 @@
 
 ### Patch Changes
 
-- fix: import.meta.url instead of \_\_dirname
+- fix: import.meta.url instead of \__dirname
 - Updated dependencies [undefined]
   - @ctx-core/package@9.0.3
 
@@ -3456,7 +3463,7 @@
 
 ### Minor Changes
 
-- package_a\_\_sort: + opts: retry_delay
+- package_a\__sort: + opts: retry_delay
 
 ## 17.1.3
 
@@ -3496,7 +3503,7 @@
 
 ### Minor Changes
 
-- - sort-packages,sort-packages-exec,sorted*pkg_o_a*,package_a\_\_sort
+- - sort-packages,sort-packages-exec,sorted*pkg_o_a*,package_a\__sort
 
 ### Patch Changes
 
@@ -4440,7 +4447,7 @@
 
 ### Patch Changes
 
-- fix: bin/npm-check-updates--monorepo.js: loading monorepo_npm\_\_dependencies\_\_update\_\_cli
+- fix: bin/npm-check-updates--monorepo.js: loading monorepo_npm\__dependencies\__update\__cli
 
 ## 15.0.1
 
@@ -4985,7 +4992,7 @@
 
 ### Patch Changes
 
-- fix: npm-check-updates--monorepo,monorepo_npm\_\_dependencies\_\_update\_\_cli: packages with multiple dependency updates have package name in first column
+- fix: npm-check-updates--monorepo,monorepo_npm\__dependencies\__update\__cli: packages with multiple dependency updates have package name in first column
 
 ## 14.0.2
 

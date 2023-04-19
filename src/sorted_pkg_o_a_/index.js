@@ -58,12 +58,12 @@ export async function sorted_pkg_o_a_() {
 	function dependency_pkg_a_(pkg, dependencies) {
 		const dependency_pkg_a = []
 		if (!dependencies) return dependency_pkg_a
-		for (const [dep_pkg_name, _dep_pkg_version] of Object.entries(dependencies)) {
-			if (pkg.name === dep_pkg_name) continue
+		for (const [dep_package_name, _dep_version] of Object.entries(dependencies)) {
+			if (pkg.name === dep_package_name) continue
 			/** @type {string} */
-			const dep_pkg_version = _dep_pkg_version
-			if (/^/.test(dep_pkg_version)) {
-				const dep_pkg = lookup_pkg_r[dep_pkg_name]
+			const dep_version = _dep_version
+			if (/^/.test(dep_version)) {
+				const dep_pkg = lookup_pkg_r[dep_package_name]
 				if (dep_pkg && !pkg_set.has(dep_pkg)) {
 					push_pkg_o_a(dep_pkg)
 				}

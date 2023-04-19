@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.4.0
+
+### Minor Changes
+
+- pkg_name=>package_name
+
 ## 20.3.5
 
 ### Patch Changes
@@ -22,7 +28,7 @@
 ### Patch Changes
 
 - bin/monorepo_pnpm\_\_dependencies\_\_update: fix: call monorepo_pnpm\_\_dependencies\_\_update\_\_cli
-- monorepo_pnpm\_\_dependencies\__update: fix: await pkg_name_R_latest_version_()
+- monorepo_pnpm\_\_dependencies\__update: fix: await package_name_R_latest_version_()
 
 ## 20.3.3
 

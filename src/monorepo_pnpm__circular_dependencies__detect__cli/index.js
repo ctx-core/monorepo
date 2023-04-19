@@ -17,7 +17,7 @@ export async function monorepo_pnpm__circular_dependencies__detect__cli() {
 		console.info(help_msg_())
 		process.exit(0)
 	}
-	const pkg_name_R_circular__dependency_a =
+	const package_name_R_circular__dependency_a =
 		await monorepo_pnpm__circular_dependencies__detect({
 			package_name_a: param_r.package_name_a,
 			threads: parseInt(param_r.threads_a[0])
@@ -29,8 +29,8 @@ export async function monorepo_pnpm__circular_dependencies__detect__cli() {
 			: null
 	try {
 		const msg =
-			pkg_name_R_circular__dependency_a
-				? JSON.stringify(pkg_name_R_circular__dependency_a, null, '\t')
+			package_name_R_circular__dependency_a
+				? JSON.stringify(package_name_R_circular__dependency_a, null, '\t')
 				: 'No circular dependencies!'
 		if (outstream) {
 			outstream.write(msg)

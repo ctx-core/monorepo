@@ -4,5 +4,5 @@ export declare function monorepo_npm__dependencies__update(
 ):Promise<Record<string, string>>
 export interface monorepo_npm__dependencies__update__params_T
 	extends monorepo_thread_params_T {
-	pkg_name_R_latest_version?:Record<string, string>
+	package_name_R_latest_version?:Record<string, string>
 }

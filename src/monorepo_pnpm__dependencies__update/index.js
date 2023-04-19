@@ -7,18 +7,18 @@ import { Readable } from 'stream'
  * @returns {Promise<Record<string, string>>}
  */
 export async function monorepo_pnpm__dependencies__update(params = {}) {
-	const pkg_name_R_latest_version =
-		await pkg_name_R_latest_version_()
+	const package_name_R_latest_version =
+		await package_name_R_latest_version_()
 	return monorepo_npm__dependencies__update({
 		...params,
-		pkg_name_R_latest_version
+		package_name_R_latest_version
 	})
 	/**
 	 * @returns {Promise<Record<string, string>>}
 	 * @private
 	 */
-	async function pkg_name_R_latest_version_() {
-		const pkg_name_R_latest_version = {}
+	async function package_name_R_latest_version_() {
+		const package_name_R_latest_version = {}
 		await new Promise(res=>{
 			const pnpm_recursive_list =
 				spawn(
@@ -29,18 +29,18 @@ export async function monorepo_pnpm__dependencies__update(params = {}) {
 			line__parse(line=>{
 				const word_a = line.split(' ')
 				if (word_a.length !== 2) return
-				const pkg_name_version_word = word_a[0]
-				const pkg_name_version_match =
-					/^(@?.*)@((\d\.?)+)$/.exec(pkg_name_version_word)
-				if (!pkg_name_version_match) return
-				const pkg_name = pkg_name_version_match[1]
-				const version = pkg_name_version_match[2]
-				if (!pkg_name || !version) return
-				pkg_name_R_latest_version[pkg_name] = version
+				const package_name_version_word = word_a[0]
+				const package_name_version_match =
+					/^(@?.*)@((\d\.?)+)$/.exec(package_name_version_word)
+				if (!package_name_version_match) return
+				const package_name = package_name_version_match[1]
+				const version = package_name_version_match[2]
+				if (!package_name || !version) return
+				package_name_R_latest_version[package_name] = version
 			}, Readable.toWeb(pnpm_recursive_list.stdout))
 			pnpm_recursive_list.on('close',
 				()=>res(null))
 		})
-		return pkg_name_R_latest_version
+		return package_name_R_latest_version
 	}
 }

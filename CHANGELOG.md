@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.4.5
+
+### Patch Changes
+
+- @ctx-core/queue: ^7.7.0 -> ^7.7.1
+
 ## 20.4.4
 
 ### Patch Changes

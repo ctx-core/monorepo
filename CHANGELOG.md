@@ -1,5 +1,18 @@
 # @ctx-core/monorepo
 
+## 20.4.11
+
+### Patch Changes
+
+- @ctx-core/function: ^21.17.19 -> ^21.18.0
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/env@17.2.85
+  - @ctx-core/array@26.12.33
+  - @ctx-core/cli-args@11.3.22
+  - @ctx-core/object@27.4.24
+  - @ctx-core/string@12.3.1
+
 ## 20.4.10
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "20.4.11",
+	"version": "20.4.12",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -62,14 +62,14 @@
 	},
 	"dependencies": {
 		"@ctx-core/array": "^26.12.33",
-		"@ctx-core/child_process": "^7.3.30",
+		"@ctx-core/child_process": "^7.3.31",
 		"@ctx-core/cli-args": "^11.3.22",
-		"@ctx-core/ctx-core-package-tools": "^8.0.194",
-		"@ctx-core/env": "^17.2.85",
+		"@ctx-core/ctx-core-package-tools": "^8.0.195",
+		"@ctx-core/env": "^17.2.86",
 		"@ctx-core/fs": "^1.0.12",
 		"@ctx-core/function": "^21.18.0",
 		"@ctx-core/object": "^27.4.24",
-		"@ctx-core/package": "^9.2.64",
+		"@ctx-core/package": "^9.2.65",
 		"@ctx-core/queue": "^7.9.0",
 		"@ctx-core/string": "^12.3.1",
 		"@types/node": "^18.16.2",

@@ -1,5 +1,21 @@
 # @ctx-core/monorepo
 
+## 20.4.22
+
+### Patch Changes
+
+- @ctx-core/env: ^17.2.91 -> ^17.2.92
+- semver: ^7.5.0 -> ^7.5.1
+- @ctx-core/object: ^27.4.25 -> ^27.4.26
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/child_process@7.3.38
+  - @ctx-core/package@9.2.69
+  - @ctx-core/array@26.12.35
+  - @ctx-core/cli-args@11.3.24
+  - @ctx-core/env@17.2.93
+
 ## 20.4.21
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @ctx-core/monorepo
 
+## 20.4.25
+
+### Patch Changes
+
+- @ctx-core/env: ^17.2.93 -> ^17.2.94
+- Updated dependencies
+  - @ctx-core/child_process@7.3.39
+
 ## 20.4.24
 
 ### Patch Changes

@@ -1,4 +1,4 @@
-import { line__parse } from '@ctx-core/string'
+import { line__transform_stream_ } from '@ctx-core/string'
 import { monorepo_npm__dependencies__update } from '../monorepo_npm__dependencies__update/index.js'
 import { spawn } from 'child_process'
 import { Readable } from 'stream'
@@ -19,28 +19,29 @@ export async function monorepo_pnpm__dependencies__update(params = {}) {
 	 */
 	async function package_name_R_latest_version_() {
 		const package_name_R_latest_version = {}
-		await new Promise(res=>{
-			const pnpm_recursive_list =
-				spawn(
-					'pnpm', ['recursive', 'list'],
-					{
-						stdio: ['pipe', 'pipe', process.stderr]
-					})
-			line__parse(line=>{
-				const word_a = line.split(' ')
-				if (word_a.length !== 2) return
-				const package_name_version_word = word_a[0]
-				const package_name_version_match =
-					/^(@?.*)@((\d\.?)+)$/.exec(package_name_version_word)
-				if (!package_name_version_match) return
-				const package_name = package_name_version_match[1]
-				const version = package_name_version_match[2]
-				if (!package_name || !version) return
-				package_name_R_latest_version[package_name] = version
-			}, Readable.toWeb(pnpm_recursive_list.stdout))
-			pnpm_recursive_list.on('close',
-				()=>res(null))
-		})
+		const pnpm_recursive_list =
+			spawn(
+				'pnpm', ['recursive', 'list'],
+				{
+					stdio: ['pipe', 'pipe', process.stderr]
+				})
+		await Readable.toWeb(pnpm_recursive_list.stdout)
+			.pipeThrough(new TextDecoderStream())
+			.pipeThrough(line__transform_stream_())
+			.pipeTo(new WritableStream({
+				write(line) {
+					const word_a = line.split(' ')
+					if (word_a.length !== 2) return
+					const package_name_version_word = word_a[0]
+					const package_name_version_match =
+						/^(@?.*)@((\d\.?)+)$/.exec(package_name_version_word)
+					if (!package_name_version_match) return
+					const package_name = package_name_version_match[1]
+					const version = package_name_version_match[2]
+					if (!package_name || !version) return
+					package_name_R_latest_version[package_name] = version
+				}
+			}))
 		return package_name_R_latest_version
 	}
 }

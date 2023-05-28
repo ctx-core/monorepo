@@ -1,5 +1,5 @@
 import { last_ } from '@ctx-core/array'
-import { line__parse } from '@ctx-core/string'
+import { line__transform_stream_ } from '@ctx-core/string'
 import { spawn } from 'child_process'
 import { Readable } from 'stream'
 const { keys } = Object
@@ -14,9 +14,9 @@ export async function monorepo_pnpm__circular_dependencies__detect(params = {}) 
 		circular__package_name_M_dependency_path_a_()
 	return (
 		circular__package_name_M_dependency_path_a.size
-			? Object.fromEntries([
-				...circular__package_name_M_dependency_path_a.entries()])
-			: null)
+		? Object.fromEntries([
+			...circular__package_name_M_dependency_path_a.entries()])
+		: null)
 	/**
 	 * @returns {Map<string, string[]>}
 	 * @private
@@ -64,30 +64,31 @@ export async function monorepo_pnpm__circular_dependencies__detect(params = {}) 
 	 */
 	async function package_name_R_dependency_a_() {
 		const package_name_R_dependency_a = {}
-		await new Promise(async res=>{
-			let current__package_name
-			const pnpm_recursive_list =
-				spawn(
-					'pnpm', ['recursive', 'list'],
-					{
-						stdio: ['pipe', 'pipe', process.stderr]
-					})
-			await line__parse(line=>{
-				const word_a = line.split(' ')
-				if (word_a.length !== 2) return
-				const package_name_version_word = word_a[0]
-				const package_name_version_match =
-					/^(@?.*)@((\d\.?)+)$/.exec(package_name_version_word)
-				if (package_name_version_match) {
-					current__package_name = package_name_version_match[1]
-					package_name_R_dependency_a[current__package_name] = []
-				} else if (current__package_name) {
-					package_name_R_dependency_a[current__package_name].push(word_a[0])
+		let current__package_name
+		const pnpm_recursive_list =
+			spawn(
+				'pnpm', ['recursive', 'list'],
+				{
+					stdio: ['pipe', 'pipe', process.stderr]
+				})
+		await Readable.toWeb(pnpm_recursive_list.stdout)
+			.pipeThrough(new TransformStream())
+			.pipeThrough(line__transform_stream_())
+			.pipeTo(new WritableStream({
+				write(line) {
+					const word_a = line.split(' ')
+					if (word_a.length !== 2) return
+					const package_name_version_word = word_a[0]
+					const package_name_version_match =
+						/^(@?.*)@((\d\.?)+)$/.exec(package_name_version_word)
+					if (package_name_version_match) {
+						current__package_name = package_name_version_match[1]
+						package_name_R_dependency_a[current__package_name] = []
+					} else if (current__package_name) {
+						package_name_R_dependency_a[current__package_name].push(word_a[0])
+					}
 				}
-			}, Readable.toWeb(pnpm_recursive_list.stdout))
-			pnpm_recursive_list.on('close',
-				()=>res(null))
-		})
+			}))
 		return package_name_R_dependency_a
 	}
 }

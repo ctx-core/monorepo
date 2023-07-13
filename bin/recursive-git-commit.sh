@@ -9,5 +9,6 @@ else
   git commit -am "$DEFAULT_MSG"
 fi||echo ''
 EOF
+EDITOR=$(git config --get core.editor) || ${EDITOR:=vi}
 "$EDITOR" "$TEMP"
 pnpm recursive exec -- sh "$TEMP"

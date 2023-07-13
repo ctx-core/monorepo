@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.4.67
+
+### Patch Changes
+
+- recursive-git-commit: $(git config --get core.editor) || ${EDITOR:=vi}
+
 ## 20.4.66
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.4.76
+
+### Patch Changes
+
+- ora: 7.0.0 -> 7.0.1
+
 ## 20.4.75
 
 ### Patch Changes

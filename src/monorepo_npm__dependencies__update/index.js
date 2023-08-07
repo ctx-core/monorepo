@@ -119,54 +119,55 @@ export async function monorepo_npm__dependencies__update(
 				if (
 					!valid(coerce(in_version, {}), {})
 					|| package_name_R_project[package_name]
-					|| package_name_R_latest_version_promise[package_name] !== undefined
 				) continue
-				const npm =
-					spawn('npm', ['show', `${package_name}@latest`], {
-						shell: true
-					})
-				package_name_R_latest_version_promise[package_name] =
-					queue.add(()=>
-						new Promise(resolve=>{
-							Readable.toWeb(npm.stderr)
-								.pipeThrough(new TextDecoderStream())
-								.pipeTo(new WritableStream({
-									start() {
-										this.txt = ''
-									},
-									write(chunk) {
-										this.txt += chunk
-									},
-									close() {
-										if (!this.txt || !/npm ERR!/.test(this.txt)) return
-										console.debug('close|debug|1', {
-											package_name,
-											_: /npm ERR!/.test(this.txt),
-										})
-										console.warn(
-											`WARN: Unable to parse ${package_name} from npm registry`)
-										process.stderr.write(this.txt)
-									}
-								}))
-							Readable.toWeb(npm.stdout)
-								.pipeThrough(new TextDecoderStream())
-								.pipeTo(new WritableStream({
-									start() {
-										this.txt = ''
-									},
-									write(chunk) {
-										this.txt += chunk
-									},
-									close() {
-										const match_a =
-											/latest: (.*)\s/g.exec(
-												(/** @type {string} */this.txt)
-													.replaceAll(/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]/g,
-														''))
-										resolve(match_a && match_a[1])
-									}
-								}))
-						}))
+				if (package_name_R_latest_version_promise[package_name] === undefined) {
+					const npm =
+						spawn('npm', ['show', `${package_name}@latest`], {
+							shell: true
+						})
+					package_name_R_latest_version_promise[package_name] =
+						queue.add(()=>
+							new Promise(resolve=>{
+								Readable.toWeb(npm.stderr)
+									.pipeThrough(new TextDecoderStream())
+									.pipeTo(new WritableStream({
+										start() {
+											this.txt = ''
+										},
+										write(chunk) {
+											this.txt += chunk
+										},
+										close() {
+											if (!this.txt || !/npm ERR!/.test(this.txt)) return
+											console.debug('close|debug|1', {
+												package_name,
+												_: /npm ERR!/.test(this.txt),
+											})
+											console.warn(
+												`WARN: Unable to parse ${package_name} from npm registry`)
+											process.stderr.write(this.txt)
+										}
+									}))
+								Readable.toWeb(npm.stdout)
+									.pipeThrough(new TextDecoderStream())
+									.pipeTo(new WritableStream({
+										start() {
+											this.txt = ''
+										},
+										write(chunk) {
+											this.txt += chunk
+										},
+										close() {
+											const match_a =
+												/latest: (.*)\s/g.exec(
+													(/** @type {string} */this.txt)
+														.replaceAll(/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]/g,
+															''))
+											resolve(match_a && match_a[1])
+										}
+									}))
+							}))
+				}
 				const latest_stripped_version =
 					await package_name_R_latest_version_promise[package_name]
 				if (

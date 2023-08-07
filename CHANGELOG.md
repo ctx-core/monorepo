@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.4.82
+
+### Patch Changes
+
+- monorepo_npm**dependencies**update: fix: all packages are updated
+
 ## 20.4.81
 
 ### Patch Changes

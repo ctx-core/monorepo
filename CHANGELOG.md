@@ -1,5 +1,18 @@
 # @ctx-core/monorepo
 
+## 20.4.81
+
+### Patch Changes
+
+- monorepo_npm**dependencies**update:
+
+      fix: parsing error:
+      	only shell out to npm show:
+      		process the rest in nodejs runtime
+      ora spinner immediately starts
+      no npm show for projects in monorepo
+      inline printing of error messages to STDERR inline
+
 ## 20.4.80
 
 ### Patch Changes

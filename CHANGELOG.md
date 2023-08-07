@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.4.80
+
+### Patch Changes
+
+- @ctx-core/package: ^9.2.84 -> ^9.2.85
+
 ## 20.4.79
 
 ### Patch Changes

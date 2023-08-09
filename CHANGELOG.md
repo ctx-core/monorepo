@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.4.84
+
+### Patch Changes
+
+- monorepo_npm**dependencies**update: - ∋ console.debug
+
 ## 20.4.83
 
 ### Patch Changes

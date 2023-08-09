@@ -139,10 +139,6 @@ export async function monorepo_npm__dependencies__update(
 										},
 										close() {
 											if (!this.txt || !/npm ERR!/.test(this.txt)) return
-											console.debug('close|debug|1', {
-												package_name,
-												_: /npm ERR!/.test(this.txt),
-											})
 											console.warn(
 												`WARN: Unable to parse ${package_name} from npm registry`)
 											process.stderr.write(this.txt)

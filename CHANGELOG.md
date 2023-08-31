@@ -1,5 +1,14 @@
 # @ctx-core/monorepo
 
+## 20.4.92
+
+### Patch Changes
+
+- monorepo_npm**dependencies**update:
+
+      dependencies: fix: ignore monorepo packages
+      fix: revert ignore private packages
+
 ## 20.4.91
 
 ### Patch Changes

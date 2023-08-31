@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.4.93
+
+### Patch Changes
+
+- project*a*: package.json has no version: fix: package_name
+
 ## 20.4.92
 
 ### Patch Changes

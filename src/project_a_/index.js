@@ -17,9 +17,13 @@ export async function project_a_() {
 		const index =
 			package_name_package_version_str.lastIndexOf('@')
 		const package_name =
-			package_name_package_version_str.slice(0, index)
+			~index
+			? package_name_package_version_str.slice(0, index)
+			:package_name_package_version_str
 		const package_version =
-			package_name_package_version_str.slice(index + 1)
+			~index
+			? package_name_package_version_str.slice(index + 1)
+			: null
 		return {
 			package_name,
 			package_version,

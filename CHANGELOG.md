@@ -1,5 +1,24 @@
 # @ctx-core/monorepo
 
+## 20.4.87
+
+### Patch Changes
+
+- @ctx-core/object: ^28.0.4 -> ^28.0.5
+- @ctx-core/array: ^26.13.0 -> ^26.14.0
+- @ctx-core/queue: ^7.9.0 -> ^7.9.1
+- @ctx-core/env: ^17.2.128 -> ^17.3.0
+- monorepo_npm**dependencies**update: fix: update dependencies that are in the monorepo
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/array@26.14.1
+  - @ctx-core/child_process@7.3.73
+  - @ctx-core/cli-args@11.3.36
+  - @ctx-core/ctx-core-package-tools@8.0.217
+  - @ctx-core/env@17.3.1
+
 ## 20.4.86
 
 ### Patch Changes

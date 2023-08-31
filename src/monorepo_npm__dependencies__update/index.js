@@ -13,7 +13,7 @@ import { package_name_R_stdout_ } from '../package_name_R_stdout_/index.js'
 import { project_a_ } from '../project_a_/index.js'
 import { readFile } from '../readFile/index.js'
 import { writeFile } from '../writeFile/index.js'
-/** @typedef {import('../_types').monorepo_npm__dependencies__update__params_T}monorepo_npm__dependencies__update__params_T */
+/** @typedef {import('./index.d.ts').monorepo_npm__dependencies__update__params_T}monorepo_npm__dependencies__update__params_T */
 /**
  * @param {monorepo_npm__dependencies__update__params_T}[params]
  * @returns {Promise<Record<string, string>>}
@@ -116,10 +116,6 @@ export async function monorepo_npm__dependencies__update(
 				const has_workspace = in_version.indexOf('') === 0
 				const has_carrot = in_version.slice(0, 1) === '^'
 				if (in_version === '') continue
-				if (
-					!valid(coerce(in_version, {}), {})
-					|| package_name_R_project[package_name]
-				) continue
 				if (package_name_R_latest_version_promise[package_name] === undefined) {
 					const npm =
 						spawn('npm', ['show', `${package_name}@latest`], {
@@ -128,7 +124,9 @@ export async function monorepo_npm__dependencies__update(
 					package_name_R_latest_version_promise[package_name] =
 						queue.add(()=>
 							new Promise(resolve=>{
-								Readable.toWeb(npm.stderr)
+								/** @type {ReadableStream<Buffer>} */
+								const stderr__readable_stream = Readable.toWeb(npm.stderr)
+								stderr__readable_stream
 									.pipeThrough(new TextDecoderStream())
 									.pipeTo(new WritableStream({
 										start() {
@@ -144,7 +142,9 @@ export async function monorepo_npm__dependencies__update(
 											process.stderr.write(this.txt)
 										}
 									}))
-								Readable.toWeb(npm.stdout)
+								/** @type {ReadableStream<Buffer>} */
+								const stdout__readable_stream = Readable.toWeb(npm.stdout)
+								stdout__readable_stream
 									.pipeThrough(new TextDecoderStream())
 									.pipeTo(new WritableStream({
 										start() {
@@ -166,6 +166,10 @@ export async function monorepo_npm__dependencies__update(
 				}
 				const latest_stripped_version =
 					await package_name_R_latest_version_promise[package_name]
+				if (
+					!valid(coerce(in_version, {}), {})
+					|| ~update_a.indexOf(update__new(package_name, in_version, latest_stripped_version))
+				) continue
 				if (
 					latest_stripped_version
 					&& compare(
@@ -232,6 +236,18 @@ export async function monorepo_npm__dependencies__update(
 		version,
 		latest_version
 	) {
-		update_a.push(`${package_name}: ${version} -> ${latest_version}`)
+		update_a.push(update__new(package_name, version, latest_version))
+	}
+	/**
+	 * @param {string}package_name
+	 * @param {string}version
+	 * @param {string}latest_version
+	 */
+	function update__new(
+		package_name,
+		version,
+		latest_version
+	) {
+		return `${package_name}: ${version} -> ${latest_version}`
 	}
 }

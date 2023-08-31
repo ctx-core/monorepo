@@ -116,7 +116,7 @@ export async function monorepo_npm__dependencies__update(
 				const has_workspace = in_version.indexOf('') === 0
 				const has_carrot = in_version.slice(0, 1) === '^'
 				if (in_version === '') continue
-				if (package_name_R_latest_version_promise[package_name] === undefined) {
+				if (package_name_R_latest_version_promise[package_name] === undefined && !pkg.private) {
 					const npm =
 						spawn('npm', ['show', `${package_name}@latest`], {
 							shell: true

@@ -1,7 +1,7 @@
 import { line__transform_stream_ } from '@ctx-core/string'
-import { monorepo_npm__dependencies__update } from '../monorepo_npm__dependencies__update/index.js'
 import { spawn } from 'child_process'
 import { Readable } from 'stream'
+import { monorepo_npm__dependencies__update } from '../monorepo_npm__dependencies__update/index.js'
 /**
  * @param {import('../_types').monorepo_thread_params_T}params
  * @returns {Promise<Record<string, string>>}
@@ -25,7 +25,7 @@ export async function monorepo_pnpm__dependencies__update(params = {}) {
 				{
 					stdio: ['pipe', 'pipe', process.stderr]
 				})
-		await Readable.toWeb(pnpm_recursive_list.stdout)
+		await (/** @type {ReadableStream<Buffer>} */Readable.toWeb(pnpm_recursive_list.stdout))
 			.pipeThrough(new TextDecoderStream())
 			.pipeThrough(line__transform_stream_())
 			.pipeTo(new WritableStream({

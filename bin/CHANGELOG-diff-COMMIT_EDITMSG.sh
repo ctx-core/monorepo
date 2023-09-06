@@ -21,7 +21,6 @@ while IFS= read -r LINE; do
 		if [ -f CHANGELOG.md ]; then
 			CHANGES="$(
 				git add . && git diff --cached CHANGELOG.md \
-				| grep 32m \
 				| sed -r "s/\x1B\[[0-9;]*[JKmsu]//g" \
 				| sed 's/^\+//' \
 				| "$BIN_DIR/surrounding-trim.sh"

@@ -1,5 +1,16 @@
 # @ctx-core/monorepo
 
+## 20.4.113
+
+### Patch Changes
+
+- remove bin command subdirectories: should fix issues with bun:
+
+      monorepo_npm__dependencies__update
+      monorepo_npm__version__sync
+      monorepo_pnpm__circular_dependencies__detect
+      monorepo_pnpm__dependencies__update
+
 ## 20.4.112
 
 ### Patch Changes

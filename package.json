@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "20.4.120",
+	"version": "20.4.121",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -61,18 +61,18 @@
 		"test-unit-coverage": "c8 pnpm test-unit"
 	},
 	"dependencies": {
-		"@ctx-core/array": "^26.15.4",
-		"@ctx-core/child_process": "^7.3.81",
-		"@ctx-core/cli-args": "^11.3.41",
-		"@ctx-core/ctx-core-package-tools": "^8.0.232",
-		"@ctx-core/env": "^17.3.9",
-		"@ctx-core/fs": "^1.2.1",
-		"@ctx-core/function": "^21.20.1",
-		"@ctx-core/object": "^28.2.0",
-		"@ctx-core/package": "^9.2.108",
-		"@ctx-core/queue": "^7.9.2",
-		"@ctx-core/string": "^12.3.22",
-		"@types/node": "^20.8.6",
+		"@ctx-core/array": "^26.15.5",
+		"@ctx-core/child_process": "^7.3.82",
+		"@ctx-core/cli-args": "^11.3.42",
+		"@ctx-core/ctx-core-package-tools": "^8.0.233",
+		"@ctx-core/env": "^17.3.10",
+		"@ctx-core/fs": "^1.2.2",
+		"@ctx-core/function": "^21.20.2",
+		"@ctx-core/object": "^28.2.1",
+		"@ctx-core/package": "^9.2.109",
+		"@ctx-core/queue": "^7.9.3",
+		"@ctx-core/string": "^12.3.23",
+		"@types/node": "^20.8.7",
 		"detect-indent": "^7.0.1",
 		"dir-glob": "^3.0.1",
 		"js-yaml": "^4.1.0",
@@ -80,7 +80,7 @@
 		"path-type": "^5.0.0",
 		"semver": "^7.5.4",
 		"tiny-glob": "^0.2.9",
-		"tsx": "^3.13.0"
+		"tsx": "^3.14.0"
 	},
 	"devDependencies": {
 		"@pnpm/logger": "^5.0.0",

@@ -1,5 +1,15 @@
 # @ctx-core/monorepo
 
+## 20.4.128
+
+### Patch Changes
+
+- @types/node: ^20.8.9 -> ^20.8.10
+- Updated dependencies
+  - @ctx-core/package@9.2.111
+  - @ctx-core/string@12.3.25
+  - @ctx-core/ctx-core-package-tools@8.0.235
+
 ## 20.4.127
 
 ### Patch Changes

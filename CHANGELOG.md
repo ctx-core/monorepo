@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.4.134
+
+### Patch Changes
+
+- CHANGELOG-diff: COMMIT_EDITMSG: git diff: commit message: fix: ignore first 4 lines: + | tail -n+5
+
 ## 20.4.133
 
 ### Patch Changes

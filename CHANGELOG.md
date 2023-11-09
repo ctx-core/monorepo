@@ -1,5 +1,17 @@
 # @ctx-core/monorepo
 
+## 20.4.139
+
+### Patch Changes
+
+- recursive-git-commit: handle npm workspaces if pnpm-workspace.yaml and pnpm-workspace.yml is not present
+- Updated dependencies
+  - @ctx-core/object@30.0.0
+  - @ctx-core/array@26.15.9
+  - @ctx-core/child_process@7.3.91
+  - @ctx-core/cli-args@11.3.46
+  - @ctx-core/env@17.3.19
+
 ## 20.4.138
 
 ### Patch Changes

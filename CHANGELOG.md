@@ -1,5 +1,36 @@
 # @ctx-core/monorepo
 
+## 20.5.0
+
+### Minor Changes
+
+- fix:types package.json exports
+- tsconfig:
+
+      "module": "ESNext"
+      "moduleResolution": "nodenext"
+      "target": "ESNext"
+
+### Patch Changes
+
+- package.json: - "svelte": "./src/index.js"
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/array@27.0.0
+  - @ctx-core/child_process@7.4.0
+  - @ctx-core/cli-args@11.4.0
+  - ctx-core@2.1.0
+  - @ctx-core/env@17.4.0
+  - @ctx-core/fs@1.3.0
+  - @ctx-core/package@9.3.0
+  - @ctx-core/queue@7.10.0
+  - @ctx-core/string@12.4.0
+  - @ctx-core/ctx-core-package-tools@8.1.0
+
 ## 20.4.140
 
 ### Patch Changes

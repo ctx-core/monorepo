@@ -1,2 +1,2 @@
 #!/bin/sh
-sed -i.bak 's/https:\/\/github.com\//git@github.com:/g' ./.git/modules/packages/**/config
+sed -i.bak 's/https:\/\/github.com\//git@github.com:/g' ./.git/modules/lib/**/config

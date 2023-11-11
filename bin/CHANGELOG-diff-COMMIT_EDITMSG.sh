@@ -20,7 +20,7 @@ while IFS= read -r LINE; do
 		cd "$DIR"
 		if [ -f CHANGELOG.md ]; then
 			CHANGES="$(
-				git add . && git diff --cached CHANGELOG.md | tail -n+5 \
+				git add . && git diff --cached CHANGELOG.md | tail -n+6 \
 				| sed -r "s/\x1B\[[0-9;]*[JKmsu]//g" \
 				| sed 's/^\+//' \
 				| "$BIN_DIR/surrounding-trim.sh"

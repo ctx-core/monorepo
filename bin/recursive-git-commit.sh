@@ -7,6 +7,7 @@ if [[ ( -f COMMIT_EDITMSG ) && ( -n "$(cat COMMIT_EDITMSG | surrounding-trim)" )
   git commit -a -F COMMIT_EDITMSG && rm COMMIT_EDITMSG
 else
   git commit -am "$DEFAULT_MSG"
+  # git add . && (git diff --quiet HEAD || git commit -C HEAD --amend)
 fi||echo ''
 EOF
 EDITOR=$(git config --get core.editor) || ${EDITOR:=vi}

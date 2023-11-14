@@ -1,5 +1,23 @@
 # @ctx-core/monorepo
 
+## 20.5.3
+
+### Patch Changes
+
+- fix: missing tsconfig.json
+- Updated dependencies
+  - @ctx-core/array@27.0.2
+  - @ctx-core/child_process@7.4.3
+  - @ctx-core/cli-args@11.4.2
+  - @ctx-core/env@17.4.2
+  - @ctx-core/fs@1.3.2
+  - @ctx-core/function@21.21.2
+  - @ctx-core/object@30.1.2
+  - @ctx-core/package@9.3.2
+  - @ctx-core/queue@7.10.2
+  - @ctx-core/string@12.4.2
+  - @ctx-core/ctx-core-package-tools@8.1.2
+
 ## 20.5.2
 
 ### Patch Changes

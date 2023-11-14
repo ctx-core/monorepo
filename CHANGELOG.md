@@ -1,5 +1,23 @@
 # @ctx-core/monorepo
 
+## 20.5.4
+
+### Patch Changes
+
+- package.json: files: + \*.js
+- Updated dependencies
+  - @ctx-core/array@27.0.3
+  - @ctx-core/child_process@7.4.4
+  - @ctx-core/cli-args@11.4.3
+  - @ctx-core/env@17.4.3
+  - @ctx-core/fs@1.3.3
+  - @ctx-core/function@21.21.3
+  - @ctx-core/object@30.1.3
+  - @ctx-core/package@9.3.3
+  - @ctx-core/queue@7.10.3
+  - @ctx-core/string@12.4.3
+  - @ctx-core/ctx-core-package-tools@8.1.3
+
 ## 20.5.3
 
 ### Patch Changes

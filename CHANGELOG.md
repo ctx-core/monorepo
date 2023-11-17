@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.5.22
+
+### Patch Changes
+
+- CHANGELOG-diff-COMMIT_EDITMSG: grep -v to exclude git diff info: leaves only diff content
+
 ## 20.5.21
 
 ### Patch Changes

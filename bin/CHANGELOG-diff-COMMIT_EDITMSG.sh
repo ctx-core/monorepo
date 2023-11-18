@@ -5,7 +5,7 @@ while getopts "fh" o; do
 	f)
 		FORCE=true
 		;;
-	h)
+	*)
 		usage
 		exit
 		;;

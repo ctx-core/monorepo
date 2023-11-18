@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.5.25
+
+### Patch Changes
+
+- CHANGELOG-diff-COMMIT_EDITMSG: any flag other than -f will show usage
+
 ## 20.5.24
 
 ### Patch Changes

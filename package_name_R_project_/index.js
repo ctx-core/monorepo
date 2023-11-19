@@ -1,5 +1,5 @@
-/** @typedef {import('../_types/index.d.ts').project_T}project_T */
-/** @typedef {import('./index.d.ts').package_name_R_project_T}package_name_R_project_T */
+/** @typedef {import('../_types/index.d.ts').project_T} */
+/** @typedef {import('./index.d.ts').package_name_R_project_T} */
 /**
  * @param {project_T[]}project_a
  * @returns {package_name_R_project_T}

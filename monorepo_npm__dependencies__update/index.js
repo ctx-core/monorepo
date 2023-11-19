@@ -13,7 +13,7 @@ import { package_name_R_stdout_ } from '../package_name_R_stdout_/index.js'
 import { project_a_ } from '../project_a_/index.js'
 import { readFile } from '../readFile/index.js'
 import { writeFile } from '../writeFile/index.js'
-/** @typedef {import('./index.d.ts').monorepo_npm__dependencies__update__params_T}monorepo_npm__dependencies__update__params_T */
+/** @typedef {import('./index.d.ts').monorepo_npm__dependencies__update__params_T} */
 /**
  * @param {monorepo_npm__dependencies__update__params_T}[params]
  * @returns {Promise<Record<string, string>>}

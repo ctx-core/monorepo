@@ -1,4 +1,4 @@
-/** @typedef {import('../_types/index.d.ts').project_T}project_T */
+/** @typedef {import('../_types/index.d.ts').project_T} */
 /**
  * @param {project_T[]}project_a
  * @param {(project:project_T)=>Promise<unknown>}promise_

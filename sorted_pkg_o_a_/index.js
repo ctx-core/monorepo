@@ -3,7 +3,7 @@ import { readFile } from 'fs/promises'
 import yaml from 'js-yaml'
 import { dirname, join } from 'path'
 import glob from 'tiny-glob'
-/** @typedef {import('./index.d.ts').pkg_r_T}pkg_r_T */
+/** @typedef {import('./index.d.ts').pkg_r_T} */
 /**
  * @returns {Promise<pkg_r_T[]>}
  */

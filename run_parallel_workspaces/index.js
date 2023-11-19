@@ -3,7 +3,7 @@ import { queue_ } from '@ctx-core/queue'
 import { package_name_R_stdout_ } from '../package_name_R_stdout_/index.js'
 import { project_a_ } from '../project_a_/index.js'
 import { promise_a_ } from '../promise_a_/index.js'
-/** @typedef {import('../_types/index.d.ts').monorepo_thread_params_T}monorepo_thread_params_T */
+/** @typedef {import('../_types/index.d.ts').monorepo_thread_params_T} */
 /**
  * @param {string[]}cmd_a
  * @param {monorepo_thread_params_T}[params]

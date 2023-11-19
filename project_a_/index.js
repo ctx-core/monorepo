@@ -1,5 +1,5 @@
 import { exec } from '@ctx-core/child_process'
-/** @typedef {import('../_types/index.d.ts').project_T}project_T */
+/** @typedef {import('../_types/index.d.ts').project_T} */
 /**
  * @returns {Promise<project_T[]>}
  * @private

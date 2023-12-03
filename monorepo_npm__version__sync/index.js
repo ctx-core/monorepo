@@ -55,7 +55,7 @@ export async function monorepo_npm__version__sync(
 			const version = await exec(`
 				npm show ${project.package_name}@latest | \
 				sed -r "s/\x1B\\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g" | \
-				grep "^latest\:" | \
+				grep "^latest:" | \
 				grep \\: | \
 				cut -f2 -d: | \
 				xargs echo

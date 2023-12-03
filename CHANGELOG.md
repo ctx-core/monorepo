@@ -1,5 +1,13 @@
 # @ctx-core/monorepo
 
+## 20.5.75
+
+### Patch Changes
+
+- @ctx-core/package: ^9.3.38 -> ^9.3.39
+- Updated dependencies
+  - @ctx-core/fs@1.4.4
+
 ## 20.5.74
 
 ### Patch Changes

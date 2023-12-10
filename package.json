@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "20.5.84",
+	"version": "20.5.85",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -94,7 +94,7 @@
 		"@ctx-core/ctx-core-package-tools": "^8.1.43",
 		"@ctx-core/env": "^17.4.43",
 		"@ctx-core/function": "^21.23.0",
-		"@ctx-core/fs": "^1.4.11",
+		"@ctx-core/fs": "^1.4.12",
 		"@ctx-core/object": "^31.1.20",
 		"@ctx-core/package": "^9.3.44",
 		"@ctx-core/queue": "^7.10.39",

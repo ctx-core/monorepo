@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.5.85
+
+### Patch Changes
+
+- @ctx-core/fs: ^1.4.11 -> ^1.4.12
+
 ## 20.5.84
 
 ### Patch Changes

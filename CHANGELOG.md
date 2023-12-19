@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 20.5.123
+
+### Patch Changes
+
+- @ctx-core/ctx-core-package-tools: ^8.1.59 -> ^8.1.60
+
 ## 20.5.122
 
 ### Patch Changes

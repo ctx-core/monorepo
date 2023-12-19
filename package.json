@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "20.5.122",
+	"version": "20.5.123",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -90,7 +90,7 @@
 	"dependencies": {
 		"@ctx-core/child_process": "^7.4.62",
 		"@ctx-core/cli-args": "^11.4.57",
-		"@ctx-core/ctx-core-package-tools": "^8.1.59",
+		"@ctx-core/ctx-core-package-tools": "^8.1.60",
 		"@ctx-core/env": "^17.4.61",
 		"@ctx-core/fs": "^1.4.41",
 		"@ctx-core/package": "^9.3.61",

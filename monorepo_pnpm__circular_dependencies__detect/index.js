@@ -1,13 +1,13 @@
-import { last_ } from '@ctx-core/array'
-import { line__transform_stream_ } from '@ctx-core/string'
+/// <reference types="../types/index.d.ts" />
+import { last_ } from 'ctx-core/array'
+import { line__transform_stream_ } from 'ctx-core/string'
 import { spawn } from 'child_process'
 import { Readable } from 'stream'
 const { keys } = Object
 /**
- * @param {import('../_types/index.js').monorepo_thread_params_T}params
  * @returns {Promise<Record<string, string>>}
  */
-export async function monorepo_pnpm__circular_dependencies__detect(params = {}) {
+export async function monorepo_pnpm__circular_dependencies__detect() {
 	const package_name_R_dependency_a =
 		await package_name_R_dependency_a_()
 	const circular__package_name_M_dependency_path_a =

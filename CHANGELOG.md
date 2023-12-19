@@ -1,5 +1,17 @@
 # @ctx-core/monorepo
 
+## 20.5.121
+
+### Patch Changes
+
+- consolidate dependencies
+- Updated dependencies
+- Updated dependencies
+  - ctx-core@5.1.0
+  - @ctx-core/child_process@7.4.61
+  - @ctx-core/cli-args@11.4.56
+  - @ctx-core/fs@1.4.40
+
 ## 20.5.120
 
 ### Patch Changes

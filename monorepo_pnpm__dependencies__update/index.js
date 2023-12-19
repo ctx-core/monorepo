@@ -1,9 +1,10 @@
-import { line__transform_stream_ } from '@ctx-core/string'
+/// <reference types="../types/index.d.ts" />
+import { line__transform_stream_ } from 'ctx-core/string'
 import { spawn } from 'child_process'
 import { Readable } from 'stream'
 import { monorepo_npm__dependencies__update } from '../monorepo_npm__dependencies__update/index.js'
 /**
- * @param {import('../_types/index.js').monorepo_thread_params_T}params
+ * @param {monorepo_thread_params_T}params
  * @returns {Promise<Record<string, string>>}
  */
 export async function monorepo_pnpm__dependencies__update(params = {}) {

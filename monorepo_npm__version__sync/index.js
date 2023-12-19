@@ -1,6 +1,7 @@
 import { exec } from '@ctx-core/child_process'
-import { values } from '@ctx-core/object'
-import { queue_ } from '@ctx-core/queue'
+import { values } from 'ctx-core/object'
+/// <reference types="../types/index.d.ts" />
+import { queue_ } from 'ctx-core/queue'
 import detect_indent from 'detect-indent'
 import ora from 'ora'
 import semver from 'semver'
@@ -13,7 +14,7 @@ const {
 	compare
 } = semver
 /**
- * @param {import('../_types/index.js').monorepo_thread_params_T}[params]
+ * @param {monorepo_thread_params_T}[params]
  * @returns {Promise<Record<string, string>>}
  */
 export async function monorepo_npm__version__sync(

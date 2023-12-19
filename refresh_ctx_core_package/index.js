@@ -1,4 +1,4 @@
-import { each } from '@ctx-core/array'
+import { each } from 'ctx-core/array'
 import { readFile, writeFile } from 'fs/promises'
 import { dirname } from 'path'
 import { map_package_json_path_glob } from '../map_package_json_path_glob/index.js'

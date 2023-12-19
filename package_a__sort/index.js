@@ -1,8 +1,8 @@
-import { sleep } from '@ctx-core/function'
-import { queue_ } from '@ctx-core/queue'
+/// <reference types="../sorted_pkg_o_a_/index.d.ts" />
+/// <reference types="./index.d.ts" />
+import { sleep } from 'ctx-core/function'
+import { queue_ } from 'ctx-core/queue'
 import { sorted_pkg_o_a_ } from '../sorted_pkg_o_a_/index.js'
-/** @typedef {import('../sorted_pkg_o_a_/index.d.ts').pnpm_list_package_T} */
-/** @typedef {import('./index.d.ts').package_a__sort__params_T} */
 /**
  * @param {(pkg:pnpm_list_package_T):Promise<void>}fn
  * @param {package_a__sort__params_T}[params]

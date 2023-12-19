@@ -1,7 +1,8 @@
+/// <reference types="./index.d.ts" />
 import { import_meta_env_ } from '@ctx-core/env'
 import { path__exists_ } from '@ctx-core/fs'
-import { entries_gen_, keys } from '@ctx-core/object'
-import { queue_ } from '@ctx-core/queue'
+import { entries_gen_, keys } from 'ctx-core/object'
+import { queue_ } from 'ctx-core/queue'
 import { spawn } from 'child_process'
 import detect_indent from 'detect-indent'
 import ora from 'ora'
@@ -13,7 +14,6 @@ import { package_name_R_stdout_ } from '../package_name_R_stdout_/index.js'
 import { project_a_ } from '../project_a_/index.js'
 import { readFile } from '../readFile/index.js'
 import { writeFile } from '../writeFile/index.js'
-/** @typedef {import('./index.d.ts').monorepo_npm__dependencies__update__params_T} */
 /**
  * @param {monorepo_npm__dependencies__update__params_T}[params]
  * @returns {Promise<Record<string, string>>}

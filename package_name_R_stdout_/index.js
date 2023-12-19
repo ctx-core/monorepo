@@ -1,4 +1,4 @@
-import { entries_gen_ } from '@ctx-core/object'
+import { entries_gen_ } from 'ctx-core/object'
 /**
  * @param {string[]}package_name_a
  * @param {string[]}stdout_aa

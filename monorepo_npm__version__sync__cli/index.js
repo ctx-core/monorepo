@@ -1,5 +1,5 @@
 import { param_r_ } from '@ctx-core/cli-args'
-import { entries_gen_ } from '@ctx-core/object'
+import { entries_gen_ } from 'ctx-core/object'
 import { createWriteStream } from 'fs'
 import { readFile } from 'fs/promises'
 import { monorepo_npm__version__sync } from '../monorepo_npm__version__sync/index.js'

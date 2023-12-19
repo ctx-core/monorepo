@@ -1,4 +1,4 @@
-import { compact, flatten } from '@ctx-core/array'
+import { compact, flatten } from 'ctx-core/array'
 import { readFile } from 'fs/promises'
 import yaml from 'js-yaml'
 import { dirname, join } from 'path'

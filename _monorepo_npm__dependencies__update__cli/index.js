@@ -1,8 +1,8 @@
+/// <reference types="./index.d.ts" />
 import { param_r_ } from '@ctx-core/cli-args'
-import { entries_gen_ } from '@ctx-core/object'
+import { entries_gen_ } from 'ctx-core/object'
 import { createWriteStream } from 'fs'
 import { readFile } from 'fs/promises'
-/** @typedef {import('./index.d.ts')._monorepo_npm__dependencies__update__cli__params_T} */
 /**
  * @param {_monorepo_npm__dependencies__update__cli__params_T}params
  * @returns {Promise<null>}

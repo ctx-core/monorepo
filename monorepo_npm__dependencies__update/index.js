@@ -1,6 +1,6 @@
 /// <reference types="./index.d.ts" />
-import { import_meta_env_ } from '@ctx-core/env'
 import { path__exists_ } from '@ctx-core/fs'
+import { import_meta_env_ } from 'ctx-core/env'
 import { entries_gen_, keys } from 'ctx-core/object'
 import { queue_ } from 'ctx-core/queue'
 import { spawn } from 'child_process'

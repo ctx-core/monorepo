@@ -1,4 +1,4 @@
-import { param_r_ } from '@ctx-core/cli-args'
+import { param_r_ } from 'ctx-core/cli-args'
 import { run_parallel_workspaces } from '../run_parallel_workspaces/index.js'
 const cmd_a = process.argv.slice(2)
 /**

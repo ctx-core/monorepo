@@ -1,9 +1,9 @@
 /// <reference types="./index.d.ts" />
-import { path__exists_ } from '@ctx-core/fs'
 import { import_meta_env_ } from 'ctx-core/env'
+import { path__exists_ } from 'ctx-core/fs'
 import { entries_gen_, keys } from 'ctx-core/object'
-import { queue_ } from 'ctx-core/queue'
 import { spawn } from 'child_process'
+import { queue_ } from 'ctx-core/queue'
 import detect_indent from 'detect-indent'
 import ora from 'ora'
 import { join } from 'path'

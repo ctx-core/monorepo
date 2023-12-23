@@ -1,5 +1,5 @@
 import { each } from 'ctx-core/array'
-import { readFile, writeFile } from 'fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
 import { dirname } from 'path'
 import { map_package_json_path_glob } from '../map_package_json_path_glob/index.js'
 const { keys } = Object

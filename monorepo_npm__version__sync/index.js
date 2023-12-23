@@ -1,14 +1,11 @@
-import { exec } from '@ctx-core/child_process'
-import { values } from 'ctx-core/object'
 /// <reference types="../types/index.d.ts" />
+import { exec } from '@ctx-core/child_process'
 import { queue_ } from 'ctx-core/queue'
 import detect_indent from 'detect-indent'
+import { readFile, writeFile } from 'node:fs/promises'
 import ora from 'ora'
 import semver from 'semver'
-import { package_name_R_project_ } from '../package_name_R_project_/index.js'
-import { project_a_ } from '../project_a_/index.js'
-import { readFile } from '../readFile/index.js'
-import { writeFile } from '../writeFile/index.js'
+import { project_a_ } from '../project_a/index.js'
 const {
 	coerce,
 	compare
@@ -23,14 +20,7 @@ export async function monorepo_npm__version__sync(
 	const queue = queue_(params.threads || 20)
 	const warn_msg_a = []
 	const projects = await project_a_()
-	const package_name_R_project =
-		package_name_R_project_(projects)
 	let current_count = 0
-	const project_a =
-		params.package_name_a
-			? params.package_name_a.map(package_name=>
-				package_name_R_project[package_name])
-			: values(package_name_R_project)
 	const stdout_a_async_a =
 		projects.map(
 			project=>

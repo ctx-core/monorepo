@@ -2,7 +2,7 @@
 /// <reference types="./index.d.ts" />
 import { sleep } from 'ctx-core/function'
 import { queue_ } from 'ctx-core/queue'
-import { sorted_pkg_o_a_ } from '../sorted_pkg_o_a_/index.js'
+import { sorted_pkg_o_a_ } from '../sorted_pkg_o_a/index.js'
 /**
  * @param {(pkg:pnpm_list_package_T):Promise<void>}fn
  * @param {package_a__sort__params_T}[params]

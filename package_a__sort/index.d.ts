@@ -1,4 +1,4 @@
-import type { pnpm_list_package_T } from '../sorted_pkg_o_a_/index.js'
+import type { pnpm_list_package_T } from '../sorted_pkg_o_a/index.js'
 export declare function package_a__sort(
 	fn:(pkg:pnpm_list_package_T)=>Promise<void>,
 	opts?:package_a__sort__params_T

@@ -3,8 +3,7 @@
 	"compilerOptions": {
 		"module": "ESNext",
 		"moduleResolution": "nodenext",
-		"strict": true,
-		"skipLibCheck": true
+		"strict": true
 	},
 	"exclude": [
 		"node_modules"

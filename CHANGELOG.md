@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 21.0.1
+
+### Patch Changes
+
+- ora: 8.0.0 -> 8.0.1
+
 ## 21.0.0
 
 ### Major Changes

@@ -24,7 +24,8 @@ export async function run_parallel_workspaces(
 	return package_name_R_stdout_(package_name_a, stdout_a)
 	async function promise_(project) {
 		const { package_dir } = project
-		return await queue.add(async ()=>(await exec(`cd ${package_dir}; ${cmd}`)).stdout.trim()
+		return await queue.add(async ()=>(
+			await exec(`cd ${package_dir}; ${cmd}`)).stdout.trim()
 		)
 	}
 }

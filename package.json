@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "21.1.18",
+	"version": "21.1.19",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -88,12 +88,12 @@
 		"test:unit:coverage": "c8 pnpm test:unit"
 	},
 	"dependencies": {
-		"@ctx-core/child_process": "^7.4.88",
+		"@ctx-core/child_process": "^7.4.89",
 		"@ctx-core/ctx-core-package-tools": "^8.1.65",
-		"@ctx-core/fs": "^1.4.67",
-		"@ctx-core/package": "^9.3.88",
+		"@ctx-core/fs": "^1.4.68",
+		"@ctx-core/package": "^9.3.89",
 		"@types/node": "^20.11.0",
-		"ctx-core": "^5.18.1",
+		"ctx-core": "^5.18.3",
 		"detect-indent": "^7.0.1",
 		"dir-glob": "^3.0.1",
 		"js-yaml": "^4.1.0",

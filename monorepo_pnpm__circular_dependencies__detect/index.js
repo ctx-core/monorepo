@@ -1,7 +1,7 @@
 /// <reference types="../types/index.d.ts" />
 import { last_ } from 'ctx-core/array'
 import { line__transform_stream_ } from 'ctx-core/string'
-import { spawn } from 'child_process'
+import { spawn } from 'node:child_process'
 import { Readable } from 'stream'
 const { keys } = Object
 /**

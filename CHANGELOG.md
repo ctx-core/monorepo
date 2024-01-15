@@ -1,5 +1,16 @@
 # @ctx-core/monorepo
 
+## 21.1.26
+
+### Patch Changes
+
+- import nodejs core modules using node: prefix
+- Updated dependencies
+  - @ctx-core/child_process@7.4.94
+  - ctx-core@5.18.8
+  - @ctx-core/package@9.3.96
+  - @ctx-core/ctx-core-package-tools@8.1.68
+
 ## 21.1.25
 
 ### Patch Changes
@@ -4222,7 +4233,7 @@
 
 ### Patch Changes
 
-- readFile: fix: export { readFile } from 'fs/promises'
+- readFile: fix: export { readFile } from 'node:fs/promises'
 - Updated dependencies
   - @ctx-core/object@27.1.4
   - @ctx-core/child_process@7.2.28

@@ -1,7 +1,7 @@
 import { compact, flatten } from 'ctx-core/array'
-import { readFile } from 'fs/promises'
+import { readFile } from 'node:fs/promises'
 import yaml from 'js-yaml'
-import { dirname, join } from 'path'
+import { dirname, join } from 'node:path'
 import glob from 'tiny-glob'
 /** @typedef {import('./index.d.ts').pkg_r_T} */
 /**

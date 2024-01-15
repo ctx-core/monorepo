@@ -1,5 +1,5 @@
 import { param_r_ } from 'ctx-core/cli-args'
-import { createWriteStream } from 'fs'
+import { createWriteStream } from 'node:fs'
 import { monorepo_pnpm__circular_dependencies__detect } from '../monorepo_pnpm__circular_dependencies__detect/index.js'
 /**
  * @returns {Promise<void>}

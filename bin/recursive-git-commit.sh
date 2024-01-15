@@ -16,7 +16,7 @@ if [ -f pnpm-workspace.yaml ] || [ -f pnpm-workspace.yml ]; then
   pnpm recursive exec -- sh "$TEMP"
 else
   WDA=$(
-    node -e "import('fs/promises').then(fs=>fs.readFile('./package.json').then(buf=>JSON.parse(buf.toString())?.workspaces||[])).then(a=>console.info(...a))"
+    node -e "import('node:fs/promises').then(fs=>fs.readFile('./package.json').then(buf=>JSON.parse(buf.toString())?.workspaces||[])).then(a=>console.info(...a))"
   )
   for wd in $WDA; do
     for d in $wd; do

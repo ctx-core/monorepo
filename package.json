@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "21.1.44",
+	"version": "21.2.0",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -54,6 +54,7 @@
 		"changeset-version-COMMIT_EDITMSG": "bin/changeset-version-COMMIT_EDITMSG.sh",
 		"CHANGELOG-diff-COMMIT_EDITMSG": "bin/CHANGELOG-diff-COMMIT_EDITMSG.sh",
 		"ensure.sh": "bin/ensure.sh",
+		"export_files_in_dir": "bin/export_files_in_dir.mjs",
 		"find--top-level-directories--npm-files": "bin/find--top-level-directories--npm-files.sh",
 		"git-commit--submodules": "bin/git-commit--submodules.sh",
 		"monorepo_npm__dependencies__update": "bin/monorepo_npm__dependencies__update.mjs",

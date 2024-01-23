@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 21.3.0
+
+### Minor Changes
+
+- bin: + package_json_files_directory_list
+
 ## 21.2.0
 
 ### Minor Changes

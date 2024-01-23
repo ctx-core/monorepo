@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 21.3.1
+
+### Patch Changes
+
+- package_json_files_directory_list: fix: wrap directory paths in quotes
+
 ## 21.3.0
 
 ### Minor Changes

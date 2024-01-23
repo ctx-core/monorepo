@@ -12,5 +12,5 @@ for (const file of files.sort()) {
 }
 console.info(
 	dir_a
-		.map(dir=>'./' + dir)
+		.map(dir=>'"./' + dir + '"')
 		.join(',\n'))

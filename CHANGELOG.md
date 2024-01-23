@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 21.4.0
+
+### Minor Changes
+
+- bin: + package_json_exports_directory_list
+
 ## 21.3.1
 
 ### Patch Changes

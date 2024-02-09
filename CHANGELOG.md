@@ -1,5 +1,17 @@
 # @ctx-core/monorepo
 
+## 21.4.33
+
+### Patch Changes
+
+- @types/node: ^20.11.16 -> ^20.11.17
+- package-manifest-changeset: fix: '^$PKG' regex
+- Updated dependencies
+- Updated dependencies
+  - ctx-core@5.38.2
+  - @ctx-core/package@9.3.145
+  - @ctx-core/ctx-core-package-tools@8.1.79
+
 ## 21.4.32
 
 ### Patch Changes

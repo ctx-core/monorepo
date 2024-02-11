@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "21.4.39",
+	"version": "21.4.40",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -94,7 +94,7 @@
 		"@ctx-core/child_process": "^7.4.140",
 		"@ctx-core/ctx-core-package-tools": "^8.1.79",
 		"@ctx-core/fs": "^1.5.18",
-		"@ctx-core/package": "^9.3.150",
+		"@ctx-core/package": "^9.3.151",
 		"@types/node": "^20.11.17",
 		"ctx-core": "^6.1.3",
 		"detect-indent": "^7.0.1",

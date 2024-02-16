@@ -20,7 +20,7 @@ else
   )
   for wd in $WDA; do
     for d in $wd; do
-      (cd $d || return; sh "$TEMP")
+      (cd $d && sh "$TEMP" || return)
     done
   done
 fi

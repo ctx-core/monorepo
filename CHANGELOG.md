@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 21.4.47
+
+### Patch Changes
+
+- recursive-git-commit: fix: multiple commits when a cd + commit has an error
+
 ## 21.4.46
 
 ### Patch Changes

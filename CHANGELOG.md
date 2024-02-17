@@ -1,5 +1,13 @@
 # @ctx-core/monorepo
 
+## 21.4.48
+
+### Patch Changes
+
+- recursive-git-commit: fix: multiple commits on root repo:
+
+      test that $(git rev-parse --show-toplevel) = $(pwd)
+
 ## 21.4.47
 
 ### Patch Changes

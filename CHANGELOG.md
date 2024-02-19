@@ -1,5 +1,15 @@
 # @ctx-core/monorepo
 
+## 21.4.49
+
+### Patch Changes
+
+- ctx-core: ^6.4.2 -> ^6.4.3
+- Updated dependencies
+  - @ctx-core/child_process@7.4.146
+  - @ctx-core/fs@1.5.24
+  - @ctx-core/package@9.3.157
+
 ## 21.4.48
 
 ### Patch Changes

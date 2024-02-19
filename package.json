@@ -115,8 +115,7 @@
 	},
 	"noUpdate": [],
 	"publishConfig": {
-		"access": "public",
-		"cache": "~/.npm"
+		"access": "public"
 	},
 	"sideEffects": false
 }

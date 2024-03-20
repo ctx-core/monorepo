@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "21.4.73",
+	"version": "21.4.74",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -16,7 +16,11 @@
 		"url": "https://github.com/ctx-core/monorepo.git"
 	},
 	"license": "Apache-2.0",
-	"author": "Brian Takita",
+	"author": {
+		"name": "Brian Takita",
+		"url": "https://briantakita.me",
+		"email": "info+ctx-core-monorepo@briantakita.me"
+	},
 	"type": "module",
 	"files": [
 		"*.d.ts",
@@ -91,12 +95,12 @@
 		"disable:test:unit:coverage": "c8 pnpm test:unit"
 	},
 	"dependencies": {
-		"@ctx-core/child_process": "^7.4.161",
-		"@ctx-core/ctx-core-package-tools": "^8.1.89",
-		"@ctx-core/fs": "^1.5.39",
-		"@ctx-core/package": "^9.3.173",
+		"@ctx-core/child_process": "^7.4.162",
+		"@ctx-core/ctx-core-package-tools": "^8.1.90",
+		"@ctx-core/fs": "^1.5.40",
+		"@ctx-core/package": "^9.3.174",
 		"@types/node": "^20.11.29",
-		"ctx-core": "^6.6.0",
+		"ctx-core": "^6.6.1",
 		"detect-indent": "^7.0.1",
 		"dir-glob": "^3.0.1",
 		"js-yaml": "^4.1.0",

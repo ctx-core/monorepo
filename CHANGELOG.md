@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 21.4.89
+
+### Patch Changes
+
+- @ctx-core/ctx-core-package-tools: ^8.1.92 -> ^8.2.0
+
 ## 21.4.88
 
 ### Patch Changes

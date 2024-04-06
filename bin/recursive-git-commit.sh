@@ -20,7 +20,7 @@ else
   )
   for wd in $WDA; do
     for d in $wd; do
-      (cd $d && [ "$(git rev-parse --show-toplevel)" = "$(pwd)" ] && sh "$TEMP" || return)
+      (cd $d && [ "$(git rev-parse --show-toplevel)" = "$(pwd)" ] && sh "$TEMP" || exit 0)
     done
   done
 fi

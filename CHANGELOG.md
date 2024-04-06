@@ -1,5 +1,11 @@
 # @ctx-core/monorepo
 
+## 21.4.96
+
+### Patch Changes
+
+- recursive-git-commit: fix: exit 0 instead of return
+
 ## 21.4.95
 
 ### Patch Changes

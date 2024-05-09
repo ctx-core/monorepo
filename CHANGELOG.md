@@ -1,5 +1,13 @@
 # @ctx-core/monorepo
 
+## 21.4.115
+
+### Patch Changes
+
+- semver: ^7.6.1 -> ^7.6.2
+- Updated dependencies
+  - @ctx-core/package@9.3.201
+
 ## 21.4.114
 
 ### Patch Changes

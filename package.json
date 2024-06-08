@@ -108,7 +108,7 @@
 		"path-type": "^5.0.0",
 		"semver": "^7.6.2",
 		"tiny-glob": "^0.2.9",
-		"tsx": "^4.12.1"
+		"tsx": "^4.13.2"
 	},
 	"devDependencies": {
 		"@pnpm/logger": "^5.0.0",

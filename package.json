@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "21.4.141",
+	"version": "21.4.142",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -95,9 +95,9 @@
 		"disable:test:unit:coverage": "c8 pnpm test:unit"
 	},
 	"dependencies": {
-		"@ctx-core/child_process": "^7.4.203",
+		"@ctx-core/child_process": "^7.4.204",
 		"@ctx-core/ctx-core-package-tools": "^8.2.20",
-		"@ctx-core/fs": "^1.5.80",
+		"@ctx-core/fs": "^1.5.81",
 		"@ctx-core/package": "^9.3.217",
 		"@types/node": "^20.14.8",
 		"ctx-core": "^7.2.24",

@@ -1,5 +1,18 @@
 # @ctx-core/monorepo
 
+## 21.4.155
+
+### Patch Changes
+
+- ora: 8.0.1 -> 8.1.0
+- @types/node: ^22.2.0 -> ^22.5.1
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - ctx-core@7.2.31
+  - @ctx-core/package@9.3.225
+  - @ctx-core/ctx-core-package-tools@8.2.26
+
 ## 21.4.154
 
 ### Patch Changes

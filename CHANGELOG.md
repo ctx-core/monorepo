@@ -1,5 +1,36 @@
 # @ctx-core/monorepo
 
+## 21.4.159
+
+### Patch Changes
+
+- c8: ^10.1.3 -> ^11.0.0
+- semver: ^7.7.3 -> ^7.7.4
+- check-dts: ^0.8.2 -> ^0.9.0
+- js-yaml: ^4.1.0 -> ^4.1.1
+- tsx: ^4.20.6 -> ^4.21.0
+- ora: 8.1.0 -> 9.3.0
+- @pnpm/logger: ^5.2.0 -> ^1001.0.1
+- @types/node: ^22.19.0 -> ^25.3.3
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @ctx-core/child_process@7.4.213
+  - ctx-core@7.2.33
+  - @ctx-core/fs@1.5.90
+  - @ctx-core/package@9.3.227
+  - @ctx-core/ctx-core-package-tools@8.2.28
+
 ## 21.4.158
 
 ### Patch Changes

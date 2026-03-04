@@ -1,5 +1,4 @@
 #!/bin/sh
-DIR="$(dirname $0)"
-TEMP=$(mktemp)
-"$DIR/monorepo-npm-check-updates/index.mjs" -o $TEMP
-cat "$TEMP" | "$DIR/package-manifest-changeset.sh"
+# Deprecated: use monorepo_npm__dependencies__update.mjs directly
+DIR="$(dirname "$0")"
+exec "$DIR/monorepo_npm__dependencies__update.mjs" "$@"

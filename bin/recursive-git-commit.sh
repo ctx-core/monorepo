@@ -14,6 +14,8 @@ EDITOR=$(git config --get core.editor) || ${EDITOR:=vi}
 "$EDITOR" "$TEMP"
 if [ -f pnpm-workspace.yaml ] || [ -f pnpm-workspace.yml ]; then
   pnpm recursive exec -- sh "$TEMP"
+  # Also commit in git submodules not covered by pnpm workspaces (e.g., dormant/)
+  git submodule foreach --quiet 'sh '"$TEMP"' || true'
 else
   WDA=$(
     node -e "import('node:fs/promises').then(fs=>fs.readFile('./package.json').then(buf=>JSON.parse(buf.toString())?.workspaces||[])).then(a=>console.info(...a))"

@@ -12,7 +12,7 @@ while getopts "fh" o; do
 	esac
 done
 
-LIST="$(pnpm list -r --depth -1)"
+LIST="$("$(dirname $0)/workspace-list.sh")"
 CHANGESETS="$(ls -1 .changeset/* | grep .*\.md | grep -v README)"
 while IFS= read -r CHANGESET_MD_PATH; do
 	FRONTMATTER="$(perl -ne '/^---/ && $i++; !/^---/ && $i < 2 && print' "$CHANGESET_MD_PATH")"

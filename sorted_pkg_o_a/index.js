@@ -1,6 +1,5 @@
 import { compact, flatten } from 'ctx-core/array'
 import { readFile } from 'node:fs/promises'
-import yaml from 'js-yaml'
 import { dirname, join } from 'node:path'
 import glob from 'tiny-glob'
 /** @typedef {import('./index.d.ts').pkg_r_T} */
@@ -8,10 +7,9 @@ import glob from 'tiny-glob'
  * @returns {Promise<pkg_r_T[]>}
  */
 export async function sorted_pkg_o_a_() {
-	const file = await readFile('./pnpm-workspace.yaml')
-	const doc = yaml.load(file.toString(), {})
+	const pkg_json = JSON.parse(await readFile('./package.json', 'utf-8'))
 	/** @type {string[]} */
-	const pkg_dir_a = doc['packages']
+	const pkg_dir_a = pkg_json.workspaces || []
 	const pkg_path_a =
 		pkg_dir_a.map(project_dir=>
 			join(project_dir, 'package.json'))

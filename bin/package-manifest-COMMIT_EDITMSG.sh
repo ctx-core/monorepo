@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LIST="$(pnpm list -r --depth -1)"
+LIST="$("$(dirname $0)/workspace-list.sh")"
 while read line; do
 	PKG="$(echo "$line" | awk '{print $1}')"
 	MSG="$(echo "$line" | awk '{$1=""; print $0}')"

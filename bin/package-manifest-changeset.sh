@@ -14,7 +14,7 @@ done
 
 BUMP=${BUMP:-patch}
 PWD=$(pwd)
-LIST="$(pnpm list -r --depth -1)"
+LIST="$("$(dirname $0)/workspace-list.sh")"
 BIN_DIR="$(dirname $0)"
 echo $DIR
 while read line; do

@@ -12,7 +12,7 @@ while getopts "fh" o; do
 	esac
 done
 
-LIST="$(pnpm list -r --depth -1)"
+LIST="$("$(dirname $0)/workspace-list.sh")"
 BIN_DIR="$(dirname $0)"
 while IFS= read -r LINE; do
 	DIR="$(echo "$LINE" | awk '{print $2}')"

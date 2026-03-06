@@ -20,7 +20,7 @@ done
 
 if [ -z $SINGLE ]; then
 	JOBLOG="$(mktemp)"
-	pnpm ls -r --depth -1 | sed '/^\s*$/d' | awk '{print $2}' \
+	"$(dirname $0)/workspace-list.sh" | awk '{print $2}' \
 		| awk -v cmd=$0 -v flags="-s$([[ -n $DRY ]] && echo ' -d')" '{print "(cd "$1"; "cmd" "flags")"}' \
 		| parallel --eta --joblog "$JOBLOG"
 	COLS="$(cat "$JOBLOG" | head -n1)"
@@ -58,7 +58,7 @@ if [ "$VERSION" = "$LATEST" ]; then
 	exit 0
 fi
 if [ -z $DRY ]; then
-	pnpm publish --tag latest --access public
+	bun publish --tag latest --access public
 	if [ $? -ne 0 ]; then
 		not_published 'Publish failed'
 		exit 1

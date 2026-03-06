@@ -1,8 +1,8 @@
 /// <reference types="../types/index.d.ts" />
 import { last_ } from 'ctx-core/array'
-import { line__transform_stream_ } from 'ctx-core/string'
-import { spawn } from 'node:child_process'
-import { Readable } from 'stream'
+import { readFile } from 'node:fs/promises'
+import { join } from 'node:path'
+import { project_a_ } from '../project_a/index.js'
 const { keys } = Object
 /**
  * @returns {Promise<Record<string, string>>}
@@ -64,31 +64,22 @@ export async function monorepo_pnpm__circular_dependencies__detect() {
 	 */
 	async function package_name_R_dependency_a_() {
 		const package_name_R_dependency_a = {}
-		let current__package_name
-		const pnpm_recursive_list =
-			spawn(
-				'pnpm', ['recursive', 'list'],
-				{
-					stdio: ['pipe', 'pipe', process.stderr]
-				})
-		await Readable.toWeb(pnpm_recursive_list.stdout)
-			.pipeThrough(new TransformStream())
-			.pipeThrough(line__transform_stream_())
-			.pipeTo(new WritableStream({
-				write(line) {
-					const word_a = line.split(' ')
-					if (word_a.length !== 2) return
-					const package_name_version_word = word_a[0]
-					const package_name_version_match =
-						/^(@?.*)@((\d\.?)+)$/.exec(package_name_version_word)
-					if (package_name_version_match) {
-						current__package_name = package_name_version_match[1]
-						package_name_R_dependency_a[current__package_name] = []
-					} else if (current__package_name) {
-						package_name_R_dependency_a[current__package_name].push(word_a[0])
-					}
+		const projects = await project_a_()
+		for (const project of projects) {
+			const pkg = JSON.parse(await readFile(join(project.package_dir, 'package.json'), 'utf-8'))
+			const deps = []
+			for (const dep_name of Object.keys(pkg.dependencies || {})) {
+				if (projects.some(p => p.package_name === dep_name)) {
+					deps.push(dep_name)
 				}
-			}))
+			}
+			for (const dep_name of Object.keys(pkg.devDependencies || {})) {
+				if (projects.some(p => p.package_name === dep_name)) {
+					deps.push(dep_name)
+				}
+			}
+			package_name_R_dependency_a[project.package_name] = deps
+		}
 		return package_name_R_dependency_a
 	}
 }

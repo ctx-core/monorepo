@@ -1,4 +1,4 @@
-#!/bin/env node
+#!/usr/bin/env node
 'use strict'
 import { sorted_pkg_o_a_ } from '../index.js'
 const sorted_pkg_o_a = await sorted_pkg_o_a_()

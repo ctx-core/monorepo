@@ -1,6 +1,6 @@
 {
 	"name": "@ctx-core/monorepo",
-	"version": "21.4.160",
+	"version": "21.4.161",
 	"description": "ctx-core monorepo",
 	"keywords": [
 		"ctx-core",
@@ -68,10 +68,10 @@
 		"package-manifest-changeset": "bin/package-manifest-changeset.sh",
 		"package-manifest-COMMIT_EDITMSG": "bin/package-manifest-COMMIT_EDITMSG.sh",
 		"npm-copy--package-bin-config": "bin/npm-copy--package-bin-config.sh",
-		"npm-publish--force": "bin/pnpm-publish--force.sh",
+		"npm-publish--force": "bin/publish--force.sh",
 		"package_json_exports_directory_list": "bin/package_json_exports_directory_list.mjs",
 		"package_json_files_directory_list": "bin/package_json_files_directory_list.mjs",
-		"pnpm-publish--force": "bin/pnpm-publish--force.sh",
+		"publish--force": "bin/publish--force.sh",
 		"pwd--packages": "bin/pwd--packages.sh",
 		"recursive-surrounding-trim-COMMIT_EDITMSG": "bin/recursive-surrounding-trim-COMMIT_EDITMSG.sh",
 		"recursive-git-commit": "bin/recursive-git-commit.sh",

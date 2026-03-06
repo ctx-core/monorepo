@@ -14,8 +14,8 @@ done
 
 BUMP=${BUMP:-patch}
 PWD=$(pwd)
-LIST="$("$(dirname $0)/workspace-list.sh")"
-BIN_DIR="$(dirname $0)"
+LIST="$("$(dirname "$(readlink -f "$0")")/workspace-list.sh")"
+BIN_DIR="$(dirname "$(readlink -f "$0")")"
 echo $DIR
 while read line; do
 	if [ -z "$(echo "$line" | xargs)" ]; then

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LIST="$("$(dirname $0)/workspace-list.sh")"
+LIST="$("$(dirname "$(readlink -f "$0")")/workspace-list.sh")"
 while read line; do
 	PKG="$(echo "$line" | awk '{print $1}')"
 	MSG="$(echo "$line" | awk '{$1=""; print $0}')"

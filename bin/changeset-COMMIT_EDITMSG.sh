@@ -12,13 +12,13 @@ while getopts "fh" o; do
 	esac
 done
 
-LIST="$("$(dirname $0)/workspace-list.sh")"
+LIST="$("$(dirname "$(readlink -f "$0")")/workspace-list.sh")"
 CHANGESETS="$(ls -1 .changeset/* | grep .*\.md | grep -v README)"
 while IFS= read -r CHANGESET_MD_PATH; do
 	FRONTMATTER="$(perl -ne '/^---/ && $i++; !/^---/ && $i < 2 && print' "$CHANGESET_MD_PATH")"
 	MSG="$(
 		perl -ne '$i > 1 ? print : /^---/ && $i++' "$CHANGESET_MD_PATH" \
-		| "$(dirname $0)/surrounding-trim.sh"
+		| "$(dirname "$(readlink -f "$0")")/surrounding-trim.sh"
 	)"
 	# sed script; See https://stackoverflow.com/questions/7359527/removing-trailing-starting-newlines-with-sed-awk-tr-and-friends
 	PKGS="$(echo "$FRONTMATTER" | awk '{print $1}' | tr -d '":')"

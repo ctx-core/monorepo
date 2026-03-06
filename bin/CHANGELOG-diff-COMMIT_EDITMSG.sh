@@ -12,8 +12,8 @@ while getopts "fh" o; do
 	esac
 done
 
-LIST="$("$(dirname $0)/workspace-list.sh")"
-BIN_DIR="$(dirname $0)"
+LIST="$("$(dirname "$(readlink -f "$0")")/workspace-list.sh")"
+BIN_DIR="$(dirname "$(readlink -f "$0")")"
 while IFS= read -r LINE; do
 	DIR="$(echo "$LINE" | awk '{print $2}')"
 	[ -z "$DIR" ] || [ ! -d "$DIR" ] && continue

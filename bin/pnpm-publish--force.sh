@@ -20,7 +20,7 @@ done
 
 if [ -z $SINGLE ]; then
 	JOBLOG="$(mktemp)"
-	"$(dirname $0)/workspace-list.sh" | awk '{print $2}' \
+	"$(dirname "$(readlink -f "$0")")/workspace-list.sh" | awk '{print $2}' \
 		| awk -v cmd=$0 -v flags="-s$([[ -n $DRY ]] && echo ' -d')" '{print "(cd "$1"; "cmd" "flags")"}' \
 		| parallel --eta --joblog "$JOBLOG"
 	COLS="$(cat "$JOBLOG" | head -n1)"
@@ -32,7 +32,7 @@ if [ -z $SINGLE ]; then
 			FAILED="$FAILED\n$ROW"
 		fi
 	done <<<"$(cat "$JOBLOG" | tail -n +2)"
-	STRIPPED_FAILED="$(echo "$FAILED" | "$(dirname $0)/surrounding-trim.sh")"
+	STRIPPED_FAILED="$(echo "$FAILED" | "$(dirname "$(readlink -f "$0")")/surrounding-trim.sh")"
 	if [ -n "$STRIPPED_FAILED" ]; then
 		echo "Jobs with errors ($JOBLOG)"
 		echo "$COLS"

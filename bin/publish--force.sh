@@ -58,8 +58,19 @@ if [ "$VERSION" = "$LATEST" ]; then
 	exit 0
 fi
 if [ -z $DRY ]; then
-	bun publish --tag latest --access public
-	if [ $? -ne 0 ]; then
+	set +x
+	if ! publish_token="$(passage btak/GRANULAR_NPM_TOKEN)"; then
+		printf '%s\n' 'NPM_CONFIG_TOKEN lookup failed' >&2
+		exit 1
+	fi
+	if [ -z "$publish_token" ]; then
+		printf '%s\n' 'NPM_CONFIG_TOKEN lookup returned empty' >&2
+		exit 1
+	fi
+	NPM_CONFIG_TOKEN="$publish_token" bun publish --tag latest --access public
+	publish_status=$?
+	unset publish_token
+	if [ "$publish_status" -ne 0 ]; then
 		not_published 'Publish failed'
 		exit 1
 	fi
